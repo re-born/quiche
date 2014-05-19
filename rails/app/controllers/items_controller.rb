@@ -113,7 +113,7 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:title, :first_image_url, :user_id, :name, :content, :deleted_at)
+      params.require(:item).permit(:title, :first_image_url, :user_id, :name, :content, :deleted_at, :tag_list)
     end
 
     def tweet(tweet_content)
