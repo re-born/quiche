@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 51f4aa4882f90ddccd8256a9d5a7135996eff1cc daichi <daipanchi@gmail.com> 1400070597 +0900	branch: Created from HEAD
+51f4aa4882f90ddccd8256a9d5a7135996eff1cc 4581c3b7f2931f1fa50a5b87ee47831fe069779c daichi <daipanchi@gmail.com> 1400072170 +0900	commit: Use sqlite, and change seed
+4581c3b7f2931f1fa50a5b87ee47831fe069779c 4c0bbbee396c6476c11a84b3935b854efa60846a daichi <daipanchi@gmail.com> 1400072276 +0900	commit: Add lines to end of file
+4c0bbbee396c6476c11a84b3935b854efa60846a 8d087ececd6f292a7b8592ffa548ea8bb10cb435 daichi <daipanchi@gmail.com> 1400072282 +0900	rebase -i (finish): refs/heads/change-db-in-development onto 4581c3b

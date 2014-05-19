@@ -1,0 +1,36 @@
+0000000000000000000000000000000000000000 b37a84f2735cef43d25e7fc4074479064afdbf2f daichi <daipanchi@gmail.com> 1396367287 +0900	branch: Created from HEAD
+b37a84f2735cef43d25e7fc4074479064afdbf2f 1d6156613e3ec94e8d9a3c9cb4915214a6cdfecd daichi <daipanchi@gmail.com> 1396367297 +0900	commit: Scaffold
+1d6156613e3ec94e8d9a3c9cb4915214a6cdfecd 6576164c650d3c1ced8c25393e13a90746253976 daichi <daipanchi@gmail.com> 1396368131 +0900	commit: Enable to receive post
+6576164c650d3c1ced8c25393e13a90746253976 f77ada5ea32e5d29bfe31c490c3ab9ddee73c258 daichi <daipanchi@gmail.com> 1396368160 +0900	commit: Add a forgotten file
+f77ada5ea32e5d29bfe31c490c3ab9ddee73c258 ec83f679d05510ec81af113834e1e9da85221a22 daichi <daipanchi@gmail.com> 1396368175 +0900	rebase -i (finish): refs/heads/prototype onto 6576164
+ec83f679d05510ec81af113834e1e9da85221a22 1b17bda0cc0dfa377eb1db21709fa961f7caba72 daichi <daipanchi@gmail.com> 1396523186 +0900	commit: Avoid encoring error
+1b17bda0cc0dfa377eb1db21709fa961f7caba72 957bb183beac7549c7d1f2adb4cc970d1822a557 daichi <daipanchi@gmail.com> 1396538165 +0900	commit: Add user model
+957bb183beac7549c7d1f2adb4cc970d1822a557 79f7df47856e53bd3a6edf7300a114b68805f6c9 daichi <daipanchi@gmail.com> 1396538204 +0900	commit: Add forgotten files
+79f7df47856e53bd3a6edf7300a114b68805f6c9 8a69c0055498b7a45a743f7dcc4e40b05ec29e78 daichi <daipanchi@gmail.com> 1396538221 +0900	rebase -i (finish): refs/heads/prototype onto 957bb18
+8a69c0055498b7a45a743f7dcc4e40b05ec29e78 074b391a75b291f2ea9cd8182efe1005c5ef2527 daichi <daipanchi@gmail.com> 1396544197 +0900	commit: Enable to delete query when rendering
+074b391a75b291f2ea9cd8182efe1005c5ef2527 5cccae52bf24ff05b77bd89acc6698fd11e4a6b9 daichi <daipanchi@gmail.com> 1396544233 +0900	commit: Install foundation
+5cccae52bf24ff05b77bd89acc6698fd11e4a6b9 475f48f58227c87c62ebab5a3b14f143adbdbf16 daichi <daipanchi@gmail.com> 1396544277 +0900	commit: Delete .css
+475f48f58227c87c62ebab5a3b14f143adbdbf16 c89a1b59b03a0cb7847d7a58b2040bc1a38e9e24 daichi <daipanchi@gmail.com> 1396544329 +0900	commit: Delete .css
+c89a1b59b03a0cb7847d7a58b2040bc1a38e9e24 1b31b73257baddfde97ab6bd3a8618c1f3ae7aa3 daichi <daipanchi@gmail.com> 1396544350 +0900	rebase -i (finish): refs/heads/prototype onto 5cccae5
+1b31b73257baddfde97ab6bd3a8618c1f3ae7aa3 abae8d0c06653c7a1e99232ad3ef070e28a276de daichi <daipanchi@gmail.com> 1396639229 +0900	commit: Delete foundation
+abae8d0c06653c7a1e99232ad3ef070e28a276de 45d6f67669bf3f976574de7146e90b3f9905e168 daichi <daipanchi@gmail.com> 1396643474 +0900	commit: Create timeline prototype
+45d6f67669bf3f976574de7146e90b3f9905e168 93e3b0111380dc49c051077d03c1aadee959d64e daichi <daipanchi@gmail.com> 1396784213 +0900	commit: Enable OAuth to authorize user
+93e3b0111380dc49c051077d03c1aadee959d64e d2d3ad2340129291a1f9fe812e5fc521fb88e510 daichi <daipanchi@gmail.com> 1396784328 +0900	commit: Modify config
+d2d3ad2340129291a1f9fe812e5fc521fb88e510 c45e34cd8c14c6f3b3fd2fec3d21041f3acd36a4 daichi <daipanchi@gmail.com> 1396790757 +0900	commit: Cope with relative url of an image
+c45e34cd8c14c6f3b3fd2fec3d21041f3acd36a4 b780e88571cf14f4d00fc053d6fa3dda4656d699 daichi <daipanchi@gmail.com> 1396791894 +0900	commit: Modify scss
+b780e88571cf14f4d00fc053d6fa3dda4656d699 06903653720d9ade801ea647fa8a1685345a66fa daichi <daipanchi@gmail.com> 1396793008 +0900	commit: Add web-font
+06903653720d9ade801ea647fa8a1685345a66fa abb33622f704f8c5ff9b3fcb95f3004024424a74 daichi <daipanchi@gmail.com> 1396793427 +0900	commit: Add web font
+abb33622f704f8c5ff9b3fcb95f3004024424a74 ddef888c0f2bbfcd6eee5d9e602842e16c688098 daichi <daipanchi@gmail.com> 1396819450 +0900	commit: Commonize to re_arrange method
+ddef888c0f2bbfcd6eee5d9e602842e16c688098 717e09acbe868cb8cf2d184967253ad0ecc4f9fb daichi <daipanchi@gmail.com> 1396819483 +0900	commit: Modify condition of Regex
+717e09acbe868cb8cf2d184967253ad0ecc4f9fb 3391fb99f9e04c98fa565b92c7da20070940a641 daichi <daipanchi@gmail.com> 1398431828 +0900	commit: Fix getting images
+3391fb99f9e04c98fa565b92c7da20070940a641 0011bcc09337ea1c98d607217e8584c578f5614c daichi <daipanchi@gmail.com> 1398432751 +0900	commit: Add getting-images condition
+0011bcc09337ea1c98d607217e8584c578f5614c 6cba53398ce295d6b7baa4e83cb7f54a0b4b1bcc daichi <daipanchi@gmail.com> 1398434789 +0900	commit: Avoid duplicated posting
+6cba53398ce295d6b7baa4e83cb7f54a0b4b1bcc aee6c96fc09be8a82b895e4d93474bfaeec71b7b daichi <daipanchi@gmail.com> 1398436753 +0900	commit: Add reader model
+aee6c96fc09be8a82b895e4d93474bfaeec71b7b f4e33f33fc783cdf428195051cdbf47df7d4db72 daichi <daipanchi@gmail.com> 1398436879 +0900	commit: Delete comments
+f4e33f33fc783cdf428195051cdbf47df7d4db72 41709967e7e625d1c16d599f15b01a15cb68f1f5 daichi <daipanchi@gmail.com> 1398438829 +0900	commit: Add prototype of reader view
+41709967e7e625d1c16d599f15b01a15cb68f1f5 69687474e238839550da56511e85d37151c84f97 daichi <daipanchi@gmail.com> 1398582271 +0900	commit: Add comment model
+69687474e238839550da56511e85d37151c84f97 34f97bd31b8fd6a572627e2450ab0125a8162fc7 daichi <daipanchi@gmail.com> 1398584471 +0900	commit: Add comments view prototype
+34f97bd31b8fd6a572627e2450ab0125a8162fc7 feefe9dd6e45c8620bda5090f8a37612d7df15f2 daichi <daipanchi@gmail.com> 1398585961 +0900	commit: Vertical centerize comment
+feefe9dd6e45c8620bda5090f8a37612d7df15f2 443148d6b388a8bf8f5c7b9218d401b9b6ed6785 daichi <daipanchi@gmail.com> 1399332588 +0900	commit: Adjust views
+443148d6b388a8bf8f5c7b9218d401b9b6ed6785 25f1d3bb0158fa30bad747b524049923a3160338 daichi <daipanchi@gmail.com> 1399337260 +0900	commit: Enable login with twitter account
+25f1d3bb0158fa30bad747b524049923a3160338 fad6d67a09aea88bbc32e8a03c4c8de82e2e553c daichi <daipanchi@gmail.com> 1399367843 +0900	commit: Adjust login-button

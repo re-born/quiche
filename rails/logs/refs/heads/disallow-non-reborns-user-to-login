@@ -1,0 +1,3 @@
+0000000000000000000000000000000000000000 43969584346376729e63e87dab41cd849f3680f9 daichi <daipanchi@gmail.com> 1400227163 +0900	branch: Created from HEAD
+43969584346376729e63e87dab41cd849f3680f9 512196a06eca45a36f0314b008b008d6dc2d80f7 daichi <daipanchi@gmail.com> 1400227206 +0900	commit: DisAllow non-reborns to login
+512196a06eca45a36f0314b008b008d6dc2d80f7 1baade0e93273714d5b11d56006ec509a8a04022 daichi <daipanchi@gmail.com> 1400344773 +0900	rebase finished: refs/heads/disallow-non-reborns-user-to-login onto dd30afaf5a5cfa8759a29ba4e2dd8ae72e90aef1

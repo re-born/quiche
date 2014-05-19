@@ -1,0 +1,5 @@
+0000000000000000000000000000000000000000 38bfe3720ec12370400899e3db8ac48387c30220 daichi <daipanchi@gmail.com> 1400502730 +0900	branch: Created from HEAD
+38bfe3720ec12370400899e3db8ac48387c30220 dad6611a8d3c3b9b689e3ab8888885f99e4612d2 daichi <daipanchi@gmail.com> 1400504047 +0900	commit: Change tree structure
+dad6611a8d3c3b9b689e3ab8888885f99e4612d2 08dc909a4661291a6706522e3b9129db8747f391 daichi <daipanchi@gmail.com> 1400504294 +0900	commit: Modify for changing structure
+08dc909a4661291a6706522e3b9129db8747f391 3619b0fd747aa011cbab56257839091c9e191bc5 daichi <daipanchi@gmail.com> 1400504456 +0900	commit: Modify for changing structure
+3619b0fd747aa011cbab56257839091c9e191bc5 29d01b5b6cd2867aea38fca69e12eba972c1897a daichi <daipanchi@gmail.com> 1400504472 +0900	rebase -i (finish): refs/heads/change-tree-structure onto dad6611

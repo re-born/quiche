@@ -1,0 +1,23 @@
+0000000000000000000000000000000000000000 b37a84f2735cef43d25e7fc4074479064afdbf2f daichi <daipanchi@gmail.com> 1396366206 +0900	commit (initial): init
+b37a84f2735cef43d25e7fc4074479064afdbf2f 03aacbb0cd87716ff4083208c7b7f51f015f56aa daichi <daipanchi@gmail.com> 1398429618 +0900	pull: Fast-forward
+03aacbb0cd87716ff4083208c7b7f51f015f56aa 6d92bdfabb2352aa39ec8baffebc97a0cf47bbd9 daichi <daipanchi@gmail.com> 1399575998 +0900	pull: Fast-forward
+6d92bdfabb2352aa39ec8baffebc97a0cf47bbd9 f2d0422c451c22cc27eac04a8a51123c3aa1152e daichi <daipanchi@gmail.com> 1399624814 +0900	commit: Activate link to home
+f2d0422c451c22cc27eac04a8a51123c3aa1152e 3f1d6533fefaa834914e6cbdbea7a2b4fbe99d61 daichi <daipanchi@gmail.com> 1399905023 +0900	commit: Enable auto tweet
+3f1d6533fefaa834914e6cbdbea7a2b4fbe99d61 c1711de7398fbaa5b318490bad57beb08690a457 daichi <daipanchi@gmail.com> 1399906847 +0900	commit: Sort order
+c1711de7398fbaa5b318490bad57beb08690a457 454d2d0a8bae879d18f00ad7e96115849cb7e887 daichi <daipanchi@gmail.com> 1399910697 +0900	commit: Add favicon
+454d2d0a8bae879d18f00ad7e96115849cb7e887 1f16fa079e175900d8a9b1f876486388a2ccbe0d daichi <daipanchi@gmail.com> 1399910720 +0900	pull: Merge made by the 'recursive' strategy.
+1f16fa079e175900d8a9b1f876486388a2ccbe0d 8897783696df524e96331832928d3b5192037106 daichi <daipanchi@gmail.com> 1400033952 +0900	commit: Order properly
+8897783696df524e96331832928d3b5192037106 51f4aa4882f90ddccd8256a9d5a7135996eff1cc daichi <daipanchi@gmail.com> 1400044973 +0900	commit: Add db/seed
+51f4aa4882f90ddccd8256a9d5a7135996eff1cc e22967075d6bd0e61440b610f05a67871ef05c65 daichi <daipanchi@gmail.com> 1400082309 +0900	commit: Add gems hirb
+e22967075d6bd0e61440b610f05a67871ef05c65 d77b49623737cf946752996af7b545044479ed3a daichi <daipanchi@gmail.com> 1400155496 +0900	commit: Use sqlite
+d77b49623737cf946752996af7b545044479ed3a 43969584346376729e63e87dab41cd849f3680f9 daichi <daipanchi@gmail.com> 1400227067 +0900	pull: Fast-forward
+43969584346376729e63e87dab41cd849f3680f9 1faeea3c052391ae5b59f29911dc5a63ac98c476 daichi <daipanchi@gmail.com> 1400235087 +0900	commit: Enable post even if no images
+1faeea3c052391ae5b59f29911dc5a63ac98c476 fe6531fd8a9871861add83a0b4da2fdd7d417584 daichi <daipanchi@gmail.com> 1400334986 +0900	commit: Remove hirb
+fe6531fd8a9871861add83a0b4da2fdd7d417584 5fd31f8aefe2a0703d796d1616a67b536b6de250 daichi <daipanchi@gmail.com> 1400335003 +0900	pull: Merge made by the 'recursive' strategy.
+5fd31f8aefe2a0703d796d1616a67b536b6de250 9ee9534bb9f6778a1124ba7785c199d168290118 daichi <daipanchi@gmail.com> 1400339588 +0900	commit: Modify path after destroying item
+9ee9534bb9f6778a1124ba7785c199d168290118 dd30afaf5a5cfa8759a29ba4e2dd8ae72e90aef1 daichi <daipanchi@gmail.com> 1400343947 +0900	commit: Set obj.images to images
+dd30afaf5a5cfa8759a29ba4e2dd8ae72e90aef1 99725121c47127c36ccf0beff6f9bd7198f6dea3 daichi <daipanchi@gmail.com> 1400345062 +0900	pull: Fast-forward
+99725121c47127c36ccf0beff6f9bd7198f6dea3 986312fa676119078f3738574cb76dd4f3a88c7e daichi <daipanchi@gmail.com> 1400364609 +0900	pull: Fast-forward
+986312fa676119078f3738574cb76dd4f3a88c7e 3c79b6f40393e69a19b86d05333a387d50b91478 daichi <daipanchi@gmail.com> 1400377575 +0900	pull: Fast-forward
+3c79b6f40393e69a19b86d05333a387d50b91478 6aae5c2ea815c25f16a69c224416c892d14b0f5e daichi <daipanchi@gmail.com> 1400390569 +0900	pull: Fast-forward
+6aae5c2ea815c25f16a69c224416c892d14b0f5e 38bfe3720ec12370400899e3db8ac48387c30220 daichi <daipanchi@gmail.com> 1400471597 +0900	pull: Fast-forward

@@ -1,0 +1,3 @@
+0000000000000000000000000000000000000000 9ee9534bb9f6778a1124ba7785c199d168290118 daichi <daipanchi@gmail.com> 1400343646 +0900	branch: Created from HEAD
+9ee9534bb9f6778a1124ba7785c199d168290118 5fd36605ffbcf0fb03bf4c5640a4211c7f8dd6d8 daichi <daipanchi@gmail.com> 1400343655 +0900	commit: Modify encoding
+5fd36605ffbcf0fb03bf4c5640a4211c7f8dd6d8 882d329afe2a96e4edc244fb4b5c8823d818a8e2 daichi <daipanchi@gmail.com> 1400344055 +0900	rebase finished: refs/heads/modify-encoding onto dd30afaf5a5cfa8759a29ba4e2dd8ae72e90aef1

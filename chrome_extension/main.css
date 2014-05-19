@@ -1,0 +1,13 @@
+#quiche_posting_animation {
+  width: 100%;
+  position: fixed;
+  z-index: 10000;
+  height: 50px;
+  line-height: 50px;
+  font-size: 25px;
+  text-align: center;
+  font-family: 'mplus-1c-light';
+  letter-spacing: 1px;
+  color: #fff;
+  background: #333;
+}

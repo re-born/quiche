@@ -1,0 +1,236 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
+/* line 17, /Users/dch/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/compass-0.12.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, /Users/dch/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/compass-0.12.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, /Users/dch/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/compass-0.12.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, /Users/dch/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/compass-0.12.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, /Users/dch/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/compass-0.12.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, /Users/dch/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/compass-0.12.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, /Users/dch/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/compass-0.12.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, /Users/dch/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/compass-0.12.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, /Users/dch/.rvm/gems/ruby-2.0.0-p451@railstutorial_rails_4_0/gems/compass-0.12.4/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+@font-face {
+  font-family: 'mplus-1c-thin';
+  src: url(http://l0o0l.info/material/fonts/mplus-1c-thin.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: 'mplus-1c-light';
+  src: url(http://l0o0l.info/material/fonts/mplus-1c-light.ttf) format("opentype");
+}
+
+/* line 29, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+* {
+  font-weight: 100;
+  font-family: 'mplus-1c-thin';
+}
+
+/* line 35, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+.user_icon img {
+  border-radius: 50%;
+}
+
+/* line 39, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+/* line 43, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body {
+  background-color: #ffffff;
+  background-image: url(http://www.transparenttextures.com/patterns/white-tiles.png);
+  background-attachment: fixed;
+}
+/* line 47, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  background-color: #1c1c1c;
+  background-image: url(http://www.transparenttextures.com/patterns/green-fibers.png);
+}
+/* line 54, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body nav h1 {
+  color: #fff;
+  font-size: 30px;
+  padding: 10px;
+  font-family: 'mplus-1c-thin';
+  width: 1000px;
+  margin: auto;
+}
+/* line 63, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body .contents {
+  margin: 70px auto;
+  width: 1000px;
+}
+/* line 68, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body .contents .row {
+  margin: 20px auto;
+  width: 100%;
+  float: left;
+  clear: both;
+  height: 150px;
+}
+/* line 74, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body .contents .row .column_date {
+  width: 14%;
+  float: left;
+  margin-top: -2px;
+}
+/* line 78, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body .contents .row .column_date .date {
+  font-family: 'mplus-1c-light', sans-serif;
+  font-size: 14px;
+  color: #cc0;
+  line-height: 17px;
+}
+/* line 84, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body .contents .row .column_date .time {
+  font-family: 'mplus-1c-thin';
+  font-size: 40px;
+  color: #660;
+  border-top: 1px solid #990;
+  margin-right: -52px;
+}
+/* line 92, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body .contents .row .column_left {
+  float: left;
+  width: 6%;
+  position: relative;
+  height: 150px;
+}
+/* line 97, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body .contents .row .column_left:after {
+  content: '';
+  position: absolute;
+  left: 15px;
+  top: 34px;
+  border-left: 1px solid #666600;
+  height: 101%;
+}
+/* line 105, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body .contents .row .column_left .user_icon {
+  margin: -4px;
+}
+/* line 107, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body .contents .row .column_left .user_icon img {
+  border: 1px solid #666600;
+  padding: 3px;
+  background: #fff;
+}
+/* line 114, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body .contents .row .column_right {
+  float: right;
+  width: 80%;
+  margin-top: 3px;
+}
+/* line 118, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body .contents .row .column_right h3 {
+  font-size: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/* line 122, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body .contents .row .column_right h3 a {
+  font-family: 'mplus-1c-light';
+  color: #0db1d3;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 10px;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+/* line 132, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body .contents .row .column_right .thumbnail {
+  margin: 18px 1%;
+  float: left;
+  width: 18%;
+}
+/* line 136, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body .contents .row .column_right .thumbnail img {
+  border-radius: 10px;
+}
+/* line 140, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body .contents .row .column_right .content {
+  width: 76%;
+  margin: 2%;
+  font-family: sans-serif;
+  font-weight: 100;
+  font-size: 14px;
+  float: left;
+  line-height: 20px;
+  word-break: break-all;
+}
+/* line 153, /Users/dch/sandbox/rails/lab_cache/app/assets/stylesheets/application.scss */
+body .truncate {
+  word-break: break-all;
+}
