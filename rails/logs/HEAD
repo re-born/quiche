@@ -1,0 +1,185 @@
+0000000000000000000000000000000000000000 b37a84f2735cef43d25e7fc4074479064afdbf2f daichi <daipanchi@gmail.com> 1396366206 +0900	commit (initial): init
+b37a84f2735cef43d25e7fc4074479064afdbf2f b37a84f2735cef43d25e7fc4074479064afdbf2f daichi <daipanchi@gmail.com> 1396367287 +0900	checkout: moving from master to prototype
+b37a84f2735cef43d25e7fc4074479064afdbf2f 1d6156613e3ec94e8d9a3c9cb4915214a6cdfecd daichi <daipanchi@gmail.com> 1396367297 +0900	commit: Scaffold
+1d6156613e3ec94e8d9a3c9cb4915214a6cdfecd 6576164c650d3c1ced8c25393e13a90746253976 daichi <daipanchi@gmail.com> 1396368131 +0900	commit: Enable to receive post
+6576164c650d3c1ced8c25393e13a90746253976 f77ada5ea32e5d29bfe31c490c3ab9ddee73c258 daichi <daipanchi@gmail.com> 1396368160 +0900	commit: Add a forgotten file
+f77ada5ea32e5d29bfe31c490c3ab9ddee73c258 6576164c650d3c1ced8c25393e13a90746253976 daichi <daipanchi@gmail.com> 1396368174 +0900	checkout: moving from prototype to 6576164
+6576164c650d3c1ced8c25393e13a90746253976 ec83f679d05510ec81af113834e1e9da85221a22 daichi <daipanchi@gmail.com> 1396368175 +0900	rebase -i (fixup): Enable to receive post
+ec83f679d05510ec81af113834e1e9da85221a22 ec83f679d05510ec81af113834e1e9da85221a22 daichi <daipanchi@gmail.com> 1396368175 +0900	rebase -i (finish): returning to refs/heads/prototype
+ec83f679d05510ec81af113834e1e9da85221a22 1b17bda0cc0dfa377eb1db21709fa961f7caba72 daichi <daipanchi@gmail.com> 1396523186 +0900	commit: Avoid encoring error
+1b17bda0cc0dfa377eb1db21709fa961f7caba72 957bb183beac7549c7d1f2adb4cc970d1822a557 daichi <daipanchi@gmail.com> 1396538165 +0900	commit: Add user model
+957bb183beac7549c7d1f2adb4cc970d1822a557 79f7df47856e53bd3a6edf7300a114b68805f6c9 daichi <daipanchi@gmail.com> 1396538204 +0900	commit: Add forgotten files
+79f7df47856e53bd3a6edf7300a114b68805f6c9 957bb183beac7549c7d1f2adb4cc970d1822a557 daichi <daipanchi@gmail.com> 1396538221 +0900	checkout: moving from prototype to 957bb18
+957bb183beac7549c7d1f2adb4cc970d1822a557 8a69c0055498b7a45a743f7dcc4e40b05ec29e78 daichi <daipanchi@gmail.com> 1396538221 +0900	rebase -i (fixup): Add user model
+8a69c0055498b7a45a743f7dcc4e40b05ec29e78 8a69c0055498b7a45a743f7dcc4e40b05ec29e78 daichi <daipanchi@gmail.com> 1396538221 +0900	rebase -i (finish): returning to refs/heads/prototype
+8a69c0055498b7a45a743f7dcc4e40b05ec29e78 074b391a75b291f2ea9cd8182efe1005c5ef2527 daichi <daipanchi@gmail.com> 1396544197 +0900	commit: Enable to delete query when rendering
+074b391a75b291f2ea9cd8182efe1005c5ef2527 5cccae52bf24ff05b77bd89acc6698fd11e4a6b9 daichi <daipanchi@gmail.com> 1396544233 +0900	commit: Install foundation
+5cccae52bf24ff05b77bd89acc6698fd11e4a6b9 475f48f58227c87c62ebab5a3b14f143adbdbf16 daichi <daipanchi@gmail.com> 1396544277 +0900	commit: Delete .css
+475f48f58227c87c62ebab5a3b14f143adbdbf16 c89a1b59b03a0cb7847d7a58b2040bc1a38e9e24 daichi <daipanchi@gmail.com> 1396544329 +0900	commit: Delete .css
+c89a1b59b03a0cb7847d7a58b2040bc1a38e9e24 c89a1b59b03a0cb7847d7a58b2040bc1a38e9e24 daichi <daipanchi@gmail.com> 1396544339 +0900	checkout: moving from prototype to c89a1b5
+c89a1b59b03a0cb7847d7a58b2040bc1a38e9e24 c89a1b59b03a0cb7847d7a58b2040bc1a38e9e24 daichi <daipanchi@gmail.com> 1396544339 +0900	rebase -i (finish): returning to refs/heads/prototype
+c89a1b59b03a0cb7847d7a58b2040bc1a38e9e24 5cccae52bf24ff05b77bd89acc6698fd11e4a6b9 daichi <daipanchi@gmail.com> 1396544350 +0900	checkout: moving from prototype to 5cccae5
+5cccae52bf24ff05b77bd89acc6698fd11e4a6b9 a4a1d5019ad05c2d70879b25b048cfffdee49cba daichi <daipanchi@gmail.com> 1396544350 +0900	rebase -i (fixup): # This is a combination of 2 commits.
+a4a1d5019ad05c2d70879b25b048cfffdee49cba 1b31b73257baddfde97ab6bd3a8618c1f3ae7aa3 daichi <daipanchi@gmail.com> 1396544350 +0900	rebase -i (fixup): Install foundation
+1b31b73257baddfde97ab6bd3a8618c1f3ae7aa3 1b31b73257baddfde97ab6bd3a8618c1f3ae7aa3 daichi <daipanchi@gmail.com> 1396544350 +0900	rebase -i (finish): returning to refs/heads/prototype
+1b31b73257baddfde97ab6bd3a8618c1f3ae7aa3 abae8d0c06653c7a1e99232ad3ef070e28a276de daichi <daipanchi@gmail.com> 1396639229 +0900	commit: Delete foundation
+abae8d0c06653c7a1e99232ad3ef070e28a276de 45d6f67669bf3f976574de7146e90b3f9905e168 daichi <daipanchi@gmail.com> 1396643474 +0900	commit: Create timeline prototype
+45d6f67669bf3f976574de7146e90b3f9905e168 93e3b0111380dc49c051077d03c1aadee959d64e daichi <daipanchi@gmail.com> 1396784213 +0900	commit: Enable OAuth to authorize user
+93e3b0111380dc49c051077d03c1aadee959d64e d2d3ad2340129291a1f9fe812e5fc521fb88e510 daichi <daipanchi@gmail.com> 1396784328 +0900	commit: Modify config
+d2d3ad2340129291a1f9fe812e5fc521fb88e510 c45e34cd8c14c6f3b3fd2fec3d21041f3acd36a4 daichi <daipanchi@gmail.com> 1396790757 +0900	commit: Cope with relative url of an image
+c45e34cd8c14c6f3b3fd2fec3d21041f3acd36a4 b780e88571cf14f4d00fc053d6fa3dda4656d699 daichi <daipanchi@gmail.com> 1396791894 +0900	commit: Modify scss
+b780e88571cf14f4d00fc053d6fa3dda4656d699 06903653720d9ade801ea647fa8a1685345a66fa daichi <daipanchi@gmail.com> 1396793008 +0900	commit: Add web-font
+06903653720d9ade801ea647fa8a1685345a66fa abb33622f704f8c5ff9b3fcb95f3004024424a74 daichi <daipanchi@gmail.com> 1396793427 +0900	commit: Add web font
+abb33622f704f8c5ff9b3fcb95f3004024424a74 ddef888c0f2bbfcd6eee5d9e602842e16c688098 daichi <daipanchi@gmail.com> 1396819450 +0900	commit: Commonize to re_arrange method
+ddef888c0f2bbfcd6eee5d9e602842e16c688098 717e09acbe868cb8cf2d184967253ad0ecc4f9fb daichi <daipanchi@gmail.com> 1396819483 +0900	commit: Modify condition of Regex
+717e09acbe868cb8cf2d184967253ad0ecc4f9fb b37a84f2735cef43d25e7fc4074479064afdbf2f daichi <daipanchi@gmail.com> 1398429531 +0900	checkout: moving from prototype to master
+b37a84f2735cef43d25e7fc4074479064afdbf2f b37a84f2735cef43d25e7fc4074479064afdbf2f daichi <daipanchi@gmail.com> 1398429566 +0900	checkout: moving from master to enalbe-share
+b37a84f2735cef43d25e7fc4074479064afdbf2f b37a84f2735cef43d25e7fc4074479064afdbf2f daichi <daipanchi@gmail.com> 1398429592 +0900	checkout: moving from enalbe-share to master
+b37a84f2735cef43d25e7fc4074479064afdbf2f 03aacbb0cd87716ff4083208c7b7f51f015f56aa daichi <daipanchi@gmail.com> 1398429618 +0900	pull: Fast-forward
+03aacbb0cd87716ff4083208c7b7f51f015f56aa 03aacbb0cd87716ff4083208c7b7f51f015f56aa daichi <daipanchi@gmail.com> 1398429633 +0900	checkout: moving from master to enalbe-sharing
+03aacbb0cd87716ff4083208c7b7f51f015f56aa 03aacbb0cd87716ff4083208c7b7f51f015f56aa daichi <daipanchi@gmail.com> 1398429760 +0900	checkout: moving from enalbe-sharing to master
+03aacbb0cd87716ff4083208c7b7f51f015f56aa 717e09acbe868cb8cf2d184967253ad0ecc4f9fb daichi <daipanchi@gmail.com> 1398429762 +0900	checkout: moving from master to prototype
+717e09acbe868cb8cf2d184967253ad0ecc4f9fb 3391fb99f9e04c98fa565b92c7da20070940a641 daichi <daipanchi@gmail.com> 1398431828 +0900	commit: Fix getting images
+3391fb99f9e04c98fa565b92c7da20070940a641 0011bcc09337ea1c98d607217e8584c578f5614c daichi <daipanchi@gmail.com> 1398432751 +0900	commit: Add getting-images condition
+0011bcc09337ea1c98d607217e8584c578f5614c 6cba53398ce295d6b7baa4e83cb7f54a0b4b1bcc daichi <daipanchi@gmail.com> 1398434789 +0900	commit: Avoid duplicated posting
+6cba53398ce295d6b7baa4e83cb7f54a0b4b1bcc aee6c96fc09be8a82b895e4d93474bfaeec71b7b daichi <daipanchi@gmail.com> 1398436753 +0900	commit: Add reader model
+aee6c96fc09be8a82b895e4d93474bfaeec71b7b f4e33f33fc783cdf428195051cdbf47df7d4db72 daichi <daipanchi@gmail.com> 1398436879 +0900	commit: Delete comments
+f4e33f33fc783cdf428195051cdbf47df7d4db72 41709967e7e625d1c16d599f15b01a15cb68f1f5 daichi <daipanchi@gmail.com> 1398438829 +0900	commit: Add prototype of reader view
+41709967e7e625d1c16d599f15b01a15cb68f1f5 69687474e238839550da56511e85d37151c84f97 daichi <daipanchi@gmail.com> 1398582271 +0900	commit: Add comment model
+69687474e238839550da56511e85d37151c84f97 34f97bd31b8fd6a572627e2450ab0125a8162fc7 daichi <daipanchi@gmail.com> 1398584471 +0900	commit: Add comments view prototype
+34f97bd31b8fd6a572627e2450ab0125a8162fc7 feefe9dd6e45c8620bda5090f8a37612d7df15f2 daichi <daipanchi@gmail.com> 1398585961 +0900	commit: Vertical centerize comment
+feefe9dd6e45c8620bda5090f8a37612d7df15f2 443148d6b388a8bf8f5c7b9218d401b9b6ed6785 daichi <daipanchi@gmail.com> 1399332588 +0900	commit: Adjust views
+443148d6b388a8bf8f5c7b9218d401b9b6ed6785 25f1d3bb0158fa30bad747b524049923a3160338 daichi <daipanchi@gmail.com> 1399337260 +0900	commit: Enable login with twitter account
+25f1d3bb0158fa30bad747b524049923a3160338 fad6d67a09aea88bbc32e8a03c4c8de82e2e553c daichi <daipanchi@gmail.com> 1399367843 +0900	commit: Adjust login-button
+fad6d67a09aea88bbc32e8a03c4c8de82e2e553c 03aacbb0cd87716ff4083208c7b7f51f015f56aa daichi <daipanchi@gmail.com> 1399575988 +0900	checkout: moving from prototype to master
+03aacbb0cd87716ff4083208c7b7f51f015f56aa 6d92bdfabb2352aa39ec8baffebc97a0cf47bbd9 daichi <daipanchi@gmail.com> 1399575998 +0900	pull: Fast-forward
+6d92bdfabb2352aa39ec8baffebc97a0cf47bbd9 f2d0422c451c22cc27eac04a8a51123c3aa1152e daichi <daipanchi@gmail.com> 1399624814 +0900	commit: Activate link to home
+f2d0422c451c22cc27eac04a8a51123c3aa1152e 3f1d6533fefaa834914e6cbdbea7a2b4fbe99d61 daichi <daipanchi@gmail.com> 1399905023 +0900	commit: Enable auto tweet
+3f1d6533fefaa834914e6cbdbea7a2b4fbe99d61 c1711de7398fbaa5b318490bad57beb08690a457 daichi <daipanchi@gmail.com> 1399906847 +0900	commit: Sort order
+c1711de7398fbaa5b318490bad57beb08690a457 454d2d0a8bae879d18f00ad7e96115849cb7e887 daichi <daipanchi@gmail.com> 1399910697 +0900	commit: Add favicon
+454d2d0a8bae879d18f00ad7e96115849cb7e887 1f16fa079e175900d8a9b1f876486388a2ccbe0d daichi <daipanchi@gmail.com> 1399910720 +0900	pull: Merge made by the 'recursive' strategy.
+1f16fa079e175900d8a9b1f876486388a2ccbe0d fad6d67a09aea88bbc32e8a03c4c8de82e2e553c daichi <daipanchi@gmail.com> 1399912097 +0900	checkout: moving from master to prototype
+fad6d67a09aea88bbc32e8a03c4c8de82e2e553c 1f16fa079e175900d8a9b1f876486388a2ccbe0d daichi <daipanchi@gmail.com> 1399912132 +0900	checkout: moving from prototype to master
+1f16fa079e175900d8a9b1f876486388a2ccbe0d 8897783696df524e96331832928d3b5192037106 daichi <daipanchi@gmail.com> 1400033952 +0900	commit: Order properly
+8897783696df524e96331832928d3b5192037106 8897783696df524e96331832928d3b5192037106 daichi <daipanchi@gmail.com> 1400042787 +0900	checkout: moving from master to enable-post-even-if-without-images
+8897783696df524e96331832928d3b5192037106 c4b1c6561a2527fd158b9be364d6983dd7f1b09b daichi <daipanchi@gmail.com> 1400042819 +0900	commit: Enable post even if no images
+c4b1c6561a2527fd158b9be364d6983dd7f1b09b 8897783696df524e96331832928d3b5192037106 daichi <daipanchi@gmail.com> 1400044799 +0900	checkout: moving from enable-post-even-if-without-images to master
+8897783696df524e96331832928d3b5192037106 51f4aa4882f90ddccd8256a9d5a7135996eff1cc daichi <daipanchi@gmail.com> 1400044973 +0900	commit: Add db/seed
+51f4aa4882f90ddccd8256a9d5a7135996eff1cc c4b1c6561a2527fd158b9be364d6983dd7f1b09b daichi <daipanchi@gmail.com> 1400067523 +0900	checkout: moving from master to enable-post-even-if-without-images
+c4b1c6561a2527fd158b9be364d6983dd7f1b09b 51f4aa4882f90ddccd8256a9d5a7135996eff1cc daichi <daipanchi@gmail.com> 1400067534 +0900	checkout: moving from enable-post-even-if-without-images to master
+51f4aa4882f90ddccd8256a9d5a7135996eff1cc 51f4aa4882f90ddccd8256a9d5a7135996eff1cc daichi <daipanchi@gmail.com> 1400069994 +0900	checkout: moving from master to simplify-db-seeds
+51f4aa4882f90ddccd8256a9d5a7135996eff1cc 51f4aa4882f90ddccd8256a9d5a7135996eff1cc daichi <daipanchi@gmail.com> 1400070571 +0900	checkout: moving from simplify-db-seeds to master
+51f4aa4882f90ddccd8256a9d5a7135996eff1cc 51f4aa4882f90ddccd8256a9d5a7135996eff1cc daichi <daipanchi@gmail.com> 1400070597 +0900	checkout: moving from master to change-db-in-development
+51f4aa4882f90ddccd8256a9d5a7135996eff1cc 4581c3b7f2931f1fa50a5b87ee47831fe069779c daichi <daipanchi@gmail.com> 1400072170 +0900	commit: Use sqlite, and change seed
+4581c3b7f2931f1fa50a5b87ee47831fe069779c 4c0bbbee396c6476c11a84b3935b854efa60846a daichi <daipanchi@gmail.com> 1400072276 +0900	commit: Add lines to end of file
+4c0bbbee396c6476c11a84b3935b854efa60846a 4581c3b7f2931f1fa50a5b87ee47831fe069779c daichi <daipanchi@gmail.com> 1400072281 +0900	rebase -i (start): checkout HEAD~2
+4581c3b7f2931f1fa50a5b87ee47831fe069779c 8d087ececd6f292a7b8592ffa548ea8bb10cb435 daichi <daipanchi@gmail.com> 1400072281 +0900	rebase -i (fixup): Use sqlite, and change seed
+8d087ececd6f292a7b8592ffa548ea8bb10cb435 8d087ececd6f292a7b8592ffa548ea8bb10cb435 daichi <daipanchi@gmail.com> 1400072282 +0900	rebase -i (finish): returning to refs/heads/change-db-in-development
+8d087ececd6f292a7b8592ffa548ea8bb10cb435 51f4aa4882f90ddccd8256a9d5a7135996eff1cc daichi <daipanchi@gmail.com> 1400082272 +0900	checkout: moving from change-db-in-development to master
+51f4aa4882f90ddccd8256a9d5a7135996eff1cc e22967075d6bd0e61440b610f05a67871ef05c65 daichi <daipanchi@gmail.com> 1400082309 +0900	commit: Add gems hirb
+e22967075d6bd0e61440b610f05a67871ef05c65 8d087ececd6f292a7b8592ffa548ea8bb10cb435 daichi <daipanchi@gmail.com> 1400082802 +0900	checkout: moving from master to origin/change-db-in-development
+8d087ececd6f292a7b8592ffa548ea8bb10cb435 e22967075d6bd0e61440b610f05a67871ef05c65 daichi <daipanchi@gmail.com> 1400082811 +0900	checkout: moving from 8d087ececd6f292a7b8592ffa548ea8bb10cb435 to master
+e22967075d6bd0e61440b610f05a67871ef05c65 d77b49623737cf946752996af7b545044479ed3a daichi <daipanchi@gmail.com> 1400155496 +0900	commit: Use sqlite
+d77b49623737cf946752996af7b545044479ed3a d77b49623737cf946752996af7b545044479ed3a daichi <daipanchi@gmail.com> 1400155529 +0900	checkout: moving from master to modify-readme
+d77b49623737cf946752996af7b545044479ed3a e9398a4d3e42e3a2321c072b46e7e04f76ff7ced daichi <daipanchi@gmail.com> 1400155537 +0900	commit: Modify README
+e9398a4d3e42e3a2321c072b46e7e04f76ff7ced bb02ff0a8b16ea61cd8da7920d61180b1b1c18c8 daichi <daipanchi@gmail.com> 1400155599 +0900	commit: Modify markdown
+bb02ff0a8b16ea61cd8da7920d61180b1b1c18c8 e9398a4d3e42e3a2321c072b46e7e04f76ff7ced daichi <daipanchi@gmail.com> 1400155622 +0900	rebase -i (start): checkout HEAD~2
+e9398a4d3e42e3a2321c072b46e7e04f76ff7ced ae8fd367fabedfc2b898ca7e3f0ec0e0086c3e88 daichi <daipanchi@gmail.com> 1400155622 +0900	rebase -i (fixup): Modify README
+ae8fd367fabedfc2b898ca7e3f0ec0e0086c3e88 ae8fd367fabedfc2b898ca7e3f0ec0e0086c3e88 daichi <daipanchi@gmail.com> 1400155622 +0900	rebase -i (finish): returning to refs/heads/modify-readme
+ae8fd367fabedfc2b898ca7e3f0ec0e0086c3e88 006a376849e7cfa65b6f56c7064f70ec11f0a812 daichi <daipanchi@gmail.com> 1400155730 +0900	commit: Change filetype
+006a376849e7cfa65b6f56c7064f70ec11f0a812 d77b49623737cf946752996af7b545044479ed3a daichi <daipanchi@gmail.com> 1400156078 +0900	checkout: moving from modify-readme to master
+d77b49623737cf946752996af7b545044479ed3a fad6d67a09aea88bbc32e8a03c4c8de82e2e553c daichi <daipanchi@gmail.com> 1400156083 +0900	checkout: moving from master to prototype
+fad6d67a09aea88bbc32e8a03c4c8de82e2e553c d77b49623737cf946752996af7b545044479ed3a daichi <daipanchi@gmail.com> 1400156089 +0900	checkout: moving from prototype to master
+d77b49623737cf946752996af7b545044479ed3a d77b49623737cf946752996af7b545044479ed3a daichi <daipanchi@gmail.com> 1400156553 +0900	checkout: moving from master to enable-comment
+d77b49623737cf946752996af7b545044479ed3a c2c492e2b8b29b68f14e477c83d2b2af7c65310f daichi <daipanchi@gmail.com> 1400162481 +0900	commit: Install comment
+c2c492e2b8b29b68f14e477c83d2b2af7c65310f 3446cd77fc7ca3cb333b01c54a461fbdbec7c07f daichi <daipanchi@gmail.com> 1400163124 +0900	commit: Add files for jquery.modal
+3446cd77fc7ca3cb333b01c54a461fbdbec7c07f 8d31080a0be78b50a11b51476839b1ef0e9aabe9 daichi <daipanchi@gmail.com> 1400163900 +0900	commit: Allow any user to comment
+8d31080a0be78b50a11b51476839b1ef0e9aabe9 4549d876c0555687f09e85855b46797e64fd9f42 daichi <daipanchi@gmail.com> 1400169666 +0900	commit: Modify comment building
+4549d876c0555687f09e85855b46797e64fd9f42 626706a57de7e80f29e4cfbcb53456ce9fe6a0d5 daichi <daipanchi@gmail.com> 1400171636 +0900	commit: Bugfix for non-logged-in-user
+626706a57de7e80f29e4cfbcb53456ce9fe6a0d5 8b56f442edbf400e65a77655555e0a1201e60cf7 daichi <daipanchi@gmail.com> 1400172524 +0900	commit: Turn off turbolinks
+8b56f442edbf400e65a77655555e0a1201e60cf7 d77b49623737cf946752996af7b545044479ed3a daichi <daipanchi@gmail.com> 1400227061 +0900	checkout: moving from enable-comment to master
+d77b49623737cf946752996af7b545044479ed3a 43969584346376729e63e87dab41cd849f3680f9 daichi <daipanchi@gmail.com> 1400227067 +0900	pull: Fast-forward
+43969584346376729e63e87dab41cd849f3680f9 43969584346376729e63e87dab41cd849f3680f9 daichi <daipanchi@gmail.com> 1400227163 +0900	checkout: moving from master to disallow-non-reborns-user-to-login
+43969584346376729e63e87dab41cd849f3680f9 512196a06eca45a36f0314b008b008d6dc2d80f7 daichi <daipanchi@gmail.com> 1400227206 +0900	commit: DisAllow non-reborns to login
+512196a06eca45a36f0314b008b008d6dc2d80f7 43969584346376729e63e87dab41cd849f3680f9 daichi <daipanchi@gmail.com> 1400232593 +0900	checkout: moving from disallow-non-reborns-user-to-login to master
+43969584346376729e63e87dab41cd849f3680f9 43969584346376729e63e87dab41cd849f3680f9 daichi <daipanchi@gmail.com> 1400232617 +0900	checkout: moving from master to install-delete_button
+43969584346376729e63e87dab41cd849f3680f9 9856fdaa529038db525874d6c746d0489420a230 daichi <daipanchi@gmail.com> 1400232644 +0900	commit: Install button to delete
+9856fdaa529038db525874d6c746d0489420a230 43969584346376729e63e87dab41cd849f3680f9 daichi <daipanchi@gmail.com> 1400233086 +0900	checkout: moving from install-delete_button to master
+43969584346376729e63e87dab41cd849f3680f9 8d087ececd6f292a7b8592ffa548ea8bb10cb435 daichi <daipanchi@gmail.com> 1400233095 +0900	checkout: moving from master to change-db-in-development
+8d087ececd6f292a7b8592ffa548ea8bb10cb435 43969584346376729e63e87dab41cd849f3680f9 daichi <daipanchi@gmail.com> 1400233251 +0900	checkout: moving from change-db-in-development to master
+43969584346376729e63e87dab41cd849f3680f9 43969584346376729e63e87dab41cd849f3680f9 daichi <daipanchi@gmail.com> 1400233265 +0900	checkout: moving from master to modify-db-seed
+43969584346376729e63e87dab41cd849f3680f9 090dc428c3c09d39719f3d935d4966d37d72bc0a daichi <daipanchi@gmail.com> 1400233291 +0900	commit: Simplify db:seed
+090dc428c3c09d39719f3d935d4966d37d72bc0a 43969584346376729e63e87dab41cd849f3680f9 daichi <daipanchi@gmail.com> 1400233410 +0900	checkout: moving from modify-db-seed to master
+43969584346376729e63e87dab41cd849f3680f9 9856fdaa529038db525874d6c746d0489420a230 daichi <daipanchi@gmail.com> 1400233420 +0900	checkout: moving from master to install-delete_button
+9856fdaa529038db525874d6c746d0489420a230 43969584346376729e63e87dab41cd849f3680f9 daichi <daipanchi@gmail.com> 1400234505 +0900	checkout: moving from install-delete_button to master
+43969584346376729e63e87dab41cd849f3680f9 1faeea3c052391ae5b59f29911dc5a63ac98c476 daichi <daipanchi@gmail.com> 1400235087 +0900	commit: Enable post even if no images
+1faeea3c052391ae5b59f29911dc5a63ac98c476 1faeea3c052391ae5b59f29911dc5a63ac98c476 daichi <daipanchi@gmail.com> 1400235150 +0900	checkout: moving from master to dont-specify-encoding
+1faeea3c052391ae5b59f29911dc5a63ac98c476 fc09d32db0d2b752c86c56a8e94660523af2854d daichi <daipanchi@gmail.com> 1400235233 +0900	commit: Dont specify encoding
+fc09d32db0d2b752c86c56a8e94660523af2854d 9856fdaa529038db525874d6c746d0489420a230 daichi <daipanchi@gmail.com> 1400235555 +0900	checkout: moving from dont-specify-encoding to install-delete_button
+9856fdaa529038db525874d6c746d0489420a230 a0427610d45747668532477abc67421a3a3e2422 daichi <daipanchi@gmail.com> 1400237704 +0900	commit: Move delete-button
+a0427610d45747668532477abc67421a3a3e2422 1faeea3c052391ae5b59f29911dc5a63ac98c476 daichi <daipanchi@gmail.com> 1400238182 +0900	checkout: moving from install-delete_button to master
+1faeea3c052391ae5b59f29911dc5a63ac98c476 1faeea3c052391ae5b59f29911dc5a63ac98c476 daichi <daipanchi@gmail.com> 1400238190 +0900	checkout: moving from master to modify-commnets-view
+1faeea3c052391ae5b59f29911dc5a63ac98c476 d183d7c22612eba6159d84e95a9acc94a0ef3502 daichi <daipanchi@gmail.com> 1400240330 +0900	commit: Modify comment-view
+d183d7c22612eba6159d84e95a9acc94a0ef3502 1faeea3c052391ae5b59f29911dc5a63ac98c476 daichi <daipanchi@gmail.com> 1400240367 +0900	checkout: moving from modify-commnets-view to master
+1faeea3c052391ae5b59f29911dc5a63ac98c476 d183d7c22612eba6159d84e95a9acc94a0ef3502 daichi <daipanchi@gmail.com> 1400241853 +0900	checkout: moving from master to modify-commnets-view
+d183d7c22612eba6159d84e95a9acc94a0ef3502 80309bc69c14d59517a82ce6ffbfd25956ec2a2a daichi <daipanchi@gmail.com> 1400241868 +0900	commit: white-space: nowrap;
+80309bc69c14d59517a82ce6ffbfd25956ec2a2a d183d7c22612eba6159d84e95a9acc94a0ef3502 daichi <daipanchi@gmail.com> 1400242030 +0900	rebase -i (start): checkout HEAD~2
+d183d7c22612eba6159d84e95a9acc94a0ef3502 9d6c454e782c6cef168ecfc6659889304975c9dc daichi <daipanchi@gmail.com> 1400242030 +0900	rebase -i (fixup): Modify comment-view
+9d6c454e782c6cef168ecfc6659889304975c9dc 9d6c454e782c6cef168ecfc6659889304975c9dc daichi <daipanchi@gmail.com> 1400242031 +0900	rebase -i (finish): returning to refs/heads/modify-commnets-view
+9d6c454e782c6cef168ecfc6659889304975c9dc 1faeea3c052391ae5b59f29911dc5a63ac98c476 daichi <daipanchi@gmail.com> 1400243712 +0900	checkout: moving from modify-commnets-view to master
+1faeea3c052391ae5b59f29911dc5a63ac98c476 1faeea3c052391ae5b59f29911dc5a63ac98c476 daichi <daipanchi@gmail.com> 1400243739 +0900	checkout: moving from master to take-screenshot
+1faeea3c052391ae5b59f29911dc5a63ac98c476 48d8296881fd6e954b7b55dcb96cbb2ed00d5018 daichi <daipanchi@gmail.com> 1400250780 +0900	commit: Create prototype
+48d8296881fd6e954b7b55dcb96cbb2ed00d5018 e0c2c8efba5fb4b0357ea5d05a6d55f209cd80ed daichi <daipanchi@gmail.com> 1400250798 +0900	commit: Add forgotten migration file
+e0c2c8efba5fb4b0357ea5d05a6d55f209cd80ed 48d8296881fd6e954b7b55dcb96cbb2ed00d5018 daichi <daipanchi@gmail.com> 1400250814 +0900	rebase -i (start): checkout HEAD~2
+48d8296881fd6e954b7b55dcb96cbb2ed00d5018 f66abed06ff553f8ba01412589ff9ec5aef7ba55 daichi <daipanchi@gmail.com> 1400250814 +0900	rebase -i (fixup): Create prototype
+f66abed06ff553f8ba01412589ff9ec5aef7ba55 f66abed06ff553f8ba01412589ff9ec5aef7ba55 daichi <daipanchi@gmail.com> 1400250814 +0900	rebase -i (finish): returning to refs/heads/take-screenshot
+f66abed06ff553f8ba01412589ff9ec5aef7ba55 1faeea3c052391ae5b59f29911dc5a63ac98c476 daichi <daipanchi@gmail.com> 1400334969 +0900	checkout: moving from take-screenshot to master
+1faeea3c052391ae5b59f29911dc5a63ac98c476 fe6531fd8a9871861add83a0b4da2fdd7d417584 daichi <daipanchi@gmail.com> 1400334986 +0900	commit: Remove hirb
+fe6531fd8a9871861add83a0b4da2fdd7d417584 5fd31f8aefe2a0703d796d1616a67b536b6de250 daichi <daipanchi@gmail.com> 1400335003 +0900	pull: Merge made by the 'recursive' strategy.
+5fd31f8aefe2a0703d796d1616a67b536b6de250 9ee9534bb9f6778a1124ba7785c199d168290118 daichi <daipanchi@gmail.com> 1400339588 +0900	commit: Modify path after destroying item
+9ee9534bb9f6778a1124ba7785c199d168290118 9ee9534bb9f6778a1124ba7785c199d168290118 daichi <daipanchi@gmail.com> 1400343646 +0900	checkout: moving from master to modify-encoding
+9ee9534bb9f6778a1124ba7785c199d168290118 5fd36605ffbcf0fb03bf4c5640a4211c7f8dd6d8 daichi <daipanchi@gmail.com> 1400343655 +0900	commit: Modify encoding
+5fd36605ffbcf0fb03bf4c5640a4211c7f8dd6d8 f66abed06ff553f8ba01412589ff9ec5aef7ba55 daichi <daipanchi@gmail.com> 1400343661 +0900	checkout: moving from modify-encoding to take-screenshot
+f66abed06ff553f8ba01412589ff9ec5aef7ba55 9ee9534bb9f6778a1124ba7785c199d168290118 daichi <daipanchi@gmail.com> 1400343915 +0900	checkout: moving from take-screenshot to master
+9ee9534bb9f6778a1124ba7785c199d168290118 dd30afaf5a5cfa8759a29ba4e2dd8ae72e90aef1 daichi <daipanchi@gmail.com> 1400343947 +0900	commit: Set obj.images to images
+dd30afaf5a5cfa8759a29ba4e2dd8ae72e90aef1 5fd36605ffbcf0fb03bf4c5640a4211c7f8dd6d8 daichi <daipanchi@gmail.com> 1400344012 +0900	checkout: moving from master to modify-encoding
+5fd36605ffbcf0fb03bf4c5640a4211c7f8dd6d8 dd30afaf5a5cfa8759a29ba4e2dd8ae72e90aef1 daichi <daipanchi@gmail.com> 1400344054 +0900	rebase: checkout master
+dd30afaf5a5cfa8759a29ba4e2dd8ae72e90aef1 882d329afe2a96e4edc244fb4b5c8823d818a8e2 daichi <daipanchi@gmail.com> 1400344055 +0900	rebase: Modify encoding
+882d329afe2a96e4edc244fb4b5c8823d818a8e2 882d329afe2a96e4edc244fb4b5c8823d818a8e2 daichi <daipanchi@gmail.com> 1400344055 +0900	rebase finished: returning to refs/heads/modify-encoding
+882d329afe2a96e4edc244fb4b5c8823d818a8e2 512196a06eca45a36f0314b008b008d6dc2d80f7 daichi <daipanchi@gmail.com> 1400344723 +0900	checkout: moving from modify-encoding to disallow-non-reborns-user-to-login
+512196a06eca45a36f0314b008b008d6dc2d80f7 dd30afaf5a5cfa8759a29ba4e2dd8ae72e90aef1 daichi <daipanchi@gmail.com> 1400344726 +0900	rebase: checkout master
+dd30afaf5a5cfa8759a29ba4e2dd8ae72e90aef1 1baade0e93273714d5b11d56006ec509a8a04022 daichi <daipanchi@gmail.com> 1400344773 +0900	rebase: DisAllow non-reborns to login
+1baade0e93273714d5b11d56006ec509a8a04022 1baade0e93273714d5b11d56006ec509a8a04022 daichi <daipanchi@gmail.com> 1400344773 +0900	rebase finished: returning to refs/heads/disallow-non-reborns-user-to-login
+1baade0e93273714d5b11d56006ec509a8a04022 882d329afe2a96e4edc244fb4b5c8823d818a8e2 daichi <daipanchi@gmail.com> 1400344957 +0900	checkout: moving from disallow-non-reborns-user-to-login to modify-encoding
+882d329afe2a96e4edc244fb4b5c8823d818a8e2 dd30afaf5a5cfa8759a29ba4e2dd8ae72e90aef1 daichi <daipanchi@gmail.com> 1400344959 +0900	checkout: moving from modify-encoding to master
+dd30afaf5a5cfa8759a29ba4e2dd8ae72e90aef1 99725121c47127c36ccf0beff6f9bd7198f6dea3 daichi <daipanchi@gmail.com> 1400345062 +0900	pull: Fast-forward
+99725121c47127c36ccf0beff6f9bd7198f6dea3 986312fa676119078f3738574cb76dd4f3a88c7e daichi <daipanchi@gmail.com> 1400364609 +0900	pull: Fast-forward
+986312fa676119078f3738574cb76dd4f3a88c7e f66abed06ff553f8ba01412589ff9ec5aef7ba55 daichi <daipanchi@gmail.com> 1400368868 +0900	checkout: moving from master to take-screenshot
+f66abed06ff553f8ba01412589ff9ec5aef7ba55 d2269d76fbd2dd41290019ef9bbe4a398c605fbc daichi <daipanchi@gmail.com> 1400369073 +0900	commit: Modify width
+d2269d76fbd2dd41290019ef9bbe4a398c605fbc 986312fa676119078f3738574cb76dd4f3a88c7e daichi <daipanchi@gmail.com> 1400369502 +0900	rebase -i (start): checkout master
+986312fa676119078f3738574cb76dd4f3a88c7e 186741105a4ea73ee7c78c461046f48dbbaee448 daichi <daipanchi@gmail.com> 1400369550 +0900	rebase -i (continue): Create prototype
+186741105a4ea73ee7c78c461046f48dbbaee448 243e31e0716c7bcd3302e3a5878e6b4654910b79 daichi <daipanchi@gmail.com> 1400369553 +0900	rebase -i (pick): Modify width
+243e31e0716c7bcd3302e3a5878e6b4654910b79 243e31e0716c7bcd3302e3a5878e6b4654910b79 daichi <daipanchi@gmail.com> 1400369553 +0900	rebase -i (finish): returning to refs/heads/take-screenshot
+243e31e0716c7bcd3302e3a5878e6b4654910b79 986312fa676119078f3738574cb76dd4f3a88c7e daichi <daipanchi@gmail.com> 1400377529 +0900	checkout: moving from take-screenshot to master
+986312fa676119078f3738574cb76dd4f3a88c7e 986312fa676119078f3738574cb76dd4f3a88c7e daichi <daipanchi@gmail.com> 1400377552 +0900	checkout: moving from master to install-rails-admin
+986312fa676119078f3738574cb76dd4f3a88c7e 986312fa676119078f3738574cb76dd4f3a88c7e daichi <daipanchi@gmail.com> 1400377570 +0900	checkout: moving from install-rails-admin to master
+986312fa676119078f3738574cb76dd4f3a88c7e 3c79b6f40393e69a19b86d05333a387d50b91478 daichi <daipanchi@gmail.com> 1400377575 +0900	pull: Fast-forward
+3c79b6f40393e69a19b86d05333a387d50b91478 986312fa676119078f3738574cb76dd4f3a88c7e daichi <daipanchi@gmail.com> 1400377582 +0900	checkout: moving from master to install-rails-admin
+986312fa676119078f3738574cb76dd4f3a88c7e 3c79b6f40393e69a19b86d05333a387d50b91478 daichi <daipanchi@gmail.com> 1400377588 +0900	rebase: checkout master
+3c79b6f40393e69a19b86d05333a387d50b91478 3c79b6f40393e69a19b86d05333a387d50b91478 daichi <daipanchi@gmail.com> 1400377588 +0900	rebase finished: returning to refs/heads/install-rails-admin
+3c79b6f40393e69a19b86d05333a387d50b91478 3c79b6f40393e69a19b86d05333a387d50b91478 daichi <daipanchi@gmail.com> 1400377603 +0900	checkout: moving from install-rails-admin to master
+3c79b6f40393e69a19b86d05333a387d50b91478 3c79b6f40393e69a19b86d05333a387d50b91478 daichi <daipanchi@gmail.com> 1400377622 +0900	checkout: moving from master to install-rails-admin
+3c79b6f40393e69a19b86d05333a387d50b91478 3c79b6f40393e69a19b86d05333a387d50b91478 daichi <daipanchi@gmail.com> 1400386008 +0900	checkout: moving from install-rails-admin to master
+3c79b6f40393e69a19b86d05333a387d50b91478 3c79b6f40393e69a19b86d05333a387d50b91478 daichi <daipanchi@gmail.com> 1400390014 +0900	checkout: moving from master to add-bitly-to-tweet
+3c79b6f40393e69a19b86d05333a387d50b91478 1f9f3b55b29a679b9f025ed5518c05487e63d13e daichi <daipanchi@gmail.com> 1400390035 +0900	commit: Add link to tweet
+1f9f3b55b29a679b9f025ed5518c05487e63d13e 3c79b6f40393e69a19b86d05333a387d50b91478 daichi <daipanchi@gmail.com> 1400390386 +0900	checkout: moving from add-bitly-to-tweet to master
+3c79b6f40393e69a19b86d05333a387d50b91478 6aae5c2ea815c25f16a69c224416c892d14b0f5e daichi <daipanchi@gmail.com> 1400390569 +0900	pull: Fast-forward
+6aae5c2ea815c25f16a69c224416c892d14b0f5e 38bfe3720ec12370400899e3db8ac48387c30220 daichi <daipanchi@gmail.com> 1400471597 +0900	pull: Fast-forward
+38bfe3720ec12370400899e3db8ac48387c30220 38bfe3720ec12370400899e3db8ac48387c30220 daichi <daipanchi@gmail.com> 1400502730 +0900	checkout: moving from master to change-tree-structure
+38bfe3720ec12370400899e3db8ac48387c30220 dad6611a8d3c3b9b689e3ab8888885f99e4612d2 daichi <daipanchi@gmail.com> 1400504047 +0900	commit: Change tree structure
+dad6611a8d3c3b9b689e3ab8888885f99e4612d2 08dc909a4661291a6706522e3b9129db8747f391 daichi <daipanchi@gmail.com> 1400504294 +0900	commit: Modify for changing structure
+08dc909a4661291a6706522e3b9129db8747f391 3619b0fd747aa011cbab56257839091c9e191bc5 daichi <daipanchi@gmail.com> 1400504456 +0900	commit: Modify for changing structure
+3619b0fd747aa011cbab56257839091c9e191bc5 dad6611a8d3c3b9b689e3ab8888885f99e4612d2 daichi <daipanchi@gmail.com> 1400504471 +0900	rebase -i (start): checkout HEAD~3
+dad6611a8d3c3b9b689e3ab8888885f99e4612d2 204304fdcfd66848abd8dfae9d31abe5e8710e47 daichi <daipanchi@gmail.com> 1400504471 +0900	rebase -i (fixup): # This is a combination of 2 commits.
+204304fdcfd66848abd8dfae9d31abe5e8710e47 29d01b5b6cd2867aea38fca69e12eba972c1897a daichi <daipanchi@gmail.com> 1400504472 +0900	rebase -i (fixup): Change tree structure
+29d01b5b6cd2867aea38fca69e12eba972c1897a 29d01b5b6cd2867aea38fca69e12eba972c1897a daichi <daipanchi@gmail.com> 1400504472 +0900	rebase -i (finish): returning to refs/heads/change-tree-structure

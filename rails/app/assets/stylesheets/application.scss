@@ -1,0 +1,313 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ *= require font-awesome
+ */
+ @import 'compass/reset';
+
+ /*@import url(http://fonts.googleapis.com/css?family=Open+Sans:300);*/
+ @font-face {
+  font-family: 'mplus-1c-thin';
+  src: url(http://l0o0l.info/material/fonts/mplus-1c-thin.ttf) format('opentype');
+ }
+ @font-face {
+  font-family: 'mplus-1c-light';
+  src: url(http://l0o0l.info/material/fonts/mplus-1c-light.ttf) format('opentype');
+ }
+
+$user_color: #660;
+$link_color: rgb(13, 177, 211);
+
+*, a, .date, h3 {
+  font-family: 'mplus-1c-light';
+}
+h1, .time {
+  font-family: 'mplus-1c-thin';
+}
+p, .content, .comments {
+   font-family: 'Helvetica', Helvetica, Arial, sans-serif;
+}
+
+
+.user_icon img {
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+body {
+  background-color: #ffffff;
+  background-image: url(http://www.transparenttextures.com/patterns/white-tiles.png);
+  background-attachment: fixed;
+  nav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    background-color: #1c1c1c;
+    background-image: url(http://www.transparenttextures.com/patterns/green-fibers.png);
+    header {
+      width: 1000px;
+      margin: auto;
+      h1 {
+        float: left;
+        color: #fff;
+        font-size: 30px;
+        padding: 10px;
+      }
+      form {
+        float: right;
+        position: relative;
+        margin: 10px;
+        opacity: 0.6;
+        input {
+          height: 22px;
+          padding: 4px;
+          background-color: #fafbff;
+        }
+        input#search_text {
+          width: 182px;
+          border: none;
+        }
+        input#search_button {
+          position: absolute;
+          top: 0;
+          _top: 1px;
+          left: 190px;
+        }
+      }
+    }
+  }
+  .contents {
+    margin: 70px auto;
+  // width: 80%;
+  // max-width: 1000px;
+    width: 1000px;
+    .row {
+      // margin: 0px auto;
+      width: 100%;
+      float: left;
+      clear: both;
+      height: 190px;
+      .column_date {
+        width: 14%;
+        float: left;
+        margin-top: -2px;
+        .date {
+          font-size: 14px;
+          color: #cc0;
+          line-height: 17px;
+        }
+        .time {
+          font-size: 40px;
+          color: #660;
+          border-top: 1px solid #990;
+          margin-right: -52px;
+        }
+      }
+      .column_left {
+        float: left;
+        width: 6%;
+        position: relative;
+        height: 150px;
+        &:after {
+          content: '';
+          position: absolute;
+          left: 15px;
+          top: 34px;
+          border-left: 1px solid $user_color;
+          height: 101%;
+        }
+        .user_icon {
+          margin: -4px;
+          img {
+            border: 1px solid $user_color;
+            padding: 3px;
+            background: #fff;
+          }
+        }
+      }
+      .column_right {
+        float: right;
+        width: 80%;
+        margin-top: 3px;
+        height: 190px;
+        position: relative;
+        h3 {
+          font-size: 20px;
+          white-space: nowrap;
+          overflow: hidden;
+          a {
+            color: $link_color;
+            font-size: 20px;
+            text-align: center;
+            border-radius: 10px;
+            letter-spacing: 2px;
+            text-decoration: none;
+            &:hover {
+              text-decoration: underline
+            };
+          }
+        }
+        .thumbnail {
+          margin: 18px 8px;
+          float: left;
+          width: 144px;
+          overflow: hidden;
+          height: 120px;
+          img {
+            border-radius: 10px;
+          }
+        }
+        .content {
+          width: 558px;
+          margin: 16px;
+          font-weight: 100;
+          font-size: 14px;
+          float: left;
+          line-height: 20px;
+          word-break: break-all;
+          .reader {
+            color: #fff;
+            background: #cc0;
+            border-radius: 8px;
+            padding: 2px 5px;
+          }
+          .user_icon {
+            margin-left: 3px;
+            img {
+              border: 1px solid #cc0;
+              padding: 3px;
+            }
+            &:before {
+              content: '';
+              position: absolute;
+              margin: 18px -8px;
+              border-top: 2px solid #cc0;
+              width: 9px;
+            }
+          }
+        }
+        .new_comment {
+          textarea {
+            width: 100%;
+          }
+        }
+        .buttons {
+          bottom: 10px;
+          right: 10px;
+          position: absolute;
+          .delete_button {
+            a {
+              color: #ccd;
+              i {
+                border: 1px solid;
+                border-radius: 50%;
+                padding: 3px 4px 2px 5px;
+                &:hover {
+                  background: #333;
+                }
+              }
+            }
+          }
+          a.comment_button {
+            padding: 0 6px;
+            background: #8DDFF0;
+            border-radius: 10px;
+            line-height: 28px;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            white-space: nowrap;
+            font-size: 16px;
+            i {
+              font-size: 20px;
+            }
+            &:hover {
+              background: #5FD0E7;
+            }
+          }
+        }
+        .comment_modal {
+          height: 400px;
+          overflow-x: hidden;
+          overflow-y: scroll;
+          .field {
+            width: 85%;
+            float: left;
+            textarea {
+              border: 1px solid #660;
+              outline: none;
+            }
+          }
+          input {
+            float: right;
+            border-radius: 50%;
+            color: #fff;
+            background: #0DB1D3;
+            border: none;
+            outline: none;
+            width: 45px;
+            height: 45px;
+            &:hover {
+              background: #63C6F8;
+            }
+          }
+          .comments {
+            clear: both;
+            p { margin-bottom: 5px}
+            .user_icon {
+              img {
+                line-height: 25px;
+                border: 1px solid #660;
+                padding: 3px;
+              }
+              &:after {
+                content: '';
+                position: absolute;
+                margin: -6px -21px;
+                border-top: 7px solid #660;
+                width: 1px;
+              }
+            }
+            .comment_date {
+              background: #cc0;
+              color: #fff;
+              border-radius: 3px;
+              padding: 1px 4px;
+              font-size: 12px;
+              white-space: nowrap;
+            }
+            .comment {
+              font-size: 14px;
+              line-height: 28px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .truncate {
+    word-break: break-all;
+  }
+  .login_button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    a {
+      color: $link_color;
+    }
+  }
+}

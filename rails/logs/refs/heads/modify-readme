@@ -1,0 +1,5 @@
+0000000000000000000000000000000000000000 d77b49623737cf946752996af7b545044479ed3a daichi <daipanchi@gmail.com> 1400155529 +0900	branch: Created from HEAD
+d77b49623737cf946752996af7b545044479ed3a e9398a4d3e42e3a2321c072b46e7e04f76ff7ced daichi <daipanchi@gmail.com> 1400155537 +0900	commit: Modify README
+e9398a4d3e42e3a2321c072b46e7e04f76ff7ced bb02ff0a8b16ea61cd8da7920d61180b1b1c18c8 daichi <daipanchi@gmail.com> 1400155599 +0900	commit: Modify markdown
+bb02ff0a8b16ea61cd8da7920d61180b1b1c18c8 ae8fd367fabedfc2b898ca7e3f0ec0e0086c3e88 daichi <daipanchi@gmail.com> 1400155622 +0900	rebase -i (finish): refs/heads/modify-readme onto e9398a4
+ae8fd367fabedfc2b898ca7e3f0ec0e0086c3e88 006a376849e7cfa65b6f56c7064f70ec11f0a812 daichi <daipanchi@gmail.com> 1400155730 +0900	commit: Change filetype

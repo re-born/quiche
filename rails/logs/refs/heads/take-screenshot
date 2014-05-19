@@ -1,0 +1,6 @@
+0000000000000000000000000000000000000000 1faeea3c052391ae5b59f29911dc5a63ac98c476 daichi <daipanchi@gmail.com> 1400243739 +0900	branch: Created from HEAD
+1faeea3c052391ae5b59f29911dc5a63ac98c476 48d8296881fd6e954b7b55dcb96cbb2ed00d5018 daichi <daipanchi@gmail.com> 1400250780 +0900	commit: Create prototype
+48d8296881fd6e954b7b55dcb96cbb2ed00d5018 e0c2c8efba5fb4b0357ea5d05a6d55f209cd80ed daichi <daipanchi@gmail.com> 1400250798 +0900	commit: Add forgotten migration file
+e0c2c8efba5fb4b0357ea5d05a6d55f209cd80ed f66abed06ff553f8ba01412589ff9ec5aef7ba55 daichi <daipanchi@gmail.com> 1400250814 +0900	rebase -i (finish): refs/heads/take-screenshot onto 48d8296
+f66abed06ff553f8ba01412589ff9ec5aef7ba55 d2269d76fbd2dd41290019ef9bbe4a398c605fbc daichi <daipanchi@gmail.com> 1400369073 +0900	commit: Modify width
+d2269d76fbd2dd41290019ef9bbe4a398c605fbc 243e31e0716c7bcd3302e3a5878e6b4654910b79 daichi <daipanchi@gmail.com> 1400369553 +0900	rebase -i (finish): refs/heads/take-screenshot onto 986312fa676119078f3738574cb76dd4f3a88c7e

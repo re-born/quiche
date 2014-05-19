@@ -1,0 +1,20 @@
+<%= form_for(@item) do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
+<div class="field">
+  <span>やりたいこと(80字以内)</span> <span class='count'>80</span>
+  <%= f.text_area :content, placeholder: "たとえば\" railsの勉強会を開きたい！\"など" %>
+</div>
+<%= f.submit "Post", class: "btn btn-2i" %>
+<% end %>
+<script>
+$(function(){
+    $('#micropost_content').bind('keyup',function(){
+        var thisValueLength = 80 - $(this).val().length;
+        $('.count').html(thisValueLength);
+        if(thisValueLength < 0)
+          $('.count').css({'color':'red'})
+        else
+          $('.count').css({'color':'#888'})
+    });
+});
+</script>

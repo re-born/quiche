@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 d77b49623737cf946752996af7b545044479ed3a daichi <daipanchi@gmail.com> 1400156553 +0900	branch: Created from HEAD
+d77b49623737cf946752996af7b545044479ed3a c2c492e2b8b29b68f14e477c83d2b2af7c65310f daichi <daipanchi@gmail.com> 1400162481 +0900	commit: Install comment
+c2c492e2b8b29b68f14e477c83d2b2af7c65310f 3446cd77fc7ca3cb333b01c54a461fbdbec7c07f daichi <daipanchi@gmail.com> 1400163124 +0900	commit: Add files for jquery.modal
+3446cd77fc7ca3cb333b01c54a461fbdbec7c07f 8d31080a0be78b50a11b51476839b1ef0e9aabe9 daichi <daipanchi@gmail.com> 1400163900 +0900	commit: Allow any user to comment
+8d31080a0be78b50a11b51476839b1ef0e9aabe9 4549d876c0555687f09e85855b46797e64fd9f42 daichi <daipanchi@gmail.com> 1400169666 +0900	commit: Modify comment building
+4549d876c0555687f09e85855b46797e64fd9f42 626706a57de7e80f29e4cfbcb53456ce9fe6a0d5 daichi <daipanchi@gmail.com> 1400171636 +0900	commit: Bugfix for non-logged-in-user
+626706a57de7e80f29e4cfbcb53456ce9fe6a0d5 8b56f442edbf400e65a77655555e0a1201e60cf7 daichi <daipanchi@gmail.com> 1400172524 +0900	commit: Turn off turbolinks

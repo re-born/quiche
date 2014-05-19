@@ -1,0 +1,81 @@
+<nav class='top-bar' data-topbar>
+  <header>
+    <a href='/'><h1>Quiche</h1></a>
+    <form action='/items'method='get'>
+      <input id='search_text' name='query' autocomplete="off" type='text'></input>
+      <input id='search_button' type='image' src='svg/search.svg'></input>
+      <div id='suggest' style='display:none;'></div>
+      <script>
+        initSuggest(
+          [<% User.all.each do |user| %>
+            '<%= user.twitter_id %>',
+          <% end %>]);
+      </script>
+    </form>
+  </header>
+</nav>
+<div class='contents'>
+  <% @items.each do |item| %>
+    <div class='row'>
+      <div class='columns column_date'>
+        <p class='date'> <%= item.created_at.strftime('%Y/%m/%d') %> </p>
+        <p class='time'> <%= item.created_at.strftime('%H:%M') %> </p>
+      </div>
+      <div class='columns column_left'>
+        <p class='user_icon'><%= image_tag item.user.image_url, size: '30' %></p>
+      </div>
+      <div class='columns column_right'>
+        <h3><span class='truncate'><%= link_to item.title.truncate(80), (extract_url item.url) %></span></h3>
+        <p class='thumbnail'>
+          <% if !item.first_image_url.nil?  %>
+            <%= image_tag item.first_image_url, width: '100%' %>
+          <% elsif !item.screen_shot.nil? %>
+            <%= image_tag(get_image_item_path(item, format: 'jpg'), width: '100%') %>
+          <% end %>
+        </p>
+        <div class='content'>
+          <p> <%= raw (re_arrange item.content) %> </p> <br>
+          <span class='reader'>reader:</span>
+          <% item.readers.each do |reader| %>
+          <span class='user_icon'><%= image_tag reader.user.image_url, size: '30' %></span>
+          <% end %>
+        </div>
+        <div class='modal comment_modal' id='comment_form_<%= item.id %>'>
+          <% unless current_user.nil? %>
+            <%= form_for(@comment = current_user.comments.build) do |f| %>
+              <%= f.hidden_field :item_id, value: item.id %>
+              <div class='field'>
+                <%= f.text_area :content, placeholder: 'コメント書きやがれください' %>
+              </div>
+              <%= f.submit 'Post', class: '' %>
+              <% @comment.item_id = item.id %>
+            <% end %>
+          <% end %>
+          <div class='comments'>
+            <% item.comments.each do |comment| %>
+            <p>
+              <span class='user_icon'>
+                <%= image_tag comment.user.image_url, size: '25' %>
+              </span>
+              <span class='comment'>
+                <%= comment.content  %>
+                <span class='comment_date'>
+                  <%= time_ago_in_words(comment.created_at) + ' ago' %>
+                </span>
+              </span>
+            </p>
+            <% end %>
+          </div>
+        </div>
+        <div class='buttons'>
+          <% if item.user == current_user %>
+            <span class='delete_button'>
+              <%= link_to (fa_icon 'trash-o'), item, confirm: '本当に消してしまうん？', method: :delete %>
+            </span>
+          <% end %>
+          <a href='#' id='comment_button_<%= item.id %>' class='comment_button'><%= fa_icon 'comments-o' %> <%= '('+item.comments.length.to_s+')' %></a>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>

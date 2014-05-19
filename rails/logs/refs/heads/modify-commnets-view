@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 1faeea3c052391ae5b59f29911dc5a63ac98c476 daichi <daipanchi@gmail.com> 1400238190 +0900	branch: Created from HEAD
+1faeea3c052391ae5b59f29911dc5a63ac98c476 d183d7c22612eba6159d84e95a9acc94a0ef3502 daichi <daipanchi@gmail.com> 1400240330 +0900	commit: Modify comment-view
+d183d7c22612eba6159d84e95a9acc94a0ef3502 80309bc69c14d59517a82ce6ffbfd25956ec2a2a daichi <daipanchi@gmail.com> 1400241868 +0900	commit: white-space: nowrap;
+80309bc69c14d59517a82ce6ffbfd25956ec2a2a 9d6c454e782c6cef168ecfc6659889304975c9dc daichi <daipanchi@gmail.com> 1400242031 +0900	rebase -i (finish): refs/heads/modify-commnets-view onto d183d7c
