@@ -136,6 +136,7 @@ body {
             border: 1px solid $user_color;
             padding: 3px;
             background: #fff;
+            width: 30px;
           }
         }
       }
@@ -191,6 +192,7 @@ body {
             img {
               border: 1px solid #cc0;
               padding: 3px;
+              width: 30px;
             }
             &:before {
               content: '';
