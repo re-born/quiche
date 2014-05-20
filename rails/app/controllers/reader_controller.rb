@@ -4,10 +4,10 @@ class ReaderController < ApplicationController
   def toggle_reader
     if @item.readers.pluck(:user_id).include?(current_user.id)
       @reader = @item.readers.find_by({user_id: current_user.id}).destroy
-      status = 'destroy'
+      status = 'unread'
     else
       @reader = Reader.create({user_id: current_user.id, item: @item})
-      status = 'create'
+      status = 'read'
     end
     render json: { status: status, data: @reader, image_url: @reader.user.image_url }
   end
