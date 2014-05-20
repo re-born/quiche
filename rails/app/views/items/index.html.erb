@@ -16,13 +16,13 @@
 </nav>
 <div class='contents'>
   <% @items.each do |item| %>
-    <div class='row'>
+    <div class='row item' id='item_<%= item.id %>'>
       <div class='columns column_date'>
         <p class='date'> <%= item.created_at.strftime('%Y/%m/%d') %> </p>
         <p class='time'> <%= item.created_at.strftime('%H:%M') %> </p>
       </div>
       <div class='columns column_left'>
-        <p class='user_icon'><%= image_tag item.user.image_url, size: '30' %></p>
+        <p class='user_icon'><%= image_tag item.user.image_url %></p>
       </div>
       <div class='columns column_right'>
         <h3><span class='truncate'><%= link_to item.title.truncate(80), (extract_url item.url) %></span></h3>
@@ -37,7 +37,7 @@
           <p> <%= raw (re_arrange item.content) %> </p> <br>
           <span class='reader'>reader:</span>
           <% item.readers.each do |reader| %>
-          <span class='user_icon'><%= image_tag reader.user.image_url, size: '30' %></span>
+            <span class='user_icon user_icon_<%= reader.user.id %>'><%= image_tag reader.user.image_url %></span>
           <% end %>
         </div>
         <div class='modal comment_modal' id='comment_form_<%= item.id %>'>
@@ -71,6 +71,12 @@
           <% if item.user == current_user %>
             <span class='delete_button'>
               <%= link_to (fa_icon 'trash-o'), item, confirm: '本当に消してしまうん？', method: :delete %>
+            </span>
+          <% else %>
+            <span class='read_button'>
+              <%= link_to toggle_reader_path({ item_id: item.id }), method: :post, remote: true do %>
+                <%= fa_icon 'check', class: item.readers.pluck(:user_id).include?(current_user.id) ? 'already_read' : '' %>
+              <% end %>
             </span>
           <% end %>
           <a href='#' id='comment_button_<%= item.id %>' class='comment_button'><%= fa_icon 'comments-o' %> <%= '('+item.comments.length.to_s+')' %></a>
