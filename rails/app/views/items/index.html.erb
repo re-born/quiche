@@ -40,7 +40,8 @@
           <span class='user_icon'><%= image_tag reader.user.image_url, size: '30' %></span>
           <% end %>
           <div class='tag_div' id='tag_list_<%= item.id %>'>
-            <%= form_for item do |f| %>
+            <%#= form_for item do |f| %>
+            <%= form_for item, :remote => true do |f| %>
               <%= f.hidden_field :item_id, :value => item.id %>
               <%= f.text_field :tag_list %>
               <%= f.submit '送信', :class => 'submit' %>
