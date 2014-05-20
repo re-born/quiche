@@ -19,6 +19,11 @@ $(window).load(function() {
     event.preventDefault();
     $(this).parent().parent().children('.modal').modal()
   })
+  $('.tags').tagsInput({'width':'auto', 'height':'23px', 'defaultText':'+'});
+    //onChange: function() {
+    //  alert($(this).parent().innerHTML);
+    //}
+  //});
 })
 
 function initSuggest(list) {

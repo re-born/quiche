@@ -43,7 +43,7 @@
             <%#= form_for item do |f| %>
             <%= form_for item, :remote => true do |f| %>
               <%= f.hidden_field :item_id, :value => item.id %>
-              <%= f.text_field :tag_list %>
+              <%= f.text_field :tag_list, :class => 'tags' %>
               <%= f.submit '送信', :class => 'submit' %>
             <% end %>
           </div>
