@@ -1,3 +1,10 @@
-//alert('Item<%#= @item.erros %>');
-//alert('Item<%#= @item.id %>s tag list updated');
-alert('<%= @item.id %>, <%= @notice %>');
+if (<%= @success %>) {
+  $('#tag_list_<%= @item.id %>').find('.tagsinput').children('.tag')
+    .css('background-color', 'rgb(251, 216, 219)')
+    .animate({backgroundColor: 'rgb(205, 230, 156)'})
+} else {
+  alert('<%= @notice %>')
+}
+
+
+
