@@ -19,11 +19,18 @@ $(window).load(function() {
     event.preventDefault();
     $(this).parent().parent().children('.modal').modal()
   })
-  $('.tags').tagsInput({'width':'auto', 'height':'23px', 'defaultText':'+'});
-    //onChange: function() {
-    //  alert($(this).parent().innerHTML);
-    //}
-  //});
+  $('.tags').tagsInput({
+  	'width':'auto',
+  	'height':'23px',
+  	'defaultText':'+',
+  });
+
+  $('.tagsinput div input').keypress(function (e) {
+    if (e.which == 13) {
+      $(e.target).closest('form').submit();
+      return false;
+    }
+  });
 })
 
 function initSuggest(list) {
