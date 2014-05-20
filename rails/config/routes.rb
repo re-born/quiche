@@ -6,6 +6,7 @@ LabCache::Application.routes.draw do
   end
   root 'items#index'
   post 'item/create' => 'items#create'
+  match 'toggle_reader', :to => 'reader#toggle_reader', :via => [:get, :post]
 
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy', as: :signout
