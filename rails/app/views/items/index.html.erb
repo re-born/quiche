@@ -22,7 +22,7 @@
         <p class='time'> <%= item.created_at.strftime('%H:%M') %> </p>
       </div>
       <div class='columns column_left'>
-        <p class='user_icon'><%= image_tag item.user.image_url, size: '30' %></p>
+        <p class='user_icon'><%= image_tag item.user.image_url %></p>
       </div>
       <div class='columns column_right'>
         <h3><span class='truncate'><%= link_to item.title.truncate(80), (extract_url item.url) %></span></h3>
@@ -37,7 +37,7 @@
           <p> <%= raw (re_arrange item.content) %> </p> <br>
           <span class='reader'>reader:</span>
           <% item.readers.each do |reader| %>
-            <span class='user_icon user_icon_<%= reader.user.id %>'><%= image_tag reader.user.image_url, size: '30' %></span>
+            <span class='user_icon user_icon_<%= reader.user.id %>'><%= image_tag reader.user.image_url %></span>
           <% end %>
         </div>
         <div class='modal comment_modal' id='comment_form_<%= item.id %>'>
