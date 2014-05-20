@@ -68,16 +68,18 @@
           </div>
         </div>
         <div class='buttons'>
-          <% if item.user == current_user %>
-            <span class='delete_button'>
-              <%= link_to (fa_icon 'trash-o'), item, confirm: '本当に消してしまうん？', method: :delete %>
-            </span>
-          <% else %>
-            <span class='read_button'>
-              <%= link_to toggle_reader_path({ item_id: item.id }), method: :post, remote: true do %>
-                <%= fa_icon 'check', class: item.readers.pluck(:user_id).include?(current_user.id) ? 'already_read' : '' %>
-              <% end %>
-            </span>
+          <% unless current_user.nil? %>
+            <% if item.user == current_user %>
+              <span class='delete_button'>
+                <%= link_to (fa_icon 'trash-o'), item, confirm: '本当に消してしまうん？', method: :delete %>
+              </span>
+            <% else %>
+              <span class='read_button'>
+                <%= link_to toggle_reader_path({ item_id: item.id }), method: :post, remote: true do %>
+                  <%= fa_icon 'check', class: item.readers.pluck(:user_id).include?(current_user.id) ? 'already_read' : '' %>
+                <% end %>
+              </span>
+            <% end %>
           <% end %>
           <a href='#' id='comment_button_<%= item.id %>' class='comment_button'><%= fa_icon 'comments-o' %> <%= '('+item.comments.length.to_s+')' %></a>
         </div>
