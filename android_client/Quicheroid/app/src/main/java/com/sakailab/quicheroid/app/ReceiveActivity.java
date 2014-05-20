@@ -2,11 +2,11 @@ package com.sakailab.quicheroid.app;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -18,13 +18,8 @@ import com.android.volley.toolbox.Volley;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-
 
 public class ReceiveActivity extends Activity {
-
 
     private RequestQueue mRequestQueue;
     private JsonObjectRequest mPostRequest;
@@ -33,9 +28,21 @@ public class ReceiveActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_receive_layout);
+        setContentView(R.layout.activity_receive_layout);
+        setWindowInfo();
+//        setPostRequest();
+    }
+
+    private void setWindowInfo() {
+        Window window = getWindow();
+        window.setType(WindowManager.LayoutParams.TYPE_TOAST);
+        window.addFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
+    }
+
+    private void setPostRequest() {
         Bundle extra = getIntent().getExtras();
         mRequestQueue = Volley.newRequestQueue(this);
+
         JSONObject reqParam = null;
         try {
             reqParam = new JSONObject();
@@ -47,7 +54,7 @@ public class ReceiveActivity extends Activity {
             reqParam.put(Config.POST_PARAM_USER, userData);
 
         } catch (JSONException e) {
-
+            e.printStackTrace();
         }
 
         mPostRequest = new JsonObjectRequest(Request.Method.POST, Config.POST_API, reqParam,
@@ -61,6 +68,7 @@ public class ReceiveActivity extends Activity {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         error.printStackTrace();
+                        finish();
                     }
                 }
         );
@@ -69,10 +77,11 @@ public class ReceiveActivity extends Activity {
         mRequestQueue.add(mPostRequest);
     }
 
-
     @Override
     protected void onStart() {
         super.onStart();
+        Toast.makeText(this, R.string.hello_world, Toast.LENGTH_LONG).show();
+        finish();
         if (mRequestQueue == null)
             return;
         mRequestQueue.start();
