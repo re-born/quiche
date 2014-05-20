@@ -75,7 +75,7 @@
           <% else %>
             <span class='read_button'>
               <%= link_to toggle_reader_path({ item_id: item.id }), method: :post, remote: true do %>
-                <%= fa_icon 'plus', class: item.readers.pluck(:user_id).include?(current_user.id) ? 'already_read' : '' %>
+                <%= fa_icon 'check', class: item.readers.pluck(:user_id).include?(current_user.id) ? 'already_read' : '' %>
               <% end %>
             </span>
           <% end %>
