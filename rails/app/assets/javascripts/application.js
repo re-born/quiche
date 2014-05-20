@@ -16,8 +16,20 @@
 
 $(window).load(function() {
   $('.comment_button').click(function() {
-    event.preventDefault();
+    event.preventDefault()
     $(this).parent().parent().children('.modal').modal()
+  })
+  $('.read_button').bind("ajax:success", function(data, response, xhr){
+    $item = $('#item_' + response.data.item_id)
+    if (response.status == 'read') {
+      $("<span class='user_icon user_icon_" + response.data.user_id + "'><img src='" + response.image_url + "'></span>").appendTo($item.find('.reader').parent()).hide().fadeIn()
+      $item.find('i').addClass('already_read')
+    } else if (response.status == 'unread') {
+      $item.find('.user_icon_' + response.data.user_id).fadeOut(500, function() {
+        this.remove()
+        $item.find('i').removeClass('already_read')
+      })
+    }
   })
 })
 
