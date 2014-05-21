@@ -21,5 +21,8 @@
 /rails/config/sunspot.yml
 sunspot-solr.pid
 
+# Ignore acts_as_taggable migration files.
+rails/db/migrate/*.acts_as_taggable_on_engine.rb
+
 /rails/config/settings.yml
 /rails/config/database.yml

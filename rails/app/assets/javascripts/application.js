@@ -31,6 +31,17 @@ $(window).load(function() {
       })
     }
   })
+  $('.tags').tagsInput({
+  	'width':'auto',
+  	'height':'23px',
+  	'defaultText':'add Tag',
+  });
+  $('.tagsinput div input').keypress(function (e) {
+    if (e.which == 13) {
+      $(e.target).closest('form').submit();
+      return false;
+    }
+  });
 })
 
 function initSuggest(list) {

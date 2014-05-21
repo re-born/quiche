@@ -34,11 +34,18 @@
           <% end %>
         </p>
         <div class='content'>
-          <p> <%= raw (re_arrange item.content) %> </p> <br>
+          <p> <%= raw (re_arrange item.content) %> </p>
           <span class='reader'>reader:</span>
           <% item.readers.each do |reader| %>
             <span class='user_icon user_icon_<%= reader.user.id %>'><%= image_tag reader.user.image_url %></span>
           <% end %>
+          <div class='tag_div' id='tag_list_<%= item.id %>'>
+            <%= form_for item, :method => 'put', :remote => true do |f| %>
+              <%= f.hidden_field :item_id, :value => item.id %>
+              <%= f.text_field :tag_list, :class => 'tags' %>
+              <%= f.submit '送信', :class => 'submit' %>
+            <% end %>
+          </div>
         </div>
         <div class='modal comment_modal' id='comment_form_<%= item.id %>'>
           <% unless current_user.nil? %>

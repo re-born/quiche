@@ -1,0 +1,36 @@
+.tag_div {
+  margin-top: 5px;
+  form {
+    float:left;
+    input.tags {
+      float:left;
+    }
+    div.tagsinput {
+      float:left;
+      background: transparent;
+      padding: 0px;
+      border-width: 0px;
+      .tag {
+        height: 21px;
+        margin-bottom: 0px;
+        padding-top: 0px;
+        padding-bottom: 0px;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-width: 0px;
+      }
+    }
+    div {
+      margin: 0px;
+      input {
+        margin: 0px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-width: 0px;
+      }
+    }
+    input.submit {
+      display: none;
+    }
+  }
+}
