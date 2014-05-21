@@ -15,6 +15,14 @@
   </header>
 </nav>
 <div class='contents'>
+  <div class='page_link'>
+    <% if !@items.first_page? %>
+      <div class='left'><%= link_to image_tag('fork.svg', { :height => '50px', :alt => 'PREVIOUS PAGE'}), items_path(:query => @query, :page => @items.previous_page) %></div>
+    <% end %>
+    <% if !@items.last_page? %>
+      <div class='right'><%= link_to image_tag('knife.svg', { :height => '50px', :alt => 'NEXT PAGE'}), items_path(:query => @query, :page => @items.next_page) %></div>
+    <% end %>
+  </div>
   <% @items.each do |item| %>
     <div class='row item' id='item_<%= item.id %>'>
       <div class='columns column_date'>
