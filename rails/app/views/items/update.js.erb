@@ -1,10 +1,7 @@
-if (<%= @success %>) {
-  $('#tag_list_<%= @item.id %>').find('.tagsinput').children('.tag')
+<% if @success %>
+  $('#tag_list_<%= @item.id %>').find('.tagsinput').children('.tag').last()
     .css('background-color', 'rgb(251, 216, 219)')
     .animate({backgroundColor: 'rgb(205, 230, 156)'})
-} else {
-  alert('<%= @notice %>')
-}
-
-
-
+<% else %>
+  alert('<%= @notece %>')
+<% end %>

@@ -31,12 +31,6 @@ $(window).load(function() {
       })
     }
   })
-  //$('.tag_div').bind("ajax:success", function(data, response, xhr){
-    //$item = $('#tag_list_' + response.data.id)
-  //  if (response.status == 'success') {
-  //    alert('!')
-  //  }
-  //})
   $('.tags').tagsInput({
   	'width':'auto',
   	'height':'23px',
