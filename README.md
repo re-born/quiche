@@ -45,6 +45,7 @@ ruby: 2.0.0
 
 git clone https://github.com/re-born/lab_cache/
 bundle install
+rake acts_as_taggable_on_engine:install:migrations
 rake db:create
 rake db:migrate
 rake db:seed

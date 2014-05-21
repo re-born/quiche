@@ -87,10 +87,10 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to @item, notice: 'Item was successfully updated.' }
-        format.json { head :no_content }
+        format.js { @success = true }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
+        format.js { @sucess = false, @notice = @item.errors }
       end
     end
   end
@@ -113,7 +113,7 @@ class ItemsController < ApplicationController
     end
 
     def item_params
-      params.require(:item).permit(:title, :first_image_url, :user_id, :name, :content, :deleted_at)
+      params.require(:item).permit(:title, :first_image_url, :user_id, :name, :content, :deleted_at, :tag_list)
     end
 
     def tweet(tweet_content)
