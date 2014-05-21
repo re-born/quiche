@@ -32,15 +32,12 @@ $(window).load(function() {
     }
   })
   $('.tags').tagsInput({
-  	'width':'auto',
-  	'height':'23px',
-  	'defaultText':'add Tag',
-  });
-  $('.tagsinput div input').keypress(function (e) {
-    if (e.which == 13) {
-      $(e.target).closest('form').submit();
-      return false;
-    }
+    'width':'auto',
+    'height':'23px',
+    'defaultText':'add Tag',
+    'onAddTag': onAddTag,
+    'onRemoveTag': onRemoveTag,
+    'removeWithBackspace' : false,
   });
 })
 
@@ -50,4 +47,10 @@ function initSuggest(list) {
     'suggest', // 補完候補を表示するエリアのID
     list,      // 補完候補の検索対象となる配列
     {dispMax: 10, interval: 1000}); // オプション
+}
+function onAddTag(tag) {
+  $(this).closest('form').submit();
+}
+function onRemoveTag(tag) {
+  $(this).closest('form').submit();
 }
