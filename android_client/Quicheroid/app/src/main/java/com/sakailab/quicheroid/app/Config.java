@@ -17,4 +17,6 @@ public final class Config {
     public static String POST_PARAM_USER_OAUTH_TOKEN = "quiche_oauth_token";
     public static String POST_PARAM_USER_TWITTER_ID = "quiche_twitter_id";
 
+    public static String POST_RESPONCE_RESULT = "result";
+
 }
