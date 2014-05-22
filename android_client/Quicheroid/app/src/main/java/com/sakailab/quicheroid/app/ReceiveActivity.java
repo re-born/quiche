@@ -18,6 +18,7 @@ import org.json.JSONObject;
 import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 
 public class ReceiveActivity extends Activity {
@@ -27,6 +28,9 @@ public class ReceiveActivity extends Activity {
     private Handler mHandler = new Handler();
     private boolean mIsFinish = false;
     private ImageView mWaitImage;
+    private final int TIMEOUT_SECOND = 10000; //10秒
+    private final int CYCLE_TIME = 100; //待ちアニメーションを更新する間隔
+    private int mTaskSecond = -CYCLE_TIME;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +39,6 @@ public class ReceiveActivity extends Activity {
         setWindowInfo();
         mWaitImage = (ImageView) findViewById(R.id.wait_image);
         callWaitAnimation();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
         setPostRequest();
     }
 
@@ -108,6 +107,12 @@ public class ReceiveActivity extends Activity {
     }
 
     private void callWaitAnimation() {
+        mTaskSecond += CYCLE_TIME;
+        if (mTaskSecond >= TIMEOUT_SECOND) {
+            awaitExecutor();
+            return;
+        }
+
         if (mIsFinish) {
             mWaitImage.setVisibility(View.GONE);
         } else {
@@ -117,7 +122,21 @@ public class ReceiveActivity extends Activity {
                 public void run() {
                     callWaitAnimation();
                 }
-            }, 100);
+            }, CYCLE_TIME);
+        }
+    }
+
+    private void awaitExecutor() {
+        try {
+            if (!mExecutor.awaitTermination(1000, TimeUnit.MILLISECONDS)) {
+                mIsFinish = true;
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } finally {
+            pushToast(R.string.server_timeout_error);
+            mExecutor.shutdownNow();
+            finish();
         }
     }
 
@@ -141,4 +160,9 @@ public class ReceiveActivity extends Activity {
         }
     }
 
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
+    }
 }
