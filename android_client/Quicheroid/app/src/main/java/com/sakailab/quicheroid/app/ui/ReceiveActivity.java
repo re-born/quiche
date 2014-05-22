@@ -153,11 +153,14 @@ public class ReceiveActivity extends Activity {
         Toast.makeText(this, text, Toast.LENGTH_LONG).show();
     }
 
-    private void doCallBack(JSONObject responce) {
+    private void doCallBack(JSONObject response) {
         try {
             mIsFinish = true;
-            String text = responce.getString(Config.POST_RESPONCE_RESULT);
-            pushToast(text);
+            String text = response.getString(Config.POST_RESPONCE_RESULT);
+            if (text.equals("success"))
+                pushToast(R.string.success_message);
+            else
+                pushToast(text);
         } catch (JSONException e) {
             e.printStackTrace();
         } finally {
