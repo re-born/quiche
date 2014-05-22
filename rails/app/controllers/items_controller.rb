@@ -11,10 +11,10 @@ class ItemsController < ApplicationController
         with(:user_id, user.first.id)
       end
       order_by :created_at, :desc
-      paginate(:page => params[:page] || 1, :per_page => 2)
+      paginate(:page => params[:page] || 1, :per_page => 30)
     end
     @items = result.results
-    @total = result.total
+    @current_page = params[:page] || 1
     @query = params[:query]
   end
 

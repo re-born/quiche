@@ -94,11 +94,18 @@
     </div>
   <% end %>
   <div class='page_link'>
+    <div class='left'>
     <% if !@items.first_page? %>
-      <div class='left'><%= link_to image_tag('fork.svg', { :height => '50px', :alt => 'PREVIOUS PAGE'}), items_path(:query => @query, :page => @items.previous_page) %></div>
+      <%= link_to image_tag('fork.svg', { :height => '50px', :alt => 'PREVIOUS PAGE'}), items_path(:query => @query, :page => @items.previous_page) %>
     <% end %>
+    </div>
+    <div class='center'>
+      <%= @current_page %>/<%= @items.total_pages %>
+    </div>
+    <div class='right'>
     <% if !@items.last_page? %>
-      <div class='right'><%= link_to image_tag('knife.svg', { :height => '50px', :alt => 'NEXT PAGE'}), items_path(:query => @query, :page => @items.next_page) %></div>
+      <%= link_to image_tag('knife.svg', { :height => '50px', :alt => 'NEXT PAGE'}), items_path(:query => @query, :page => @items.next_page) %>
     <% end %>
+    </div>
   </div>
 </div>
