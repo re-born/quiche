@@ -11,9 +11,11 @@ class ItemsController < ApplicationController
         with(:user_id, user.first.id)
       end
       order_by :created_at, :desc
-      Sunspot.config.pagination.default_per_page = 50
+      paginate({ page: params[:page] || 1, per_page: 30 })
     end
     @items = result.results
+    @current_page = params[:page] || 1
+    @query = params[:query]
   end
 
   def show

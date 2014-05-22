@@ -40,10 +40,10 @@
             <span class='user_icon user_icon_<%= reader.user.id %>'><%= image_tag reader.user.image_url %></span>
           <% end %>
           <div class='tag_div' id='tag_list_<%= item.id %>'>
-            <%= form_for item, :method => 'put', :remote => true do |f| %>
-              <%= f.hidden_field :item_id, :value => item.id %>
-              <%= f.text_field :tag_list, :class => 'tags' %>
-              <%= f.submit '送信', :class => 'submit' %>
+            <%= form_for item, method: 'put', remote: true do |f| %>
+              <%= f.hidden_field :item_id, value: item.id %>
+              <%= f.text_field :tag_list, class: 'tags' %>
+              <%= f.submit '送信', class: 'submit' %>
             <% end %>
           </div>
         </div>
@@ -92,5 +92,20 @@
         </div>
       </div>
     </div>
+  <% end %>
+  <div class='page_link'>
+    <div class='left'>
+    <% unless @items.first_page? %>
+      <%= link_to image_tag('fork.svg', height: '50px', alt: 'PREVIOUS PAGE'), items_path( query: @query, page: @items.previous_page) %>
     <% end %>
+    </div>
+    <div class='center'>
+      <%= @current_page %>/<%= @items.total_pages %>
+    </div>
+    <div class='right'>
+    <% unless @items.last_page? %>
+      <%= link_to image_tag('knife.svg', height: '50px', alt: 'NEXT PAGE'), items_path(query: @query, page: @items.next_page) %>
+    <% end %>
+    </div>
   </div>
+</div>
