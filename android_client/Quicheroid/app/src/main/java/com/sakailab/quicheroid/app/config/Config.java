@@ -1,4 +1,4 @@
-package com.sakailab.quicheroid.app;
+package com.sakailab.quicheroid.app.config;
 
 /**
  * Created by taisho6339 on 2014/05/19.

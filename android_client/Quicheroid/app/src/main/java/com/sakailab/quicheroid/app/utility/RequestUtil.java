@@ -1,4 +1,4 @@
-package com.sakailab.quicheroid.app;
+package com.sakailab.quicheroid.app.utility;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
