@@ -1,14 +1,15 @@
-package com.sakailab.quicheroid.app;
+package com.sakailab.quicheroid.app.ui;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.sakailab.quicheroid.app.config.Config;
+import com.sakailab.quicheroid.app.R;
 
 
 public class MainActivity extends Activity {

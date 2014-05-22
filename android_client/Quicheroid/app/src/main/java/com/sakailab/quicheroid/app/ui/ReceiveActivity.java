@@ -1,4 +1,4 @@
-package com.sakailab.quicheroid.app;
+package com.sakailab.quicheroid.app.ui;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +11,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.sakailab.quicheroid.app.utility.ArticleUtil;
+import com.sakailab.quicheroid.app.config.Config;
+import com.sakailab.quicheroid.app.R;
+import com.sakailab.quicheroid.app.utility.RequestUtil;
 
 import org.json.JSONException;
 import org.json.JSONObject;
