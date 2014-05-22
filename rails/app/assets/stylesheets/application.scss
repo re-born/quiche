@@ -308,10 +308,16 @@ body {
       height: 100px;
       padding: 10px;
       div {
+        width: 33.3%;
         padding: 50px 0px;
+        float: left;
       }
-      .left { float: left;}
-      .right { float: right;}
+      .center {
+        text-align: center;
+      }
+      .right {
+        img { float: right;}
+      }
     }
   }
   .truncate {
