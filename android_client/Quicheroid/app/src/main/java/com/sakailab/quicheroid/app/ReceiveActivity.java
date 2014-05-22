@@ -4,36 +4,43 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Set;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 public class ReceiveActivity extends Activity {
 
-    private RequestQueue mRequestQueue;
-    private JsonObjectRequest mPostRequest;
-    private final Object REQUEST_TAG = new Object();
+
+    private ExecutorService mExecutor = Executors.newSingleThreadExecutor();
+    private Handler mHandler = new Handler();
+    private boolean mIsFinish = false;
+    private ImageView mWaitImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receive_layout);
         setWindowInfo();
-        mRequestQueue = Volley.newRequestQueue(this);
+        mWaitImage = (ImageView) findViewById(R.id.wait_image);
+        callWaitAnimation();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        setPostRequest();
     }
 
     private void setWindowInfo() {
@@ -50,11 +57,6 @@ public class ReceiveActivity extends Activity {
 
         if (!(ArticleUtil.isHttpsUrl(text) || ArticleUtil.isHttpUrl(text)))
             throw new IllegalArgumentException(text);
-
-        Log.d(Config.DEBUG_TAG, getIntent().getExtras().getString(Intent.EXTRA_TEXT));
-        Log.d(Config.DEBUG_TAG, ArticleUtil.getURLString(
-                ArticleUtil.getURLString(getIntent().getExtras().getString(Intent.EXTRA_TEXT))));
-        Log.d(Config.DEBUG_TAG, getIntent().getExtras().getString(Intent.EXTRA_SUBJECT));
     }
 
     private void setPostRequest() {
@@ -73,59 +75,70 @@ public class ReceiveActivity extends Activity {
             userData.put(Config.POST_PARAM_USER_OAUTH_TOKEN, "aa1199u398tuoailajflaho");
             reqParam.put(Config.POST_PARAM_USER, userData);
 
-            mPostRequest = new JsonObjectRequest(Request.Method.POST, Config.POST_API, reqParam,
-                    new Response.Listener<JSONObject>() {
-                        @Override
-                        public void onResponse(JSONObject response) {
-                            Log.d(Config.DEBUG_TAG, response.toString());
-                            pushToast(R.string.post_article_success);
-                            finish();
-                        }
-                    },
-                    new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            error.printStackTrace();
-                            pushToast(R.string.post_article_success);
-                            finish();
-                        }
-                    }
-            );
-            mPostRequest.setTag(REQUEST_TAG);
-            mRequestQueue.add(mPostRequest);
+            postURL(reqParam);
 
         } catch (JSONException e) {
             e.printStackTrace();
+            finish();
         } catch (IllegalArgumentException e) {
             e.printStackTrace();
             Log.e(Config.DEBUG_TAG, "不正なURLを受け取りました.");
+            finish();
         }
+    }
 
+    private void postURL(final JSONObject reqParams) {
+        mIsFinish = false;
+        mExecutor.execute(new Runnable() {
+            @Override
+            public void run() {
+                final JSONObject data = RequestUtil.requestPost(Config.POST_API, reqParams);
+                if (data == null)
+                    return;
+                Log.d(Config.DEBUG_TAG, data.toString());
+                mHandler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        doCallBack(data);
+                    }
+                });
+            }
+        });
+        mExecutor.shutdown();
+    }
+
+    private void callWaitAnimation() {
+        if (mIsFinish) {
+            mWaitImage.setVisibility(View.GONE);
+        } else {
+            mWaitImage.setRotation(mWaitImage.getRotation() + 30f);
+            mHandler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    callWaitAnimation();
+                }
+            }, 100);
+        }
     }
 
     private void pushToast(int textID) {
         Toast.makeText(this, textID, Toast.LENGTH_LONG).show();
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        setPostRequest();
+    private void pushToast(String text) {
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show();
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (mRequestQueue == null)
-            return;
-        mRequestQueue.start();
+    private void doCallBack(JSONObject responce) {
+        try {
+            mIsFinish = true;
+            String text = responce.getString(Config.POST_RESPONCE_RESULT);
+            pushToast(text);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } finally {
+            finish();
+        }
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        if (mPostRequest == null)
-            return;
-        mRequestQueue.cancelAll(REQUEST_TAG);
-    }
 }
