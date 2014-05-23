@@ -184,7 +184,7 @@ body {
             height: 60px;
             overflow-y: hidden;
           }
-          .reader {
+          .reader_label {
             color: #858134;
             background: #EEEE86;
             border-radius: 8px;
@@ -196,14 +196,14 @@ body {
             img {
               border: 1px solid #cc0;
               padding: 3px;
-              width: 30px;
+              width: 24px;
             }
             &:before {
               content: '';
               position: absolute;
-              margin: 18px -8px;
-              border-top: 2px solid #cc0;
-              width: 9px;
+              margin: 18px -7px;
+              border-top: 2px solid #DDDD3C;
+              width: 8px;
             }
           }
         }
