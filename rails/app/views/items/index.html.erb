@@ -38,7 +38,7 @@
           <div class='readers'>
             <span class='reader_label'>reader:</span>
             <% item.readers.each do |reader| %>
-              <span class='reader user_icon user_icon_<%= reader.user.id %>'>
+              <span class='reader user_icon' id='user_icon_<%= reader.user.id %>'>
                 <%= image_tag reader.user.image_url %>
               </span>
             <% end %>
