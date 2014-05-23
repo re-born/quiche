@@ -34,7 +34,7 @@
           <% end %>
         </p>
         <div class='content'>
-          <p> <%= raw (re_arrange item.content) %> </p>
+          <p class='article'> <%= raw (re_arrange item.content) %> </p>
           <span class='reader'>reader:</span>
           <% item.readers.each do |reader| %>
             <span class='user_icon user_icon_<%= reader.user.id %>'><%= image_tag reader.user.image_url %></span>
