@@ -35,10 +35,14 @@
         </p>
         <div class='content'>
           <p class='article'> <%= raw (re_arrange item.content) %> </p>
-          <span class='reader'>reader:</span>
-          <% item.readers.each do |reader| %>
-            <span class='user_icon user_icon_<%= reader.user.id %>'><%= image_tag reader.user.image_url %></span>
-          <% end %>
+          <div class='readers'>
+            <span class='reader_label'>reader:</span>
+            <% item.readers.each do |reader| %>
+              <span class='reader user_icon user_icon_<%= reader.user.id %>'>
+                <%= image_tag reader.user.image_url %>
+              </span>
+            <% end %>
+          </div>
           <div class='tag_div' id='tag_list_<%= item.id %>'>
             <%= form_for item, method: 'put', remote: true do |f| %>
               <%= f.hidden_field :item_id, value: item.id %>
