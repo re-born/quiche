@@ -180,6 +180,10 @@ body {
           float: left;
           line-height: 20px;
           word-break: break-all;
+          .article {
+            height: 60px;
+            overflow-y: hidden;
+          }
           .reader {
             color: #858134;
             background: #EEEE86;
