@@ -33,6 +33,7 @@ gem 'seed_dump'
 gem 'font-awesome-rails'
 gem 'imgkit'
 gem 'bitly'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'better_errors'

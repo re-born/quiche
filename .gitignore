@@ -26,3 +26,4 @@ rails/db/migrate/*.acts_as_taggable_on_engine.rb
 
 /rails/config/settings.yml
 /rails/config/database.yml
+/rails/config/newrelic.yml
