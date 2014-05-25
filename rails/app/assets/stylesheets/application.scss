@@ -33,7 +33,7 @@ $link_color: rgb(13, 177, 211);
 h1, .time {
   font-family: 'mplus-1c-thin';
 }
-p, .content, .comments {
+p, .content, .comments, .read_more_content {
    font-family: 'Helvetica', Helvetica, Arial, sans-serif;
 }
 
@@ -216,7 +216,9 @@ body {
           bottom: 10px;
           right: 10px;
           position: absolute;
-          .delete_button, .read_button {
+          .delete_button,
+          .read_button,
+          .read_more {
             a {
               text-decoration: none;
               color: #ccd;
@@ -230,8 +232,9 @@ body {
             }
           }
           .delete_button i { padding: 3px 4px 2px 5px; }
+          .read_more i { padding: 3px 3px 2px 3px; }
           .read_button i { padding: 3px 3px 2px 3px; }
-          a.comment_button {
+          a.comment {
             padding: 0 6px;
             background: #8DDFF0;
             border-radius: 10px;
@@ -249,10 +252,15 @@ body {
             }
           }
         }
-        .comment_modal {
+        .comment_modal,
+        .read_more_modal {
           height: 400px;
           overflow-x: hidden;
           overflow-y: scroll;
+          .read_more_content {
+            line-height: 26px;
+
+          }
           .field {
             width: 85%;
             float: left;
