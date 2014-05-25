@@ -9,7 +9,8 @@ module ApplicationHelper
 
   #TODO move to decorator
   def re_arrange(str)
-    TAGS_TO_BE_REMOVED.each { |pattern| str.gsub!(pattern, '') }
-    str.truncate(250)
+    cloned_str = str.dup
+    TAGS_TO_BE_REMOVED.each { |pattern| cloned_str.gsub!(pattern, '') }
+    cloned_str.truncate(250)
   end
 end
