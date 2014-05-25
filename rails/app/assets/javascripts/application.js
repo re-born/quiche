@@ -15,14 +15,8 @@
 //= require_tree .
 
 $(window).load(function() {
-  $('.comment_button').click(function() {
-    event.preventDefault()
-    $(this).parent().parent().children('.modal').modal()
-  })
-  $('.read_more').click(function() {
-    event.preventDefault()
-    $(this).parent().parent().children('.read_more_modal').modal()
-  })
+  open_modal('.read_more')
+  open_modal('.comment')
   $('.read_button').bind("ajax:success", function(data, response, xhr){
     $item = $('#item_' + response.data.item_id)
     if (response.status == 'read') {
@@ -57,4 +51,11 @@ function onAddTag(tag) {
 }
 function onRemoveTag(tag) {
   $(this).closest('form').submit();
+}
+
+function open_modal(button){
+  $(button).click(function() {
+    event.preventDefault()
+    $(this).parent().parent().children( button + '_modal' ).modal()
+  })
 }
