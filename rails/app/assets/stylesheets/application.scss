@@ -259,7 +259,9 @@ body {
           overflow-y: scroll;
           .read_more_content {
             line-height: 26px;
-
+            p {
+              margin-top: 25px;
+            }
           }
           .field {
             width: 85%;
