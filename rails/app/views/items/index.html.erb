@@ -78,7 +78,13 @@
             <% end %>
           </div>
         </div>
+        <div class='modal read_more_modal'>
+          <div class='read_more_content'>
+            <p class='article'> <%= raw item.content %> </p>
+          </div>
+        </div>
         <div class='buttons'>
+          <span class='read_more'><a href='#'><%= fa_icon 'eye' %></a></span>
           <% unless current_user.nil? %>
             <% if item.user == current_user %>
               <span class='delete_button'>
@@ -92,7 +98,7 @@
               </span>
             <% end %>
           <% end %>
-          <a href='#' id='comment_button_<%= item.id %>' class='comment_button'><%= fa_icon 'comments-o' %> <%= '('+item.comments.length.to_s+')' %></a>
+          <a href='#' id='comment_<%= item.id %>' class='comment'><%= fa_icon 'comments-o' %> <%= '('+item.comments.length.to_s+')' %></a>
         </div>
       </div>
     </div>
