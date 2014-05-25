@@ -19,6 +19,10 @@ $(window).load(function() {
     event.preventDefault()
     $(this).parent().parent().children('.modal').modal()
   })
+  $('.read_more').click(function() {
+    event.preventDefault()
+    $(this).parent().parent().children('.read_more_modal').modal()
+  })
   $('.read_button').bind("ajax:success", function(data, response, xhr){
     $item = $('#item_' + response.data.item_id)
     if (response.status == 'read') {
