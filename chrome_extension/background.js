@@ -2,7 +2,22 @@ if (!window.localStorage) {
   alert('お使いのブラウザはlocalstorageに対応してません。');
 }
 var user = {}
+var quiche_type = 'main'
+
 chrome.browserAction.onClicked.addListener(function(tab){
+  bake(tab, quiche_type)
+})
+
+chrome.commands.onCommand.addListener(function(command) {
+  if(command == 'bake_main_quiche'){
+    quiche_type = 'main'
+  } else if (command == 'bake_gouter'){
+    quiche_type = 'gouter'
+  }
+  chrome.tabs.getSelected(null, function(tab){ bake(tab, quiche_type) })
+})
+
+function bake(tab, quiche_type) {
   chrome.storage.local.get(function(items) {
     user = {
       'quiche_oauth_token': items.quiche_oauth_token,
@@ -32,18 +47,19 @@ chrome.browserAction.onClicked.addListener(function(tab){
         chrome.storage.local.set(user, function(){
           console.log('user has been saved to localStorage');
         });
-        post_to_server(tab, user);
+        post_to_server(tab, user, quiche_type);
       });
     });
   }else{
-    post_to_server(tab, user);
+    post_to_server(tab, user, quiche_type);
   }
-});
+}
 
-function post_to_server(tab, user) {
+function post_to_server(tab, user, quiche_type) {
   var data = {
     'title': tab.title,
     'url': tab.url,
+    'quiche_type': quiche_type,
     'user': {
       'quiche_oauth_token': user.quiche_oauth_token,
       'quiche_twitter_id': user.quiche_twitter_id,
@@ -77,4 +93,3 @@ function post_to_server(tab, user) {
 function doStuffWithDOM(domContent) {
     console.log('I received the following DOM content:\n' + domContent);
 }
-
