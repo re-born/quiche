@@ -16,7 +16,7 @@ chrome.browserAction.onClicked.addListener(function(tab){
     || user.quiche_twitter_id == null
     || user.quiche_twitter_image_url == null
     ){
-    OAuth.initialize('c1x-ZnmgDHkG8DVvT3toTgAcyQ0');
+    OAuth.initialize('XXXXXXXXXXXXXXXXXXXXXXXXXXXX');
     OAuth.popup('twitter', function(error, result) {
       console.log(error)
       console.log('oauth_token: ' + result.oauth_token);

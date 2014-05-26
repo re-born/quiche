@@ -33,7 +33,7 @@ $link_color: rgb(13, 177, 211);
 h1, .time {
   font-family: 'mplus-1c-thin';
 }
-p, .content, .comments {
+p, .content, .comments, .read_more_content {
    font-family: 'Helvetica', Helvetica, Arial, sans-serif;
 }
 
@@ -180,7 +180,11 @@ body {
           float: left;
           line-height: 20px;
           word-break: break-all;
-          .reader {
+          .article {
+            height: 60px;
+            overflow-y: hidden;
+          }
+          .reader_label {
             color: #858134;
             background: #EEEE86;
             border-radius: 8px;
@@ -192,14 +196,14 @@ body {
             img {
               border: 1px solid #cc0;
               padding: 3px;
-              width: 30px;
+              width: 24px;
             }
             &:before {
               content: '';
               position: absolute;
-              margin: 18px -8px;
-              border-top: 2px solid #cc0;
-              width: 9px;
+              margin: 18px -7px;
+              border-top: 2px solid #DDDD3C;
+              width: 8px;
             }
           }
         }
@@ -212,7 +216,9 @@ body {
           bottom: 10px;
           right: 10px;
           position: absolute;
-          .delete_button, .read_button {
+          .delete_button,
+          .read_button,
+          .read_more {
             a {
               text-decoration: none;
               color: #ccd;
@@ -226,8 +232,9 @@ body {
             }
           }
           .delete_button i { padding: 3px 4px 2px 5px; }
+          .read_more i { padding: 3px 3px 2px 3px; }
           .read_button i { padding: 3px 3px 2px 3px; }
-          a.comment_button {
+          a.comment {
             padding: 0 6px;
             background: #8DDFF0;
             border-radius: 10px;
@@ -245,10 +252,15 @@ body {
             }
           }
         }
-        .comment_modal {
+        .comment_modal,
+        .read_more_modal {
           height: 400px;
           overflow-x: hidden;
           overflow-y: scroll;
+          .read_more_content {
+            line-height: 26px;
+
+          }
           .field {
             width: 85%;
             float: left;
@@ -325,10 +337,16 @@ body {
   }
   .login_button {
     position: fixed;
-    bottom: 30px;
+    bottom: 20px;
     right: 30px;
+    background: #7E7E7E;
+    padding: 4px;
+    border-radius: 7px;
+    color: #eee;
+    font-family: 'mplus-1c-light';
+    opacity: 0.7;
     a {
-      color: $link_color;
+      color: #6BE6FF;
     }
   }
 }

@@ -36,14 +36,15 @@
 
 ## data-schema
 
-![](http://gyazo.l0o0l.co/img/2014-05-14/7e00e4f6887f685fba3954375913bc12.png)
+![](http://gyazo.l0o0l.co/img/2014-05-25/5c1846413f3664cb1104373745b5ee90.png)
 
 ## 環境設定 [WIP]
 
 ```
 ruby: 2.0.0
 
-git clone https://github.com/re-born/lab_cache/
+git clone https://github.com/re-born/quiche/
+cd quiche/rails
 bundle install
 rake acts_as_taggable_on_engine:install:migrations
 rake db:create

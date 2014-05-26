@@ -1,4 +1,5 @@
 module ApplicationHelper
+  TAGS_TO_BE_REMOVED = [/<div>/, /<\/div>/, /\n/, /\t/, /<p>/, /<\/p>/].freeze
 
   #TODO move to decorator
   def extract_url(url)
@@ -8,6 +9,8 @@ module ApplicationHelper
 
   #TODO move to decorator
   def re_arrange(str)
-    str.gsub('&#13;', '').gsub(/<div>/,'').gsub(/<\/div>/,'').gsub(/ ?/,'').gsub(/\n/,'').gsub(/\t/,'').gsub(/<p> <\/p>/,'').truncate(100)
+    cloned_str = str.dup
+    TAGS_TO_BE_REMOVED.each { |pattern| cloned_str.gsub!(pattern, '') }
+    cloned_str.truncate(250)
   end
 end

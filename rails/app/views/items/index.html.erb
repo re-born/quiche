@@ -34,11 +34,15 @@
           <% end %>
         </p>
         <div class='content'>
-          <p> <%= raw (re_arrange item.content) %> </p>
-          <span class='reader'>reader:</span>
-          <% item.readers.each do |reader| %>
-            <span class='user_icon user_icon_<%= reader.user.id %>'><%= image_tag reader.user.image_url %></span>
-          <% end %>
+          <p class='article'> <%= raw (re_arrange item.content) %> </p>
+          <div class='readers'>
+            <span class='reader_label'>reader:</span>
+            <% item.readers.each do |reader| %>
+              <span class='reader user_icon' id='user_icon_<%= reader.user.id %>'>
+                <%= image_tag reader.user.image_url %>
+              </span>
+            <% end %>
+          </div>
           <div class='tag_div' id='tag_list_<%= item.id %>'>
             <%= form_for item, method: 'put', remote: true do |f| %>
               <%= f.hidden_field :item_id, value: item.id %>
@@ -74,7 +78,13 @@
             <% end %>
           </div>
         </div>
+        <div class='modal read_more_modal'>
+          <div class='read_more_content'>
+            <p class='article'> <%= raw item.content %> </p>
+          </div>
+        </div>
         <div class='buttons'>
+          <span class='read_more'><a href='#'><%= fa_icon 'eye' %></a></span>
           <% unless current_user.nil? %>
             <% if item.user == current_user %>
               <span class='delete_button'>
@@ -88,7 +98,7 @@
               </span>
             <% end %>
           <% end %>
-          <a href='#' id='comment_button_<%= item.id %>' class='comment_button'><%= fa_icon 'comments-o' %> <%= '('+item.comments.length.to_s+')' %></a>
+          <a href='#' id='comment_<%= item.id %>' class='comment'><%= fa_icon 'comments-o' %> <%= '('+item.comments.length.to_s+')' %></a>
         </div>
       </div>
     </div>

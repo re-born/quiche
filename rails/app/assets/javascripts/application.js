@@ -15,17 +15,15 @@
 //= require_tree .
 
 $(window).load(function() {
-  $('.comment_button').click(function() {
-    event.preventDefault()
-    $(this).parent().parent().children('.modal').modal()
-  })
+  open_modal('.read_more')
+  open_modal('.comment')
   $('.read_button').bind("ajax:success", function(data, response, xhr){
     $item = $('#item_' + response.data.item_id)
     if (response.status == 'read') {
-      $("<span class='user_icon user_icon_" + response.data.user_id + "'><img src='" + response.image_url + "'></span>").appendTo($item.find('.reader').parent()).hide().fadeIn()
+      $("<span class='user_icon' id='user_icon_" + response.data.user_id + "'><img src='" + response.image_url + "'></span>").appendTo($item.find('.reader_label').parent()).hide().fadeIn()
       $item.find('i').addClass('already_read')
     } else if (response.status == 'unread') {
-      $item.find('.user_icon_' + response.data.user_id).fadeOut(500, function() {
+      $item.find('#user_icon_' + response.data.user_id).fadeOut(500, function() {
         this.remove()
         $item.find('i').removeClass('already_read')
       })
@@ -53,4 +51,11 @@ function onAddTag(tag) {
 }
 function onRemoveTag(tag) {
   $(this).closest('form').submit();
+}
+
+function open_modal(button){
+  $(button).click(function() {
+    event.preventDefault()
+    $(this).parent().parent().children( button + '_modal' ).modal()
+  })
 }
