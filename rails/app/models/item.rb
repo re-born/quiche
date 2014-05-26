@@ -6,6 +6,11 @@ class Item < ActiveRecord::Base
   has_many :readers
   has_many :comments
 
+  enum quiche_type: {
+    main: 0,
+    gouter: 1,
+  }
+
   acts_as_taggable # Alias for acts_as_taggable_on :tags
   searchable do
     text :title
