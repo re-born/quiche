@@ -10,6 +10,13 @@ class ItemsController < ApplicationController
       else
         with(:user_id, user.first.id)
       end
+
+      if params[:type] == 'gouter'
+        with(:quiche_type, 'gouter')
+      else
+        without(:quiche_type, 'gouter')
+      end
+
       order_by :created_at, :desc
       paginate({ page: params[:page] || 1, per_page: 30 })
     end

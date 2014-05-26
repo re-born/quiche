@@ -18,6 +18,7 @@ class Item < ActiveRecord::Base
     text :tag_list
     time :created_at
     integer :user_id
+    integer :quiche_type
   end
 
 end

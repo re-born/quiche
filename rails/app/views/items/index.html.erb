@@ -1,6 +1,6 @@
 <nav class='top-bar' data-topbar>
   <header>
-    <a href='/'><h1>Quiche</h1></a>
+    <a href='/'><h1>Quiche <%= ( params[:type].to_s || '').capitalize %></h1></a>
     <form action='/items'method='get'>
       <input id='search_text' name='query' autocomplete="off" type='text'></input>
       <input id='search_button' type='image' src='svg/search.svg'></input>
@@ -16,7 +16,7 @@
 </nav>
 <div class='contents'>
   <% @items.each do |item| %>
-    <div class='row item' id='item_<%= item.id %>'>
+    <div class='row item <%= item.quiche_type || 'main' %>_quiche ' id='item_<%= item.id %>'>
       <div class='columns column_date'>
         <p class='date'> <%= item.created_at.strftime('%Y/%m/%d') %> </p>
         <p class='time'> <%= item.created_at.strftime('%H:%M') %> </p>
