@@ -347,11 +347,18 @@ body {
       .row {
         position: relative;
         .column_date {
-          -webkit-transform: rotate(90deg);
-          top: 58px;
-          right: 40px;
-          float: right;
+          -webkit-transform: rotate(-90deg);
+          top: 75px;
+          left: 0px;
+          /*float: right;*/
           position: absolute;
+          .date {
+            font-size: 12px;
+          }
+          .time {
+            font-size: 20px;
+            border: none;
+          }
         }
         .column_left {
           width: 15%;
@@ -367,9 +374,9 @@ body {
             }
           }
           .thumbnail {
-            width: 100px;
-            height: 70px;
-            margin: 10px 8px;
+            width: 81%;
+            height: 80px;
+            margin: 10px 10px;
           }
           .content {
             display: none;
