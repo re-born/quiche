@@ -5,7 +5,7 @@ var user = {}
 var quiche_type = 'main'
 
 chrome.browserAction.onClicked.addListener(function(tab){
-  bake(tab, quiche_type)
+  bake(tab, 'main')
 })
 
 chrome.commands.onCommand.addListener(function(command) {
