@@ -46,7 +46,10 @@ p, .content, .comments, .read_more_content {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
-
+.wrapper {
+  width: 1000px;
+  margin: auto;
+}
 body {
   background-color: #ffffff;
   background-image: url(http://www.transparenttextures.com/patterns/white-tiles.png);
@@ -102,19 +105,19 @@ body {
       clear: both;
       height: 190px;
       .column_date {
-        width: 14%;
+        width: 13%;
         float: left;
         margin-top: -2px;
         .date {
-          font-size: 14px;
+          font-size: 12px;
           color: #cc0;
           line-height: 17px;
         }
         .time {
-          font-size: 40px;
+          font-size: 30px;
           color: #660;
           border-top: 1px solid #990;
-          margin-right: -52px;
+          margin-right: -43px;
         }
       }
       .column_left {
@@ -141,8 +144,8 @@ body {
         }
       }
       .column_right {
-        float: right;
-        width: 80%;
+        float: left;
+        width: 78%;
         margin-top: 3px;
         height: 190px;
         position: relative;
@@ -173,7 +176,7 @@ body {
           }
         }
         .content {
-          width: 558px;
+          width: 65%;
           margin: 16px;
           font-weight: 100;
           font-size: 14px;
@@ -329,6 +332,49 @@ body {
       }
       .right {
         img { float: right;}
+      }
+    }
+    &.main_quiches {
+      width: 750px;
+      float: left;
+    }
+    &.gouter_quiches {
+      width: 250px;
+      float: right;
+      .article {
+        width: 100px;
+      }
+      .row {
+        position: relative;
+        .column_date {
+          -webkit-transform: rotate(90deg);
+          top: 58px;
+          right: 40px;
+          float: right;
+          position: absolute;
+        }
+        .column_left {
+          width: 15%;
+        }
+        .column_right {
+          width: 70%;
+          h3 {
+            height: 63px;
+            margin-top: -10px;
+            white-space: normal;
+            a {
+              font-size: 14px;
+            }
+          }
+          .thumbnail {
+            width: 100px;
+            height: 70px;
+            margin: 10px 8px;
+          }
+          .content {
+            display: none;
+          }
+        }
       }
     }
   }

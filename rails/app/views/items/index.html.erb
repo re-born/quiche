@@ -14,7 +14,8 @@
     </form>
   </header>
 </nav>
-<div class='contents'>
+<div class='wrapper'>
+<div class='contents main_quiches'>
   <% @items.each do |item| %>
     <div class='row item <%= item.quiche_type || 'main' %>_quiche ' id='item_<%= item.id %>'>
       <div class='columns column_date'>
@@ -118,4 +119,111 @@
     <% end %>
     </div>
   </div>
+</div>
+
+<div class='contents gouter_quiches'>
+  <% @items.each do |item| %>
+    <div class='row item <%= item.quiche_type || 'main' %>_quiche ' id='item_<%= item.id %>'>
+      <div class='columns column_date'>
+        <p class='date'> <%= item.created_at.strftime('%Y/%m/%d') %> </p>
+        <p class='time'> <%= item.created_at.strftime('%H:%M') %> </p>
+      </div>
+      <div class='columns column_left'>
+        <p class='user_icon'><%= image_tag item.user.image_url %></p>
+      </div>
+      <div class='columns column_right'>
+        <h3><span class='truncate'><%= link_to item.title.truncate(80), item.url %></span></h3>
+        <p class='thumbnail'>
+          <% if !item.first_image_url.nil?  %>
+            <%= image_tag item.first_image_url, width: '100%' %>
+          <% elsif !item.screen_shot.nil? %>
+            <%= image_tag(get_image_item_path(item, format: 'jpg'), width: '100%') %>
+          <% end %>
+        </p>
+        <div class='content'>
+          <p class='article'> <%= raw (re_arrange item.content) %> </p>
+          <div class='readers'>
+            <span class='reader_label'>reader:</span>
+            <% item.readers.each do |reader| %>
+              <span class='reader user_icon' id='user_icon_<%= reader.user.id %>'>
+                <%= image_tag reader.user.image_url %>
+              </span>
+            <% end %>
+          </div>
+          <div class='tag_div' id='tag_list_<%= item.id %>'>
+            <%= form_for item, method: 'put', remote: true do |f| %>
+              <%= f.hidden_field :item_id, value: item.id %>
+              <%= f.text_field :tag_list, class: 'tags' %>
+              <%= f.submit '送信', class: 'submit' %>
+            <% end %>
+          </div>
+        </div>
+        <div class='modal comment_modal' id='comment_form_<%= item.id %>'>
+          <% unless current_user.nil? %>
+            <%= form_for(@comment = current_user.comments.build) do |f| %>
+              <%= f.hidden_field :item_id, value: item.id %>
+              <div class='field'>
+                <%= f.text_area :content, placeholder: 'コメント書きやがれください' %>
+              </div>
+              <%= f.submit 'Post', class: '' %>
+              <% @comment.item_id = item.id %>
+            <% end %>
+          <% end %>
+          <div class='comments'>
+            <% item.comments.each do |comment| %>
+            <p>
+              <span class='user_icon'>
+                <%= image_tag comment.user.image_url, size: '25' %>
+              </span>
+              <span class='comment'>
+                <%= comment.content  %>
+                <span class='comment_date'>
+                  <%= time_ago_in_words(comment.created_at) + ' ago' %>
+                </span>
+              </span>
+            </p>
+            <% end %>
+          </div>
+        </div>
+        <div class='modal read_more_modal'>
+          <div class='read_more_content'>
+            <p class='article'> <%= raw item.content %> </p>
+          </div>
+        </div>
+        <div class='buttons'>
+          <span class='read_more'><a href='#'><%= fa_icon 'eye' %></a></span>
+          <% unless current_user.nil? %>
+            <% if item.user == current_user %>
+              <span class='delete_button'>
+                <%= link_to (fa_icon 'trash-o'), item, confirm: '本当に消してしまうん？', method: :delete %>
+              </span>
+            <% else %>
+              <span class='read_button'>
+                <%= link_to toggle_reader_path({ item_id: item.id }), method: :post, remote: true do %>
+                  <%= fa_icon 'check', class: item.readers.pluck(:user_id).include?(current_user.id) ? 'already_read' : '' %>
+                <% end %>
+              </span>
+            <% end %>
+          <% end %>
+          <a href='#' id='comment_<%= item.id %>' class='comment'><%= fa_icon 'comments-o' %> <%= '('+item.comments.length.to_s+')' %></a>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  <div class='page_link'>
+    <div class='left'>
+    <% unless @items.first_page? %>
+      <%= link_to image_tag('fork.svg', height: '50px', alt: 'PREVIOUS PAGE'), items_path( query: @query, page: @items.previous_page) %>
+    <% end %>
+    </div>
+    <div class='center'>
+      <%= @current_page %>/<%= @items.total_pages %>
+    </div>
+    <div class='right'>
+    <% unless @items.last_page? %>
+      <%= link_to image_tag('knife.svg', height: '50px', alt: 'NEXT PAGE'), items_path(query: @query, page: @items.next_page) %>
+    <% end %>
+    </div>
+  </div>
+</div>
 </div>
