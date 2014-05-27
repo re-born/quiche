@@ -93,3 +93,4 @@ function post_to_server(tab, user, quiche_type) {
 function doStuffWithDOM(domContent) {
     console.log('I received the following DOM content:\n' + domContent);
 }
+
