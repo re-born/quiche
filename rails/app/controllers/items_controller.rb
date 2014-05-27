@@ -10,6 +10,13 @@ class ItemsController < ApplicationController
       else
         with(:user_id, user.first.id)
       end
+
+      if params[:type] == 'gouter'
+        with(:quiche_type, 'gouter')
+      else
+        without(:quiche_type, 'gouter')
+      end
+
       order_by :created_at, :desc
       paginate({ page: params[:page] || 1, per_page: 30 })
     end
@@ -67,6 +74,7 @@ class ItemsController < ApplicationController
         title: title,
         url: params[:url],
         content: content_html,
+        quiche_type: params[:quiche_type],
         first_image_url: images[0],
         screen_shot: screen_shot_binary,
         user_id: User.find_by(twitter_id: twitter_id).id
