@@ -37,6 +37,12 @@ p, .content, .comments, .read_more_content {
    font-family: 'Helvetica', Helvetica, Arial, sans-serif;
 }
 
+html, body, .wrapper {
+  height: 100%;
+}
+html, body {
+  overflow: hidden;
+}
 
 .user_icon img {
   border-radius: 50%;
@@ -94,12 +100,13 @@ body {
     }
   }
   .contents {
-    margin: 70px auto;
-  // width: 80%;
-  // max-width: 1000px;
     width: 1000px;
+    height: 95%;
+    margin: 50px auto;
+    padding: 20px 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
     .row {
-      // margin: 0px auto;
       width: 100%;
       float: left;
       clear: both;
@@ -326,6 +333,7 @@ body {
         width: 33.3%;
         padding: 50px 0px;
         float: left;
+        margin-right: -5px;
       }
       .center {
         text-align: center;
@@ -346,7 +354,13 @@ body {
       }
       .row {
         position: relative;
+        &:hover {
+          .column_date {
+            display: block;
+          }
+        }
         .column_date {
+          display: none;
           -webkit-transform: rotate(-90deg);
           top: 75px;
           left: 0px;
@@ -362,6 +376,10 @@ body {
         }
         .column_left {
           width: 15%;
+          .user_icon img {
+            width: 22px;
+            margin: 4px;
+          }
         }
         .column_right {
           width: 70%;

@@ -4,25 +4,24 @@ class ItemsController < ApplicationController
   include ApplicationHelper
   def index
     user = User.where("last_name = ? or twitter_id = ?", params[:query], params[:query])
-    result = Item.search do
-      if (user.blank?)
-        fulltext params[:query]
-      else
-        with(:user_id, user.first.id)
+    @items = {}
+    @current_page = {}
+    @query = {}
+    ['main', 'gouter'].each_with_index do |quiche_type, i|
+      result = Item.search do
+        if (user.blank?)
+          fulltext params[:query]
+        else
+          with(:user_id, user.first.id)
+        end
+        with(:quiche_type, i)
+        order_by :created_at, :desc
+        paginate({ page: params[quiche_type.to_sym] || 1, per_page: 30 })
       end
-
-      if params[:type] == 'gouter'
-        with(:quiche_type, 'gouter')
-      else
-        without(:quiche_type, 'gouter')
-      end
-
-      order_by :created_at, :desc
-      paginate({ page: params[:page] || 1, per_page: 30 })
+      @items[quiche_type] = result.results
+      @current_page[quiche_type] = params[quiche_type.to_sym] || 1
+      @query[quiche_type] = params[:query]
     end
-    @items = result.results
-    @current_page = params[:page] || 1
-    @query = params[:query]
   end
 
   def show
