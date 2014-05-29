@@ -24,6 +24,13 @@
   src: url(http://l0o0l.info/material/fonts/mplus-1c-light.ttf) format('opentype');
  }
 
+@mixin little_transition {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all  0.3s ease;
+}
+
 $user_color: #660;
 $link_color: rgb(13, 177, 211);
 
@@ -168,8 +175,8 @@ body {
             letter-spacing: 2px;
             text-decoration: none;
             &:hover {
-              text-decoration: underline
-            };
+              text-decoration: underline;
+            }
           }
         }
         .thumbnail {
@@ -180,6 +187,10 @@ body {
           height: 120px;
           img {
             border-radius: 10px;
+            border-right: 1px solid #660;
+            padding: 5px;
+            width: 91%;
+            border-left: 1px solid #cc0;
           }
         }
         .content {
@@ -356,19 +367,18 @@ body {
         position: relative;
         height: auto;
         &:hover {
-          .column_date {
-            display: block;
-          }
-          .column_right .buttons {
-            display: block;
+          .column_date, .column_right .buttons {
+            opacity: 1;
           }
         }
         .column_date {
-          display: none;
+          width: auto;
+          opacity: 0;
           -webkit-transform: rotate(-90deg);
-          top: 75px;
-          left: 0px;
-          /*float: right;*/
+          -moz-transform: rotate(-90deg);
+          top: 65px;
+          left: 3px;
+          @include little_transition;
           position: absolute;
           .date {
             font-size: 12px;
@@ -376,6 +386,8 @@ body {
           .time {
             font-size: 20px;
             border: none;
+            margin-right: auto;
+            text-align: center;
           }
         }
         .column_left {
@@ -383,8 +395,13 @@ body {
           margin-left: 20px;
           height: 140px;
           .user_icon img {
-            width: 22px;
-            margin: 4px;
+            width: 24px;
+            margin: 3px;
+          }
+          &:after {
+            left: 15px;
+            top: 34px;
+            height: 73%;
           }
         }
         .column_right {
@@ -399,28 +416,28 @@ body {
             }
           }
           .thumbnail {
-            width: 81%;
+            width: 80%;
             height: 80px;
-            margin: 3px 10px 10px;
+            float: none;
+            position: absolute;
+            left: 10px;
+            margin: 5px auto;
           }
           .content {
             display: none;
           }
           .buttons {
             display: none;
-            position: absolute;
+            /*opacity: 0;*/
+            @include little_transition;
             background: rgba(51, 51, 51, 0.8);
             padding: 5px;
             border-radius: 14px;
-            /*width: 81%;*/
-            margin: 28px 20px;
-            /*height: 80px;*/
-            bottom: auto;
-            right: auto;
             .delete_button,
             .read_button,
             .read_more {
               a i {
+                font-size: 13px;
                 &:hover, &.already_read{
                   background: #fff;
                 }
