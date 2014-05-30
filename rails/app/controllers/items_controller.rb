@@ -73,7 +73,7 @@ class ItemsController < ApplicationController
         title: title,
         url: params[:url],
         content: content_html,
-        quiche_type: params[:quiche_type],
+        quiche_type: Item::QUICHE_TYPE[params['quiche_type'].to_sym],
         first_image_url: images[0],
         screen_shot: screen_shot_binary,
         user_id: User.find_by(twitter_id: twitter_id).id
