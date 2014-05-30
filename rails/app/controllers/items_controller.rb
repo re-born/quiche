@@ -80,8 +80,10 @@ class ItemsController < ApplicationController
         })
       if @item.save
         message = 'success'
-        bitly = Bitly.new(ENV['bitly_legacy_login'], ENV['bitly_legacy_api_key'])
-        tweet('['+title.truncate(108) + '] が焼けたよ ' + bitly.shorten(params[:url]).short_url)
+        unless params[:quiche_type] == 'gouter'
+          bitly = Bitly.new(ENV['bitly_legacy_login'], ENV['bitly_legacy_api_key'])
+          tweet('['+title.truncate(108) + '] が焼けたよ ' + bitly.shorten(params[:url]).short_url)
+        end
       else
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
