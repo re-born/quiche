@@ -4,25 +4,24 @@ class ItemsController < ApplicationController
   include ApplicationHelper
   def index
     user = User.where("last_name = ? or twitter_id = ?", params[:query], params[:query])
-    result = Item.search do
-      if (user.blank?)
-        fulltext params[:query]
-      else
-        with(:user_id, user.first.id)
+    @items = {}
+    @current_page = {}
+    @query = {}
+    ['main', 'gouter'].each_with_index do |quiche_type, i|
+      result = Item.search do
+        if (user.blank?)
+          fulltext params[:query]
+        else
+          with(:user_id, user.first.id)
+        end
+        with(:quiche_type, i)
+        order_by :created_at, :desc
+        paginate({ page: params[quiche_type.to_sym] || 1, per_page: 30 })
       end
-
-      if params[:type] == 'gouter'
-        with(:quiche_type, 'gouter')
-      else
-        without(:quiche_type, 'gouter')
-      end
-
-      order_by :created_at, :desc
-      paginate({ page: params[:page] || 1, per_page: 30 })
+      @items[quiche_type] = result.results
+      @current_page[quiche_type] = params[quiche_type.to_sym] || 1
+      @query[quiche_type] = params[:query]
     end
-    @items = result.results
-    @current_page = params[:page] || 1
-    @query = params[:query]
   end
 
   def show
@@ -74,15 +73,17 @@ class ItemsController < ApplicationController
         title: title,
         url: params[:url],
         content: content_html,
-        quiche_type: params[:quiche_type],
+        quiche_type: Item::QUICHE_TYPE[params['quiche_type'].to_sym],
         first_image_url: images[0],
         screen_shot: screen_shot_binary,
         user_id: User.find_by(twitter_id: twitter_id).id
         })
       if @item.save
         message = 'success'
-        bitly = Bitly.new(ENV['bitly_legacy_login'], ENV['bitly_legacy_api_key'])
-        tweet('['+title.truncate(108) + '] が焼けたよ ' + bitly.shorten(params[:url]).short_url)
+        unless params[:quiche_type] == 'gouter'
+          bitly = Bitly.new(ENV['bitly_legacy_login'], ENV['bitly_legacy_api_key'])
+          tweet('['+title.truncate(108) + '] が焼けたよ ' + bitly.shorten(params[:url]).short_url)
+        end
       else
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
