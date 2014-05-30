@@ -24,6 +24,13 @@
   src: url(http://l0o0l.info/material/fonts/mplus-1c-light.ttf) format('opentype');
  }
 
+@mixin little_transition {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all  0.3s ease;
+}
+
 $user_color: #660;
 $link_color: rgb(13, 177, 211);
 
@@ -37,6 +44,12 @@ p, .content, .comments, .read_more_content {
    font-family: 'Helvetica', Helvetica, Arial, sans-serif;
 }
 
+html, body, .wrapper {
+  height: 100%;
+}
+html, body {
+  overflow: hidden;
+}
 
 .user_icon img {
   border-radius: 50%;
@@ -46,7 +59,10 @@ p, .content, .comments, .read_more_content {
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
-
+.wrapper {
+  width: 1000px;
+  margin: auto;
+}
 body {
   background-color: #ffffff;
   background-image: url(http://www.transparenttextures.com/patterns/white-tiles.png);
@@ -91,30 +107,31 @@ body {
     }
   }
   .contents {
-    margin: 70px auto;
-  // width: 80%;
-  // max-width: 1000px;
     width: 1000px;
+    height: 95%;
+    margin: 50px auto;
+    padding: 20px 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
     .row {
-      // margin: 0px auto;
       width: 100%;
       float: left;
       clear: both;
       height: 190px;
       .column_date {
-        width: 14%;
+        width: 13%;
         float: left;
         margin-top: -2px;
         .date {
-          font-size: 14px;
+          font-size: 12px;
           color: #cc0;
           line-height: 17px;
         }
         .time {
-          font-size: 40px;
+          font-size: 30px;
           color: #660;
           border-top: 1px solid #990;
-          margin-right: -52px;
+          margin-right: -43px;
         }
       }
       .column_left {
@@ -141,8 +158,8 @@ body {
         }
       }
       .column_right {
-        float: right;
-        width: 80%;
+        float: left;
+        width: 78%;
         margin-top: 3px;
         height: 190px;
         position: relative;
@@ -158,8 +175,8 @@ body {
             letter-spacing: 2px;
             text-decoration: none;
             &:hover {
-              text-decoration: underline
-            };
+              text-decoration: underline;
+            }
           }
         }
         .thumbnail {
@@ -170,10 +187,14 @@ body {
           height: 120px;
           img {
             border-radius: 10px;
+            border-right: 1px solid #660;
+            padding: 5px;
+            width: 91%;
+            border-left: 1px solid #cc0;
           }
         }
         .content {
-          width: 558px;
+          width: 65%;
           margin: 16px;
           font-weight: 100;
           font-size: 14px;
@@ -323,12 +344,107 @@ body {
         width: 33.3%;
         padding: 50px 0px;
         float: left;
+        margin-right: -5px;
       }
       .center {
         text-align: center;
       }
       .right {
         img { float: right;}
+      }
+    }
+    &.main_quiches {
+      width: 750px;
+      float: left;
+    }
+    &.gouter_quiches {
+      width: 250px;
+      float: right;
+      .article {
+        width: 100px;
+      }
+      .row {
+        position: relative;
+        height: auto;
+        &:hover {
+          .column_date, .column_right .buttons {
+            opacity: 1;
+          }
+        }
+        .column_date {
+          width: auto;
+          opacity: 0;
+          -webkit-transform: rotate(-90deg);
+          -moz-transform: rotate(-90deg);
+          top: 65px;
+          left: 3px;
+          @include little_transition;
+          position: absolute;
+          .date {
+            font-size: 12px;
+          }
+          .time {
+            font-size: 20px;
+            border: none;
+            margin-right: auto;
+            text-align: center;
+          }
+        }
+        .column_left {
+          width: 15%;
+          margin-left: 20px;
+          height: 140px;
+          .user_icon img {
+            width: 24px;
+            margin: 3px;
+          }
+          &:after {
+            left: 15px;
+            top: 34px;
+            height: 73%;
+          }
+        }
+        .column_right {
+          width: 70%;
+          height: auto;
+          h3 {
+            height: 42px;
+            margin-top: -10px;
+            white-space: normal;
+            a {
+              font-size: 14px;
+            }
+          }
+          .thumbnail {
+            width: 80%;
+            height: 80px;
+            float: none;
+            position: absolute;
+            left: 10px;
+            margin: 5px auto;
+          }
+          .content {
+            display: none;
+          }
+          .buttons {
+            display: none;
+            /*opacity: 0;*/
+            @include little_transition;
+            background: rgba(51, 51, 51, 0.8);
+            padding: 5px;
+            border-radius: 14px;
+            .delete_button,
+            .read_button,
+            .read_more {
+              a i {
+                font-size: 13px;
+                &:hover, &.already_read{
+                  background: #fff;
+                }
+              }
+            }
+          }
+        }
       }
     }
   }
