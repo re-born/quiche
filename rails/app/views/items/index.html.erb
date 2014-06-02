@@ -28,13 +28,15 @@
           </div>
           <div class='columns column_right'>
             <h3><span class='truncate'><%= link_to item.title.truncate(80), item.url %></span></h3>
-            <p class='thumbnail'>
-              <% if !item.first_image_url.nil?  %>
-                <%= image_tag item.first_image_url, width: '100%' %>
-              <% elsif !item.screen_shot.nil? %>
-                <%= image_tag(get_image_item_path(item, format: 'jpg'), width: '100%') %>
-              <% end %>
-            </p>
+            <%= link_to item.url do %>
+              <p class='thumbnail'>
+                <% if !item.first_image_url.nil?  %>
+                  <%= image_tag item.first_image_url, width: '100%' %>
+                <% elsif !item.screen_shot.nil? %>
+                  <%= image_tag(get_image_item_path(item, format: 'jpg'), width: '100%') %>
+                <% end %>
+              </p>
+            <% end %>
             <div class='content'>
               <p class='article'> <%= raw (re_arrange item.content) %> </p>
               <div class='readers'>
