@@ -15,7 +15,7 @@ class ItemsController < ApplicationController
           with(:user_id, user.first.id)
         end
         with(:quiche_type, i)
-        without(:private, true)
+        without(:private, true) unless current_user
         order_by :created_at, :desc
         paginate({ page: params[quiche_type.to_sym] || 1, per_page: 30 })
       end
