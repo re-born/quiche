@@ -19,6 +19,7 @@ class Item < ActiveRecord::Base
     time :created_at
     integer :user_id
     integer :quiche_type
+    boolean :private
   end
 
 end

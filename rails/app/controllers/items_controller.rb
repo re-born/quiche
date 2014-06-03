@@ -15,6 +15,7 @@ class ItemsController < ApplicationController
           with(:user_id, user.first.id)
         end
         with(:quiche_type, i)
+        without(:private, true) unless current_user
         order_by :created_at, :desc
         paginate({ page: params[quiche_type.to_sym] || 1, per_page: 30 })
       end
@@ -76,13 +77,17 @@ class ItemsController < ApplicationController
         quiche_type: Item::QUICHE_TYPE[params['quiche_type'].to_sym],
         first_image_url: images[0],
         screen_shot: screen_shot_binary,
-        user_id: User.find_by(twitter_id: twitter_id).id
+        user_id: User.find_by(twitter_id: twitter_id).id,
+        private: (params[:url] =~ /qiita.com\/.+\/private/) != nil
         })
       if @item.save
         message = 'success'
-        unless params[:quiche_type] == 'gouter'
+        unless (params[:quiche_type] == 'gouter') || @item.private
           bitly = Bitly.new(ENV['bitly_legacy_login'], ENV['bitly_legacy_api_key'])
           tweet('['+title.truncate(108) + '] が焼けたよ ' + bitly.shorten(params[:url]).short_url)
+        end
+        if @item.private
+          slack_notify('A new weekly report has baked! ' + @item.url)
         end
       else
         format.json { render json: @item.errors, status: :unprocessable_entity }
@@ -145,5 +150,11 @@ class ItemsController < ApplicationController
       rescue Exception => e
         p e
       end
+    end
+
+    def slack_notify(message)
+      require 'slack-notify'
+      client = SlackNotify::Client.new('reborn', ENV['slack_incoming_token'], {username: 'Quiche bot'} )
+      client.notify(message , '#oven')
     end
 end
