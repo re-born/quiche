@@ -34,6 +34,7 @@ gem 'font-awesome-rails'
 gem 'imgkit'
 gem 'bitly'
 gem 'newrelic_rpm'
+gem 'slack-notify'
 
 group :development do
   gem 'better_errors'

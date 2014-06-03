@@ -86,6 +86,9 @@ class ItemsController < ApplicationController
           bitly = Bitly.new(ENV['bitly_legacy_login'], ENV['bitly_legacy_api_key'])
           tweet('['+title.truncate(108) + '] が焼けたよ ' + bitly.shorten(params[:url]).short_url)
         end
+        if @item.private
+          slack_notify('A new weekly report has baked! ' + @item.url)
+        end
       else
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
@@ -147,5 +150,11 @@ class ItemsController < ApplicationController
       rescue Exception => e
         p e
       end
+    end
+
+    def slack_notify(message)
+      require 'slack-notify'
+      client = SlackNotify::Client.new('reborn', ENV['slack_incoming_token'] )
+      client.notify(message , '#oven')
     end
 end
