@@ -88,6 +88,9 @@
               </div>
             </div>
             <div class='buttons'>
+              <% if item.private %>
+                <span class='private'><a href='#'><%= fa_icon 'lock' %></a></span>
+              <% end %>
               <span class='read_more'><a href='#'><%= fa_icon 'eye' %></a></span>
               <% unless current_user.nil? %>
                 <% if item.user == current_user %>
