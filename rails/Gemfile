@@ -35,6 +35,7 @@ gem 'imgkit'
 gem 'bitly'
 gem 'newrelic_rpm'
 gem 'slack-notify'
+gem 'grape'
 
 group :development do
   gem 'better_errors'
