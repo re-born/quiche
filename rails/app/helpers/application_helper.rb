@@ -11,6 +11,6 @@ module ApplicationHelper
   def re_arrange(str)
     cloned_str = str.dup
     TAGS_TO_BE_REMOVED.each { |pattern| cloned_str.gsub!(pattern, '') }
-    cloned_str.truncate(250)
+    sanitize(cloned_str.truncate(250), tags: %w(div p))
   end
 end
