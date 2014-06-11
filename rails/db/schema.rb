@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140526160056) do
+ActiveRecord::Schema.define(version: 20140603151019) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -33,9 +33,10 @@ ActiveRecord::Schema.define(version: 20140526160056) do
     t.text     "url"
     t.binary   "screen_shot",     limit: 16777215
     t.integer  "quiche_type"
+    t.boolean  "private"
   end
 
-  add_index "items", ["user_id"], name: "index_items_on_user_id", using: :btree
+  add_index "items", ["user_id"], name: "index_items_on_user_id"
 
   create_table "readers", force: true do |t|
     t.integer  "user_id"
@@ -54,14 +55,14 @@ ActiveRecord::Schema.define(version: 20140526160056) do
     t.datetime "created_at"
   end
 
-  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true, using: :btree
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
 
   create_table "tags", force: true do |t|
     t.string  "name"
     t.integer "taggings_count", default: 0
   end
 
-  add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
   create_table "users", force: true do |t|
     t.string   "last_name"

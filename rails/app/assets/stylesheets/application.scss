@@ -34,6 +34,10 @@
 $user_color: #660;
 $link_color: rgb(13, 177, 211);
 
+$headings: h1, h2, h3, h4, h5, h6;
+$size: 1.8em, 1.6em, 1.4em, 1.3em, 1.2em, 1.1em;
+$head-size: zip($headings, $size);
+
 *, a, .date, h3 {
   font-family: 'mplus-1c-light';
 }
@@ -43,6 +47,7 @@ h1, .time {
 p, .content, .comments, .read_more_content {
    font-family: 'Helvetica', Helvetica, Arial, sans-serif;
 }
+a { color: $link_color; }
 
 html, body, .wrapper {
   height: 100%;
@@ -56,7 +61,7 @@ html, body {
   vertical-align: middle;
 }
 
-h1, h2, h3, h4, h5, h6 {
+#{$headings} {
   line-height: 1;
 }
 .wrapper {
@@ -163,12 +168,11 @@ body {
         margin-top: 3px;
         height: 190px;
         position: relative;
-        h3 {
+        h3.title {
           font-size: 20px;
           white-space: nowrap;
           overflow: hidden;
           a {
-            color: $link_color;
             font-size: 20px;
             text-align: center;
             border-radius: 10px;
@@ -239,7 +243,8 @@ body {
           position: absolute;
           .delete_button,
           .read_button,
-          .read_more {
+          .read_more,
+          .private {
             a {
               text-decoration: none;
               color: #ccd;
@@ -251,6 +256,10 @@ body {
                 }
               }
             }
+          }
+          .private {
+            pointer-events: none;
+            i { padding: 3px 6px 2px 6px; }
           }
           .delete_button i { padding: 3px 4px 2px 5px; }
           .read_more i { padding: 3px 3px 2px 3px; }
@@ -275,12 +284,26 @@ body {
         }
         .comment_modal,
         .read_more_modal {
-          height: 400px;
+          height: 500px;
+          width: 500px;
           overflow-x: hidden;
           overflow-y: scroll;
           .read_more_content {
             line-height: 26px;
-
+            img {
+              max-width: 400px;
+              display: block;
+              margin: 25px auto;
+            }
+            #{$headings} {
+              margin: 30px 0px;
+              font-family: 'Helvetica', Helvetica, Arial, sans-serif;
+            }
+            @each $a in $head-size {
+              #{nth($a, 1)} {
+                font-size: nth($a, 2);
+              }
+            }
           }
           .field {
             width: 85%;

@@ -27,14 +27,16 @@
             <p class='user_icon'><%= image_tag item.user.image_url %></p>
           </div>
           <div class='columns column_right'>
-            <h3><span class='truncate'><%= link_to item.title.truncate(80), item.url %></span></h3>
-            <p class='thumbnail'>
-              <% if !item.first_image_url.nil?  %>
-                <%= image_tag item.first_image_url, width: '100%' %>
-              <% elsif !item.screen_shot.nil? %>
-                <%= image_tag(get_image_item_path(item, format: 'jpg'), width: '100%') %>
-              <% end %>
-            </p>
+            <h3 class='title'><span class='truncate'><%= link_to item.title.truncate(80), item.url, title: item.title %></span></h3>
+            <%= link_to item.url do %>
+              <p class='thumbnail'>
+                <% if !item.first_image_url.nil?  %>
+                  <%= image_tag item.first_image_url, width: '100%' %>
+                <% elsif !item.screen_shot.nil? %>
+                  <%= image_tag(get_image_item_path(item, format: 'jpg'), width: '100%') %>
+                <% end %>
+              </p>
+            <% end %>
             <div class='content'>
               <p class='article'> <%= raw (re_arrange item.content) %> </p>
               <div class='readers'>
@@ -86,6 +88,9 @@
               </div>
             </div>
             <div class='buttons'>
+              <% if item.private %>
+                <span class='private'><a href='#'><%= fa_icon 'lock' %></a></span>
+              <% end %>
               <span class='read_more'><a href='#'><%= fa_icon 'eye' %></a></span>
               <% unless current_user.nil? %>
                 <% if item.user == current_user %>
