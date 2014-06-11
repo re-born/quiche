@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :check_logged_in_user, only: [:update]
 
   ALLOWED_TAGS = (1..6).map { |i| 'h' + i.to_s } + %w(div p img a)
 
@@ -161,5 +162,11 @@ class ItemsController < ApplicationController
       require 'slack-notify'
       client = SlackNotify::Client.new('reborn', ENV['slack_incoming_token'], {username: 'Quiche bot'} )
       client.notify(message , '#oven')
+    end
+
+    def check_logged_in_user
+      if current_user.nil?
+        redirect_to root_path
+      end
     end
 end
