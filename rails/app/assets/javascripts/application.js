@@ -33,6 +33,7 @@ $(window).load(function() {
     'width':'auto',
     'height':'23px',
     'defaultText':'add Tag',
+    'interactive':true,
     'onAddTag': onAddTag,
     'onRemoveTag': onRemoveTag,
     'removeWithBackspace' : false,
