@@ -450,10 +450,12 @@ body {
             display: none;
           }
           .buttons {
-            display: none;
-            /*opacity: 0;*/
+            opacity: 0;
+            bottom: -70px;
+            right: -60px;
+            -webkit-transform: rotate(90deg);
+            -moz-transform: rotate(90deg);
             @include little_transition;
-            background: rgba(51, 51, 51, 0.8);
             padding: 5px;
             border-radius: 14px;
             .delete_button,
@@ -461,9 +463,6 @@ body {
             .read_more {
               a i {
                 font-size: 13px;
-                &:hover, &.already_read{
-                  background: #fff;
-                }
               }
             }
           }
