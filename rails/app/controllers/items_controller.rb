@@ -1,10 +1,11 @@
 class ItemsController < ApplicationController
+  include ApplicationHelper
+  include ItemsHelper
+
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :check_logged_in_user, only: [:update]
 
   ALLOWED_TAGS = (1..6).map { |i| 'h' + i.to_s } + %w(div p img a)
-
-  include ApplicationHelper
   def index
     user = User.where("last_name = ? or twitter_id = ?", params[:query], params[:query])
     @items = {}
@@ -94,6 +95,7 @@ class ItemsController < ApplicationController
         end
         if @item.private
           slack_notify('A new weekly report has baked! ' + @item.url)
+          add_tag('weekly_report', @item)
         end
       else
         format.json { render json: @item.errors, status: :unprocessable_entity }

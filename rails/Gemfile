@@ -43,6 +43,16 @@ group :development do
   gem 'sqlite3'
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'rspec-kickstarter'
+  gem 'spork'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+end
+
 group :doc do
   gem 'sdoc', require: false
 end
