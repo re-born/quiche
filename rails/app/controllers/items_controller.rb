@@ -50,12 +50,6 @@ class ItemsController < ApplicationController
     images = obj.images
     twitter_id = params[:user][:quiche_twitter_id]
 
-    unless images.empty?
-      images[0] = absolute_image_path(images[0], uri)
-    else
-      screen_shot_binary = take_screen_shot(params[:url])
-    end
-
     if ( ( user = User.find_by(twitter_id: twitter_id) ) == nil )
       message = 'Create user in "Oven" before Baking!'
     elsif ( item = Item.find_by(title: title) )
@@ -66,6 +60,11 @@ class ItemsController < ApplicationController
         message = 'Your Quiche has also baked!'
       end
     else
+      if images.empty?
+        screen_shot_binary = take_screen_shot(params[:url])
+      else
+        images[0] = absolute_image_path(images[0], uri)
+      end
       @item = Item.new({
         title: title,
         url: params[:url],
