@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
   before_action :check_logged_in_user, only: [:update]
 
   ALLOWED_TAGS = (1..6).map { |i| 'h' + i.to_s } + %w(div p img a)
+
   def index
     @query = params[:query]
     @current_page = {}
@@ -61,12 +62,11 @@ class ItemsController < ApplicationController
     if ( ( user = User.find_by(twitter_id: twitter_id) ) == nil )
       message = 'Create user in "Oven" before Baking!' # chrome extention で表示
     elsif ( item = Item.find_by(title: title) ) # 既に読まれていた場合
-      if(item.user == user)
+      if (item.user == user || item.readers.include?(user))
         message = 'You have already read!'
-      elsif Reader.new({user: user, item: item}).save # user を reader に追加
-        message = 'Your Quiche has also baked!'
       else
-        message = 'You have already read!'
+        Reader.new(user: user, item: item).save
+        message = 'Your Quiche has also baked!'
       end
     else
       @item = Item.new({
