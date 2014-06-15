@@ -1,4 +1,6 @@
 class Item < ActiveRecord::Base
+  require 'lib'
+  include Notification
   include ItemsHelper
 
   after_create :notify_new_item
