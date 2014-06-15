@@ -9,6 +9,9 @@ gem 'progress_bar', '1.0.0'
 # for tag
 gem 'acts-as-taggable-on'
 
+gem 'rmagick'
+gem 'kmeans-clustering', :git => 'git://github.com/vaneyckt/kmeans-clustering.git'
+
 gem 'spring'
 gem 'jazz_hands'
 gem 'nokogiri'
