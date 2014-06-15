@@ -48,20 +48,17 @@ class ItemsController < ApplicationController
     title = obj.title
     content_html = obj.content.encode('UTF-8')
     images = obj.images
+    twitter_id = params[:user][:quiche_twitter_id]
 
-    # TODO Avoid using direct link
     unless images.empty?
       images[0] = absolute_image_path(images[0], uri)
     else
       screen_shot_binary = take_screen_shot(params[:url])
     end
 
-    twitter_id = params[:user][:quiche_twitter_id]
-    image_url = params[:user][:quiche_twitter_image_url]
-
     if ( ( user = User.find_by(twitter_id: twitter_id) ) == nil )
-      message = 'Create user in "Oven" before Baking!' # chrome extention で表示
-    elsif ( item = Item.find_by(title: title) ) # 既に読まれていた場合
+      message = 'Create user in "Oven" before Baking!'
+    elsif ( item = Item.find_by(title: title) )
       if (item.user == user || item.readers.include?(user))
         message = 'You have already read!'
       else
@@ -76,7 +73,7 @@ class ItemsController < ApplicationController
         quiche_type: Item::QUICHE_TYPE[params['quiche_type'].to_sym],
         first_image_url: images[0],
         screen_shot: screen_shot_binary,
-        user_id: User.find_by(twitter_id: twitter_id).id,
+        user_id: user.id,
         private: (params[:url] =~ /qiita.com\/.+\/private/) != nil
         })
       if @item.save
