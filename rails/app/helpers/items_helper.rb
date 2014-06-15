@@ -8,7 +8,7 @@ module ItemsHelper
     item.reload
   end
 
-  def search query
+  def search(query)
     quiche_type = query[:quiche_type]
     member_flag = query[:menber]
     page = query[:page] || 1
@@ -31,7 +31,7 @@ module ItemsHelper
         end
       end
 
-      paginate({ page: page, per_page: PER_PAGE })
+      paginate( page: page, per_page: PER_PAGE )
 
       unless text.nil?
         fulltext text
