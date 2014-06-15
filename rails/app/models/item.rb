@@ -1,4 +1,10 @@
 class Item < ActiveRecord::Base
+  require 'lib'
+  include Notification
+  include ItemsHelper
+
+  after_create :notify_new_item
+
   belongs_to :user
   validates :title, uniqueness: true
   default_scope -> { order('created_at DESC') }
@@ -28,4 +34,16 @@ class Item < ActiveRecord::Base
     boolean :private
   end
 
+  private
+
+  def notify_new_item
+    unless (self.quiche_type == 1) || self.private
+      bitly = Bitly.new(ENV['bitly_legacy_login'], ENV['bitly_legacy_api_key'])
+      tweet('[' + self.title.truncate(108) + '] が焼けたよ ' + bitly.shorten(self.url).short_url)
+    end
+    if self.private
+      slack_notify('A new weekly report has baked! ' + self.url)
+      add_tag('weekly_report', self)
+    end
+  end
 end

@@ -81,14 +81,6 @@ class ItemsController < ApplicationController
         })
       if @item.save
         message = 'success'
-        unless (params[:quiche_type] == 'gouter') || @item.private
-          bitly = Bitly.new(ENV['bitly_legacy_login'], ENV['bitly_legacy_api_key'])
-          tweet('['+title.truncate(108) + '] が焼けたよ ' + bitly.shorten(params[:url]).short_url)
-        end
-        if @item.private
-          slack_notify('A new weekly report has baked! ' + @item.url)
-          add_tag('weekly_report', @item)
-        end
       else
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
@@ -134,28 +126,6 @@ class ItemsController < ApplicationController
 
     def item_params
       params.require(:item).permit(:title, :first_image_url, :user_id, :name, :content, :deleted_at, :tag_list)
-    end
-
-    def tweet(tweet_content)
-        require 'twitter'
-        client = Twitter::REST::Client.new do |config|
-          config.consumer_key       = ENV['consumer_key']
-          config.consumer_secret    = ENV['consumer_secret']
-          config.access_token        = ENV['oauth_token']
-          config.access_token_secret = ENV['oauth_token_secret']
-        end
-        tweet_content = (tweet_content.length > 140) ? tweet_content[0..139].to_s : tweet_content
-      begin
-        client.update(tweet_content)
-      rescue Exception => e
-        p e
-      end
-    end
-
-    def slack_notify(message)
-      require 'slack-notify'
-      client = SlackNotify::Client.new('reborn', ENV['slack_incoming_token'], {username: 'Quiche bot'} )
-      client.notify(message , '#oven')
     end
 
     def check_logged_in_user
