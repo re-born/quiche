@@ -56,7 +56,7 @@ class ItemsController < ApplicationController
       if (item.user == user || item.readers.include?(user))
         message = 'You have already read!'
       else
-        Reader.new(user: user, item: item).save
+        Reader.create(user: user, item: item)
         message = 'Your Quiche has also baked!'
       end
     else
