@@ -50,13 +50,9 @@ class ItemsController < ApplicationController
 
     # TODO Avoid using direct link
     unless images.empty?
-      if  ( (images[0] =~ /^\//) == 0) # relative path
-        images[0] = 'http://' + uri.host + images[0]
-      elsif ( (images[0] =~ /^http/) != 0) # filename only
-        images[0] = 'http://' + uri.host + uri.path + images[0]
-      end
+      images[0] = absolute_image_path(images[0], uri)
     else
-      screen_shot_binary = IMGKit.new(params[:url], width: 144).to_img(:jpg)
+      screen_shot_binary = take_screen_shot(params[:url])
     end
 
     twitter_id = params[:user][:quiche_twitter_id]
