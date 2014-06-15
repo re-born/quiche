@@ -7,7 +7,9 @@ class ItemsController < ApplicationController
 
   ALLOWED_TAGS = (1..6).map { |i| 'h' + i.to_s } + %w(div p img a)
   def index
-    @current_page = @query = @items = {}
+    @current_page = {}
+    @query = {}
+    @items = {}
     user = User.where("last_name = ? or twitter_id = ?", params[:query], params[:query])
     user_id = user.first.id unless user.blank?
     ['main', 'gouter'].each_with_index do |quiche_type, i|
