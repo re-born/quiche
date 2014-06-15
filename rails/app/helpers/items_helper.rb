@@ -1,10 +1,18 @@
 module ItemsHelper
   PER_PAGE = 30
 
-  def add_tag(str, item)
-    item.tag_list.add(str)
-    item.save
-    item.reload
+  def absolute_image_path(image_url, uri)
+    if  ( (image_url =~ /^\//) == 0 ) # relative path
+      image_url = 'http://' + uri.host + image_url
+    elsif ( (image_url =~ /^http/) != 0 ) # filename only
+      image_url = 'http://' + uri.host + uri.path + image_url
+    else
+      image_url
+    end
+  end
+
+  def take_screen_shot(url)
+    IMGKit.new(url, width: 144).to_img(:jpg)
   end
 
   def search(query)

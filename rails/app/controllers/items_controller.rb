@@ -5,7 +5,8 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :check_logged_in_user, only: [:update]
 
-  ALLOWED_TAGS = (1..6).map { |i| 'h' + i.to_s } + %w(div p img a)
+  ALLOWED_TAGS = ((1..6).map { |i| "h#{i}" } + %w(div p img a)).freeze
+
   def index
     @query = params[:query]
     @current_page = {}
@@ -47,32 +48,23 @@ class ItemsController < ApplicationController
     title = obj.title
     content_html = obj.content.encode('UTF-8')
     images = obj.images
-
-    # TODO Avoid using direct link
-    unless images.empty?
-      if  ( (images[0] =~ /^\//) == 0) # relative path
-        images[0] = 'http://' + uri.host + images[0]
-      elsif ( (images[0] =~ /^http/) != 0) # filename only
-        images[0] = 'http://' + uri.host + uri.path + images[0]
-      end
-    else
-      screen_shot_binary = IMGKit.new(params[:url], width: 144).to_img(:jpg)
-    end
-
     twitter_id = params[:user][:quiche_twitter_id]
-    image_url = params[:user][:quiche_twitter_image_url]
 
     if ( ( user = User.find_by(twitter_id: twitter_id) ) == nil )
-      message = 'Create user in "Oven" before Baking!' # chrome extention で表示
-    elsif ( item = Item.find_by(title: title) ) # 既に読まれていた場合
-      if(item.user == user)
+      message = 'Create user in "Oven" before Baking!'
+    elsif ( item = Item.find_by(title: title) )
+      if (item.user == user || item.readers.include?(user))
         message = 'You have already read!'
-      elsif Reader.new({user: user, item: item}).save # user を reader に追加
-        message = 'Your Quiche has also baked!'
       else
-        message = 'You have already read!'
+        Reader.create(user: user, item: item)
+        message = 'Your Quiche has also baked!'
       end
     else
+      if images.empty?
+        screen_shot_binary = take_screen_shot(params[:url])
+      else
+        images[0] = absolute_image_path(images[0], uri)
+      end
       @item = Item.new({
         title: title,
         url: params[:url],
@@ -80,19 +72,11 @@ class ItemsController < ApplicationController
         quiche_type: Item::QUICHE_TYPE[params['quiche_type'].to_sym],
         first_image_url: images[0],
         screen_shot: screen_shot_binary,
-        user_id: User.find_by(twitter_id: twitter_id).id,
+        user_id: user.id,
         private: (params[:url] =~ /qiita.com\/.+\/private/) != nil
         })
       if @item.save
         message = 'success'
-        unless (params[:quiche_type] == 'gouter') || @item.private
-          bitly = Bitly.new(ENV['bitly_legacy_login'], ENV['bitly_legacy_api_key'])
-          tweet('['+title.truncate(108) + '] が焼けたよ ' + bitly.shorten(params[:url]).short_url)
-        end
-        if @item.private
-          slack_notify('A new weekly report has baked! ' + @item.url)
-          add_tag('weekly_report', @item)
-        end
       else
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
@@ -138,28 +122,6 @@ class ItemsController < ApplicationController
 
     def item_params
       params.require(:item).permit(:title, :first_image_url, :user_id, :name, :content, :deleted_at, :tag_list)
-    end
-
-    def tweet(tweet_content)
-        require 'twitter'
-        client = Twitter::REST::Client.new do |config|
-          config.consumer_key       = ENV['consumer_key']
-          config.consumer_secret    = ENV['consumer_secret']
-          config.access_token        = ENV['oauth_token']
-          config.access_token_secret = ENV['oauth_token_secret']
-        end
-        tweet_content = (tweet_content.length > 140) ? tweet_content[0..139].to_s : tweet_content
-      begin
-        client.update(tweet_content)
-      rescue Exception => e
-        p e
-      end
-    end
-
-    def slack_notify(message)
-      require 'slack-notify'
-      client = SlackNotify::Client.new('reborn', ENV['slack_incoming_token'], {username: 'Quiche bot'} )
-      client.notify(message , '#oven')
     end
 
     def check_logged_in_user

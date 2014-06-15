@@ -1,0 +1,8 @@
+SpaceAfterControlKeyword:
+  Enabled: false
+
+ParenthesesAroundCondition:
+  Enabled: false
+
+SpaceInsideParens:
+  Enabled: false
