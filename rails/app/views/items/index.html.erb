@@ -114,11 +114,11 @@
         <div class='left'>
           <% unless @items[quiche_type].first_page? %>
             <% if quiche_type == 'main' %>
-                <%= link_to image_tag('fork.svg', height: '50px', alt: 'NEXT PAGE'), items_path(query: @query[quiche_type],
+                <%= link_to image_tag('fork.svg', height: '50px', alt: 'NEXT PAGE'), items_path(query: @query,
                               main: @items['main'].previous_page,
                             gouter: @current_page['gouter']) %>
             <% else %>
-              <%= link_to image_tag('fork.svg', height: '50px', alt: 'NEXT PAGE'), items_path(query: @query[quiche_type],
+              <%= link_to image_tag('fork.svg', height: '50px', alt: 'NEXT PAGE'), items_path(query: @query,
                             main: @current_page['main'],
                           gouter: @items['gouter'].previous_page) %>
             <% end %>
@@ -130,11 +130,11 @@
         <div class='right'>
           <% unless @items[quiche_type].last_page? %>
             <% if quiche_type == 'main' %>
-              <%= link_to image_tag('knife.svg', height: '50px', alt: 'NEXT PAGE'), items_path(query: @query[quiche_type],
+              <%= link_to image_tag('knife.svg', height: '50px', alt: 'NEXT PAGE'), items_path(query: @query,
                             main: @items['main'].next_page,
                           gouter: @current_page['gouter']) %>
             <% else %>
-              <%= link_to image_tag('knife.svg', height: '50px', alt: 'NEXT PAGE'), items_path(query: @query[quiche_type],
+              <%= link_to image_tag('knife.svg', height: '50px', alt: 'NEXT PAGE'), items_path(query: @query,
                             main: @current_page['main'],
                           gouter: @items['gouter'].next_page) %>
             <% end %>
