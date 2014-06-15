@@ -18,6 +18,12 @@ class Item < ActiveRecord::Base
     text :tag_list
     time :created_at
     integer :user_id
+    integer :readers, multiple: true do |item|
+      item.readers.pluck(:user_id)
+    end
+    integer :tags, multiple: true do |item|
+      item.tags.pluck(:id)
+    end
     integer :quiche_type
     boolean :private
   end
