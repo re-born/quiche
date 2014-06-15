@@ -7,25 +7,17 @@ class ItemsController < ApplicationController
 
   ALLOWED_TAGS = (1..6).map { |i| 'h' + i.to_s } + %w(div p img a)
   def index
+    @current_page = @query = @items = {}
     user = User.where("last_name = ? or twitter_id = ?", params[:query], params[:query])
-    @items = {}
-    @current_page = {}
-    @query = {}
+    user_id = user.first.id unless user.blank?
     ['main', 'gouter'].each_with_index do |quiche_type, i|
-      result = Item.search do
-        if (user.blank?)
-          fulltext params[:query]
-        else
-          with(:user_id, user.first.id)
-        end
-        with(:quiche_type, i)
-        without(:private, true) unless current_user
-        order_by :created_at, :desc
-        paginate({ page: params[quiche_type.to_sym] || 1, per_page: 30 })
-      end
-      @items[quiche_type] = result.results
       @current_page[quiche_type] = params[quiche_type.to_sym] || 1
       @query[quiche_type] = params[:query]
+      @items[quiche_type] = search( quiche_type: i,
+                                    member: current_user.present?,
+                                    page: params[quiche_type.to_sym],
+                                    text: params[:query],
+                                    user_id: user_id)
     end
   end
 
