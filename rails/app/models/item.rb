@@ -34,6 +34,12 @@ class Item < ActiveRecord::Base
     boolean :private
   end
 
+  def add_tag(str)
+    self.tag_list.add(str)
+    self.save
+    self.reload
+  end
+
   private
 
   def notify_new_item
@@ -43,7 +49,7 @@ class Item < ActiveRecord::Base
     end
     if self.private
       slack_notify('A new weekly report has baked! ' + self.url)
-      add_tag('weekly_report', self)
+      add_tag('weekly_report')
     end
   end
 end
