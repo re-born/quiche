@@ -30,7 +30,7 @@ module ItemsHelper
         end
       end
 
-      paginate(page: page, per_page: PER_PAGE )
+      paginate(page: page, per_page: PER_PAGE)
 
       unless text.nil?
         fulltext text
