@@ -1,5 +1,4 @@
 module ItemsHelper
-
   PER_PAGE = 30
 
   def add_tag(str, item)
@@ -31,7 +30,7 @@ module ItemsHelper
         end
       end
 
-      paginate( page: page, per_page: PER_PAGE )
+      paginate(page: page, per_page: PER_PAGE )
 
       unless text.nil?
         fulltext text
@@ -74,6 +73,6 @@ module ItemsHelper
       end
     end
 
-    return result.results
+    result.results
   end
 end
