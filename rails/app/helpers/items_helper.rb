@@ -5,7 +5,7 @@ module ItemsHelper
     if  ( (image_url =~ /^\//) == 0 ) # relative path
       image_url = 'http://' + uri.host + image_url
     elsif ( (image_url =~ /^http/) != 0 ) # filename only
-      image_url = 'http://' + uri.host + uri.path + images[0]
+      image_url = 'http://' + uri.host + uri.path + image_url
     else
       image_url
     end

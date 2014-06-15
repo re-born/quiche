@@ -1,4 +1,6 @@
 module Notification
+  extend ActiveSupport::Concern
+
   def tweet(tweet_content)
     require 'twitter'
     client = Twitter::REST::Client.new do |config|
