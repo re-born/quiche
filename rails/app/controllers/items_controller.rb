@@ -53,12 +53,7 @@ class ItemsController < ApplicationController
     if ( ( user = User.find_by(twitter_id: twitter_id) ) == nil )
       message = 'Create user in "Oven" before Baking!'
     elsif ( item = Item.find_by(title: title) )
-      if (item.user == user || item.readers.include?(user))
-        message = 'You have already read!'
-      else
-        Reader.create(user: user, item: item)
-        message = 'Your Quiche has also baked!'
-      end
+      message = already_read_message(item, user)
     else
       if images.empty?
         screen_shot_binary = take_screen_shot(params[:url])

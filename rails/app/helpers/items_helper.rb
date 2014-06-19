@@ -15,6 +15,15 @@ module ItemsHelper
     IMGKit.new(url, width: 144).to_img(:jpg)
   end
 
+  def already_read_message(item, user)
+    if (item.user == user || item.readers.include?(user))
+      'You have already read!'
+    else
+      Reader.create(user: user, item: item)
+      'Your Quiche has also baked!'
+    end
+  end
+
   def search(query)
     quiche_type = query[:quiche_type]
     member_flag = query[:menber]
