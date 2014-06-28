@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140603151019) do
+ActiveRecord::Schema.define(version: 20140628180034) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20140603151019) do
 
   create_table "items", force: true do |t|
     t.string   "title"
-    t.string   "first_image_url"
+    t.text     "first_image_url", limit: 1000
     t.integer  "user_id"
     t.string   "name"
     t.text     "content"
