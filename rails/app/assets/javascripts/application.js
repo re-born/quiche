@@ -38,14 +38,27 @@ $(window).load(function() {
     'onRemoveTag': onRemoveTag,
     'removeWithBackspace' : false,
   });
+  initSuggest();
 })
 
-function initSuggest(list) {
-  new Suggest.Local(
-    'search_text',    // 入力のエレメントID
-    'suggest', // 補完候補を表示するエリアのID
-    list,      // 補完候補の検索対象となる配列
-    {dispMax: 10, interval: 1000}); // オプション
+function initSuggest() {
+  $.getJSON('/api/v0.1/tag.json').next(function(tag_json) { // -- (1)
+    console.log('tag_json', tag_json);
+    tags = $.map(tag_json, function(o) { return o["name"]; })
+    return $.getJSON('/api/v0.1/users.json').next(function(twitter_ids) { // -- (2)
+      console.log('twitter_ids', twitter_ids);
+      return tags.concat(twitter_ids);
+    });
+  }).next(function(suggest_array) { // -- (3)
+    console.log('suggest_array', suggest_array);
+    new Suggest.Local(
+      'search_text',    // 入力のエレメントID
+      'suggest', // 補完候補を表示するエリアのID
+      suggest_array,      // 補完候補の検索対象となる配列
+      {dispMax: 10, interval: 1000}); // オプション
+  }).error(function(status) { // -- (4)
+    console.log('error', status);
+  });
 }
 function onAddTag(tag) {
   $(this).closest('form').submit();

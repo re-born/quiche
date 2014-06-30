@@ -8,4 +8,9 @@ class API < Grape::API
       ActsAsTaggableOn::Tag.all
     end
   end
+  resource :users do
+    get do
+      User.all.pluck(:twitter_id)
+    end
+  end
 end

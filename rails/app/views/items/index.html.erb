@@ -5,12 +5,6 @@
       <input id='search_text' name='query' autocomplete="off" type='text'></input>
       <input id='search_button' type='image' src='svg/search.svg'></input>
       <div id='suggest' style='display:none;'></div>
-      <script>
-        initSuggest(
-          [<% User.all.each do |user| %>
-            '<%= user.twitter_id %>',
-          <% end %>]);
-      </script>
     </form>
   </header>
 </nav>
