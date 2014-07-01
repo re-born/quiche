@@ -17,9 +17,9 @@ module Notification
     end
   end
 
-  def slack_notify(message)
+  def slack_notify(message, room)
     require 'slack-notify'
     client = SlackNotify::Client.new('reborn', ENV['slack_incoming_token'], {username: 'Quiche bot'} )
-    client.notify(message , '#oven')
+    client.notify(message, room)
   end
 end
