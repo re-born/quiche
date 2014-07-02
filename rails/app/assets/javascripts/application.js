@@ -15,6 +15,7 @@
 //= require_tree .
 
 $(window).load(function() {
+  $('.tag_div').fadeIn(1000)
   open_modal('.read_more')
   open_modal('.comment')
   $('.read_button').bind("ajax:success", function(data, response, xhr){
