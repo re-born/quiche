@@ -45,11 +45,11 @@ class Item < ActiveRecord::Base
   def notify_new_item
     unless (self.quiche_type == 1) || self.private
       bitly = Bitly.new(ENV['bitly_legacy_login'], ENV['bitly_legacy_api_key'])
-      tweet("[ #{self.title.truncate(108)}] が焼けたよ #{bitly.shorten(self.url).short_url}")
+      tweet("[ #{self.title.truncate(107)} ] が焼けたよ #{bitly.shorten(self.url).short_url}")
     end
 
     if (self.quiche_type == 1)
-      slack_notify("[ #{self.title}] が焼けたよ #{self.url}", '#oven_gouter')
+      slack_notify("[ #{self.title} ] が焼けたよ #{self.url}", '#oven_gouter')
     end
 
     if self.private
