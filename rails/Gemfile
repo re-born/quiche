@@ -34,7 +34,7 @@ gem 'font-awesome-rails'
 gem 'imgkit'
 gem 'bitly'
 gem 'newrelic_rpm'
-gem 'slack-notify'
+gem 'slack-notifier'
 gem 'grape'
 
 group :development do
