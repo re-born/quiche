@@ -46,14 +46,15 @@ class Item < ActiveRecord::Base
     unless (self.quiche_type == 1) || self.private
       bitly = Bitly.new(ENV['bitly_legacy_login'], ENV['bitly_legacy_api_key'])
       tweet("[ #{self.title.truncate(107)} ] が焼けたよ #{bitly.shorten(self.url).short_url}")
+      slack_notify("#{self.url} が焼けたよ [##{id}](http://q.l0o0l.co/#item_#{id})", '#oven')
     end
 
     if (self.quiche_type == 1)
-      slack_notify("[ #{self.title} ] が焼けたよ #{self.url}", '#oven_gouter')
+      slack_notify("#{url} が焼けたよ [##{id}](http://q.l0o0l.co/#item_#{id})", '#oven_gouter')
     end
 
     if self.private
-      slack_notify("A new weekly report has baked! #{self.url}", '#oven')
+      slack_notify("A new weekly report has baked! #{url}", '#oven')
       add_tag('weekly_report')
     end
   end

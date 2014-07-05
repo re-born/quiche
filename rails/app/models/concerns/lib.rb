@@ -4,8 +4,8 @@ module Notification
   def tweet(tweet_content)
     require 'twitter'
     client = Twitter::REST::Client.new do |config|
-      config.consumer_key       = ENV['consumer_key']
-      config.consumer_secret    = ENV['consumer_secret']
+      config.consumer_key        = ENV['consumer_key']
+      config.consumer_secret     = ENV['consumer_secret']
       config.access_token        = ENV['oauth_token']
       config.access_token_secret = ENV['oauth_token_secret']
     end
@@ -18,8 +18,12 @@ module Notification
   end
 
   def slack_notify(message, room)
-    require 'slack-notify'
-    client = SlackNotify::Client.new('reborn', ENV['slack_incoming_token'], {username: 'Quiche bot'} )
-    client.notify(message, room)
+    require 'slack-notifier'
+    notifier = Slack::Notifier.new('reborn',
+                                   ENV['slack_incoming_token'],
+                                   channel: room,
+                                   username: 'Quiche bot',
+                                   icon_url: 'https://pbs.twimg.com/profile_images/465866699145625600/q49lf5U5.png')
+    notifier.ping message, unfurl_links: true
   end
 end
