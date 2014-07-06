@@ -3,7 +3,7 @@ class Comment < ActiveRecord::Base
   include Notification
 
   belongs_to :user
-  belongs_to :item
+  belongs_to :item, touch: true
   validates :content, presence: true
   default_scope -> { order('created_at DESC') }
   after_create :notify_new_comment
