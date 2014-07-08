@@ -26,9 +26,9 @@
               <%= link_to item.url do %>
                 <p class='thumbnail'>
                   <% if !item.first_image_url.nil?  %>
-                    <%= image_tag item.first_image_url, width: '100%' %>
+                    <%= lazy_image_tag item.first_image_url, width: '100%' %>
                   <% elsif !item.screen_shot.nil? %>
-                    <%= image_tag(get_image_item_path(item, format: 'jpg'), width: '100%') %>
+                    <%= lazy_image_tag(get_image_item_path(item, format: 'jpg'), width: '100%') %>
                   <% end %>
                 </p>
               <% end %>
