@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
   ALLOWED_TAGS = ((1..6).map { |i| "h#{i}" } + %w(div p img a)).freeze
 
   def index
+    Rails.logger.level = Logger::ERROR
     @query = params[:query]
     @current_page = {}
     @items = {}
