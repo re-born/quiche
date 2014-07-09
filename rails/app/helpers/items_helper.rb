@@ -22,7 +22,7 @@ module ItemsHelper
     else
       options[:class] = options[:class].to_s + ' lazy'
     end
-    image_tag '', options
+    image_tag 'placeholder.png', options
   end
 
   def already_read_message(item, user)
