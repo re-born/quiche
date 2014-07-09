@@ -42,6 +42,15 @@ $(window).load(function() {
   initSuggest();
 })
 
+$(function() {
+  $.each(['.main_quiches', '.gouter_quiches'], function(i, val) {
+    $(val+' img.lazy').lazyload({
+      container: $(val),
+      effect: 'fadeIn'
+    })
+  })
+})
+
 function initSuggest() {
   $.getJSON('/api/v0.1/tag.json').next(function(tag_json) { // -- (1)
     console.log('tag_json', tag_json);

@@ -15,6 +15,16 @@ module ItemsHelper
     IMGKit.new(url, width: 144).to_img(:jpg)
   end
 
+  def lazy_image_tag source, options = {}
+    options['data-original'] = source
+    if options[:class].blank?
+      options[:class] = 'lazy'
+    else
+      options[:class] = options[:class].to_s + ' lazy'
+    end
+    image_tag 'placeholder.png', options
+  end
+
   def already_read_message(item, user)
     if (item.user == user || item.readers.include?(user))
       'You have already read!'
