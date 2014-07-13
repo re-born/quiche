@@ -40,7 +40,15 @@ $(window).load(function() {
     'removeWithBackspace' : false,
   });
   initSuggest();
+  add_link_to_tag()
 })
+
+function add_link_to_tag() {
+  $('.tag').on('click', function(){
+    tag_name = $(this).children('span').text().replace(/\s+/g, '')
+    location.href = location.origin + '/items?query=' + tag_name
+  })
+}
 
 $(function() {
   $.each(['.main_quiches', '.gouter_quiches'], function(i, val) {
