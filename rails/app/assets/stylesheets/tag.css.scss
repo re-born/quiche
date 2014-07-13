@@ -19,6 +19,11 @@
         height: 20px;
         line-height: 20px;
         padding: 0 5px 0 12px;
+        span {
+          cursor: pointer;
+          &:hover { color: #224204; }
+        }
+        a:hover { color: #224204; }
         &:before {
           content: "";
           position: absolute;
