@@ -100,6 +100,6 @@ module ItemsHelper
       end
     end
 
-    result.results
+    [result.total, result.results]
   end
 end
