@@ -12,14 +12,16 @@ class ItemsController < ApplicationController
     @query = params[:query]
     @current_page = {}
     @items = {}
+    @items['length'] = {}
     user = User.where("last_name = ? or twitter_id = ?", params[:query], params[:query])
     unless user.blank?
       user_id = user.first.id
       params[:query] = nil
     end
+
     ['main', 'gouter'].each_with_index do |quiche_type, i|
       @current_page[quiche_type] = params[quiche_type.to_sym] || 1
-      @items[quiche_type] = search(quiche_type: i,
+      @items['length'][quiche_type], @items[quiche_type] = search(quiche_type: i,
                                     member: current_user.present?,
                                     page: params[quiche_type.to_sym],
                                     text: params[:query],
