@@ -36,6 +36,7 @@ gem 'bitly'
 gem 'newrelic_rpm'
 gem 'slack-notifier'
 gem 'grape'
+gem 'resque'
 
 group :development do
   gem 'better_errors'
