@@ -58,28 +58,26 @@ class ItemsController < ApplicationController
     elsif ( item = Item.find_by(title: title) )
       message = already_read_message(item, user)
     else
+      if images.empty?
+        screen_shot_binary = take_screen_shot(params[:url])
+      else
+        images[0] = absolute_image_path(images[0], uri)
+      end
       @item = Item.new({
         title: title,
         url: params[:url],
         content: content_html,
         quiche_type: Item::QUICHE_TYPE[params['quiche_type'].to_sym],
+        first_image_url: images[0],
+        screen_shot: screen_shot_binary,
         user_id: user.id,
         private: (params[:url] =~ /qiita.com\/.+\/private/) != nil
-      })
-
+        })
       if @item.save
         message = 'success'
       else
         format.json { render json: @item.errors, status: :unprocessable_entity }
       end
-
-      if images.empty?
-        Resque.enqueue(TakeScreenShot, @item.id, params[:url])
-      else
-        images[0] = absolute_image_path(images[0], uri)
-        @item.update!( first_image_url: images[0] )
-      end
-
     end
     respond_to do |format|
       format.json {
