@@ -249,7 +249,8 @@ body {
           .delete_button,
           .read_button,
           .read_more,
-          .private {
+          .private,
+          .copy_url {
             a {
               text-decoration: none;
               color: #ccd;
@@ -262,10 +263,12 @@ body {
               }
             }
           }
+          a.zeroclipboard-is-hover i { background: #333; }
           .private {
             pointer-events: none;
             i { padding: 3px 6px 2px 6px; }
           }
+          .copy_url i { padding: 3px 4px 2px 4px; }
           .delete_button i { padding: 3px 4px 2px 5px; }
           .read_more i { padding: 3px 3px 2px 3px; }
           .read_button i { padding: 3px 3px 2px 3px; }

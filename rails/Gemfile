@@ -37,6 +37,7 @@ gem 'newrelic_rpm'
 gem 'slack-notifier'
 gem 'grape'
 gem 'resque'
+gem 'zeroclipboard-rails'
 
 group :development do
   gem 'better_errors'

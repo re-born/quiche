@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require zeroclipboard
 //= require_tree .
 
 $(window).load(function() {
@@ -40,7 +41,8 @@ $(window).load(function() {
     'removeWithBackspace' : false,
   });
   initSuggest();
-  add_link_to_tag()
+  add_link_to_tag();
+  add_copy_url_button();
 })
 
 function add_link_to_tag() {
@@ -89,5 +91,12 @@ function open_modal(button){
   $(button).click(function() {
     event.preventDefault()
     $(this).parent().parent().children( button + '_modal' ).modal()
+  })
+}
+
+function add_copy_url_button() {
+  var clip = new ZeroClipboard($('.copy_url_button'))
+  clip.on('aftercopy', function( event ) {
+    alert('Copied text to clipboard: ' + event.data['text/plain'] );
   })
 }
