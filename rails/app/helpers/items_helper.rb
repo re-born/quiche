@@ -1,5 +1,6 @@
 module ItemsHelper
-  PER_PAGE = 2
+
+  PER_PAGE = 30
 
   def absolute_image_path(image_url, uri)
     if  ( (image_url =~ /^\//) == 0 ) # relative path
