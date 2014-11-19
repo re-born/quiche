@@ -1,5 +1,4 @@
 module ItemsHelper
-
   PER_PAGE = 30
 
   def absolute_image_path(image_url, uri)
