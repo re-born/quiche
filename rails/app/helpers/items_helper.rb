@@ -1,5 +1,5 @@
 module ItemsHelper
-  PER_PAGE = 30
+  PER_PAGE = 2
 
   def absolute_image_path(image_url, uri)
     if  ( (image_url =~ /^\//) == 0 ) # relative path
@@ -63,17 +63,19 @@ module ItemsHelper
         fulltext text
       end
 
-      unless user_id.nil?
-        with(:user_id, user_id)
-      end
-
       unless reader_and_flag.nil?
         if reader_and_flag
+          unless user_id.nil?
+            with(:user_id, user_id)
+          end
           reader_ids.each do |id|
             with(:readers, id)
           end
         else
           any_of do
+            unless user_id.nil?
+              with(:user_id, user_id)
+            end
             with(:readers, reader_ids)
           end
         end

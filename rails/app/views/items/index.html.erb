@@ -10,6 +10,42 @@
 </nav>
 <div class='wrapper'>
   <% ['main', 'gouter'].each do |quiche_type| %>
-    <%= render partial: 'items', locals: {items: @items, quiche_type: quiche_type, current_page: @current_page, query: @query} %>
+    <div class='contents <%= quiche_type %>_quiches'>
+    <h3 class='total'><%= "( #{@items['length'][quiche_type]}件 )" %></h3>
+      <% @items[quiche_type].each do |item| %>
+        <%= render partial: 'item', locals: {item: item, quiche_type: quiche_type} %>
+      <% end %>
+      <div class='page_link'>
+        <div class='left'>
+          <% unless @items[quiche_type].first_page? %>
+            <% if quiche_type == 'main' %>
+                <%= link_to image_tag('fork.svg', height: '50px', alt: 'NEXT PAGE'), items_path(query: @query,
+                              main: @items['main'].previous_page,
+                            gouter: @current_page['gouter']) %>
+            <% else %>
+              <%= link_to image_tag('fork.svg', height: '50px', alt: 'NEXT PAGE'), items_path(query: @query,
+                            main: @current_page['main'],
+                          gouter: @items['gouter'].previous_page) %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class='center'>
+          <%= @current_page[quiche_type] %>/<%= @items[quiche_type].total_pages %>
+        </div>
+        <div class='right'>
+          <% unless @items[quiche_type].last_page? %>
+            <% if quiche_type == 'main' %>
+              <%= link_to image_tag('knife.svg', height: '50px', alt: 'NEXT PAGE'), items_path(query: @query,
+                            main: @items['main'].next_page,
+                          gouter: @current_page['gouter']) %>
+            <% else %>
+              <%= link_to image_tag('knife.svg', height: '50px', alt: 'NEXT PAGE'), items_path(query: @query,
+                            main: @current_page['main'],
+                          gouter: @items['gouter'].next_page) %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
   <% end %>
 </div>
