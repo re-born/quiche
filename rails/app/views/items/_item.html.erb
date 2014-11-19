@@ -5,7 +5,10 @@
       <p class='time'> <%= item.created_at.strftime('%H:%M') %> </p>
     </div>
     <div class='columns column_left'>
-      <p class='user_icon'><%= image_tag item.user.image_url %></p>
+      <p class='user_icon'>
+        <%= link_to image_tag(item.user.image_url),
+                    '/' + item.user.twitter_id %>
+      </p>
     </div>
     <div class='columns column_right'>
       <h3 class='title'><span class='truncate'><%= link_to item.title.truncate(80), item.url, title: item.title %></span></h3>
@@ -25,7 +28,8 @@
           <span class='reader_label'>reader:</span>
           <% item.readers.each do |reader| %>
             <span class='reader user_icon' id='user_icon_<%= reader.user.id %>'>
-              <%= image_tag reader.user.image_url %>
+              <%= link_to image_tag(reader.user.image_url),
+                          '/' + reader.user.twitter_id %>
             </span>
           <% end %>
         </div>
