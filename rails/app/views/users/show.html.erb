@@ -10,7 +10,7 @@
 </nav>
 <div class='wrapper'>
   <% ['main', 'gouter'].each do |quiche_type| %>
-    <div class='contents <%= @quiche_type %>_quiches'>
+    <div class='contents <%= quiche_type %>_quiches'>
     <h3 class='total'><%= "( #{@items['length'][quiche_type]}件 )" %></h3>
       <% @items[quiche_type].each do |item| %>
         <%= render partial: 'items/item', locals: {item: item, quiche_type: quiche_type} %>
@@ -18,7 +18,7 @@
       <div class='page_link'>
         <div class='left'>
           <% unless @items[quiche_type].first_page? %>
-            <% if @quiche_type == 'main' %>
+            <% if quiche_type == 'main' %>
                 <%= link_to image_tag('fork.svg', height: '50px', alt: 'NEXT PAGE'),
                   controller: 'users',
                   action: 'show',
@@ -40,7 +40,7 @@
         </div>
         <div class='right'>
           <% unless @items[quiche_type].last_page? %>
-            <% if @quiche_type == 'main' %>
+            <% if quiche_type == 'main' %>
               <%= link_to image_tag('knife.svg', height: '50px', alt: 'NEXT PAGE'),
                 controller: 'users',
                 action: 'show',
