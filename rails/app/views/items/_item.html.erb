@@ -74,6 +74,12 @@
         </div>
       </div>
       <div class='buttons'>
+        <span class='copy_url'>
+          <textarea id='item_url_<%= item.id %>' style='display:none'><%= item.url %></textarea>
+          <a class='copy_url_button' data-clipboard-target='item_url_<%= item.id %>' >
+            <%= fa_icon 'copy' %>
+          </a>
+        </span>
         <% if item.private %>
           <span class='private'><a href='#'><%= fa_icon 'lock' %></a></span>
         <% end %>
