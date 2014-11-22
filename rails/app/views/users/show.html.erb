@@ -1,0 +1,63 @@
+<nav class='top-bar' data-topbar>
+  <header>
+    <a href='/'><h1>Quiche</h1></a>
+    <form action='/<%= @user.twitter_id %>'method='get'>
+      <input id='search_text' name='query' autocomplete="off" type='text'></input>
+      <input id='search_button' type='image' src='svg/search.svg'></input>
+      <div id='suggest' style='display:none;'></div>
+    </form>
+  </header>
+</nav>
+<div class='wrapper'>
+  <% ['main', 'gouter'].each do |quiche_type| %>
+    <div class='contents <%= quiche_type %>_quiches'>
+    <h3 class='total'><%= "( #{@items['length'][quiche_type]}件 )" %></h3>
+      <% @items[quiche_type].each do |item| %>
+        <%= render partial: 'items/item', locals: {item: item, quiche_type: quiche_type} %>
+      <% end %>
+      <div class='page_link'>
+        <div class='left'>
+          <% unless @items[quiche_type].first_page? %>
+            <% if quiche_type == 'main' %>
+                <%= link_to image_tag('fork.svg', height: '50px', alt: 'NEXT PAGE'),
+                  controller: 'users',
+                  action: 'show',
+                  query: @query,
+                  main: @items['main'].previous_page,
+                  gouter: @current_page['gouter'] %>
+            <% else %>
+              <%= link_to image_tag('fork.svg', height: '50px', alt: 'NEXT PAGE'),
+                controller: 'users',
+                action: 'show',
+                query: @query,
+                main: @current_page['main'],
+                gouter: @items['gouter'].previous_page %>
+            <% end %>
+          <% end %>
+        </div>
+        <div class='center'>
+          <%= @current_page[quiche_type] %>/<%= @items[quiche_type].total_pages %>
+        </div>
+        <div class='right'>
+          <% unless @items[quiche_type].last_page? %>
+            <% if quiche_type == 'main' %>
+              <%= link_to image_tag('knife.svg', height: '50px', alt: 'NEXT PAGE'),
+                controller: 'users',
+                action: 'show',
+                query: @query,
+                main: @items['main'].next_page,
+                gouter: @current_page['gouter'] %>
+            <% else %>
+              <%= link_to image_tag('knife.svg', height: '50px', alt: 'NEXT PAGE'),
+                controller: 'users',
+                action: 'show',
+                query: @query,
+                main: @current_page['main'],
+                gouter: @items['gouter'].next_page %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
