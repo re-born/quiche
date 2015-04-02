@@ -17,10 +17,6 @@
 
 @implementation ShareViewController
 
-- (BOOL)isContentValid {
-    // Do validation of contentText and/or NSExtensionContext attachments here
-    return YES;
-}
 
 - (void)didSelectPost {
     // This is called after the user selects Post. Do the upload of contentText and/or NSExtensionContext attachments.
@@ -49,15 +45,16 @@
 
                                          NSData *jsonData = nil;
                                          if([NSJSONSerialization isValidJSONObject:param]){
-                                             jsonData = [NSJSONSerialization dataWithJSONObject:param options:NSJSONWritingPrettyPrinted error:&error];
+                                             jsonData = [NSJSONSerialization dataWithJSONObject: param
+                                                                                        options:
+                                                               NSJSONWritingPrettyPrinted error: &error];
                                          }
                                          
                                          NSString *quiche_url = @"http://q.l0o0l.co/item/create";
                                          // リクエストの種類、ヘッダを設定する
-                                         NSMutableURLRequest *request = [NSMutableURLRequest
-                                                                         requestWithURL: [NSURL URLWithString: quiche_url]
-                                                                         cachePolicy: NSURLRequestUseProtocolCachePolicy
-                                                                         timeoutInterval: 10.0];
+                                         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: [NSURL URLWithString: quiche_url]
+                                                                                                cachePolicy: NSURLRequestUseProtocolCachePolicy
+                                                                                            timeoutInterval: 10.0];
 
                                          [request setHTTPMethod: @"POST"];
                                          [request setValue: @"application/json"  forHTTPHeaderField: @"Accept"];
@@ -93,8 +90,7 @@
     SLComposeSheetConfigurationItem *configurationItem = [[SLComposeSheetConfigurationItem alloc] init];
 
     configurationItem.title = @"Type";
-
-    configurationItem.value = @"Quiche";
+    configurationItem.value = @"quiche";
 
     configurationItem.tapHandler = ^(void){
         UIViewController *viewController = [[UIViewController alloc] init];
